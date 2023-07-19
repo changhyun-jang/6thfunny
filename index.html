@@ -6,25 +6,42 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/common.css" />
 
-    <link rel="stylesheet" href="./css/desktopIndex.css" />
-    <!-- <link
+    <link
+      rel="stylesheet"
+      media="screen and (min-width : 769px)"
+      href="./css/desktopIndex.css"
+    />
+    <link
       rel="stylesheet"
       media="screen and (max-width : 768px)"
-      href="mobileIndex.css"
-    /> -->
+      href="./css/mobileIndex.css"
+    />
   </head>
   <script
     src="https://code.jquery.com/jquery-3.7.0.js"
     integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
     crossorigin="anonymous"
   ></script>
-  <body>
+  <script
+    type="text/javascript"
+    src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=xpmj5g73ov"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <script src="./js/adm_district.js"></script>
+  <body id="body">
     <div class="main">
       <ul class="nav">
         <!--984px 부터 줄바꿈 -->
-        <li class="navcontent">회원가입</li>
-        <li class="navcontent">전체 후기</li>
-        <li class="navcontent">진행중인 공연</li>
+        <li class="navcontent animate__animated animate__bounce" id="test1">
+          회원가입
+        </li>
+        <li class="navcontent animate__animated animate__bounce">전체 후기</li>
+        <li class="navcontent animate__animated animate__bounce">
+          진행중인 공연
+        </li>
       </ul>
 
       <div class="logoarea"></div>
@@ -71,7 +88,7 @@
           </div>
         </div>
         <div class="selectContent" id="cate">
-          <div class="cate">카테고리</div>
+          <div class="cate" id="cate-val">카테고리</div>
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -108,12 +125,28 @@
           <p>서울</p>
           <p>경기</p>
           <p>부산</p>
+          <p>대구</p>
+          <p>인천</p>
+          <p>대전</p>
+          <p>광주</p>
+          <p>울산</p>
+          <p>강원</p>
+          <p>충북</p>
+          <p>충남</p>
+          <p>전북</p>
+          <p>전남</p>
+          <p>경북</p>
+          <p>경남</p>
+          <p>제주</p>
         </div>
         <div class="optionlist close" id="gu-list"></div>
         <div class="optionlist close" id="cate-list">
-          <p>asd</p>
-          <p>asd</p>
-          <p>asd</p>
+          <p>뮤지컬</p>
+          <p>콘서트</p>
+          <p>연극</p>
+          <p>클래식/무용</p>
+          <p>스포츠</p>
+          <p>페스티벌</p>
         </div>
         <div class="empty"></div>
       </div>
@@ -128,7 +161,7 @@
             <ul class="info">
               <li>
                 <strong class="infolabel">장소</strong>
-                <div class="infocontent" id="locat">
+                <div class="infocontent">
                   구름아래소극장
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -176,6 +209,7 @@
               </li>
             </ul>
             <button class="btn">후기 보러가기</button>
+            <div class="map"></div>
           </div>
         </div>
         <div class="card">
@@ -187,7 +221,7 @@
             <ul class="info">
               <li>
                 <strong class="infolabel">장소</strong>
-                <div class="infocontent" id="locat">
+                <div class="infocontent">
                   KSPO DOME
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -235,13 +269,35 @@
               </li>
             </ul>
             <button class="btn">후기 보러가기</button>
+            <div class="map"></div>
           </div>
         </div>
       </div>
     </div>
+    <div id="modalWrap">
+      <div id="modalContent">
+        <div id="modalBody">
+          <span id="closeBtn">&times;</span>
+          <p>modal-popup 입니다.</p>
+          //팝업창 내 글귀
+        </div>
+      </div>
+    </div>
   </body>
+  <img src="./indexImage/음표1.png" alt="" class="backImg1" />
+
   <script>
+    /* animate test*/
+    // let test = document.getElementById("test1");
+    // let navs = document.getElementsByClassName("navcontent");
+    // test.addEventListener("animationend", () => {
+    //   for (let nav of navs) {
+    //     nav.classList.add("animate__animated", "animate__bounce");
+    //   }
+    // });
+
     window.onload = function () {
+      /* 시, 도 onclick */
       let siList = document.getElementById("si-list");
       let siLists = siList.children;
       for (let si of siLists) {
@@ -251,65 +307,25 @@
           document.getElementById("gu-val").innerText = "시 · 구 · 군";
         });
       }
+
+      /* 카테고리 onclick */
+      let cate = document.getElementById("cate-val");
+      let cateList = document.getElementById("cate-list");
+      cate.addEventListener("click", function () {
+        $(cateList).toggleClass("close open");
+      });
+
+      let cateLists = cateList.children;
+      for (let ca of cateLists) {
+        ca.addEventListener("click", function () {
+          console.log(ca);
+          cate.innerText = this.innerText;
+          $(cateList).toggleClass("close open");
+        });
+      }
     };
 
-    let seoulArr = [
-      "종로구",
-      "중구",
-      "용산구",
-      "성동구",
-      "광진구",
-      "동대문구",
-      "중랑구",
-      "성북구",
-      "강북구",
-      "도봉구",
-      "노원구",
-      "은평구",
-      "서대문구",
-      "미포구",
-      "양천구",
-      "강서구",
-      "구로구",
-      "금천구",
-      "영등포구",
-      "동작구",
-      "관악구",
-      "서초구",
-      "강남구",
-      "송파구",
-      "강동구",
-    ];
-    let gyeongiArr = [
-      "수원시",
-      "성남시",
-      "의정부시",
-      "안양시",
-      "부천시",
-      "광명시",
-      "평택시",
-      "동두천시",
-      "안산시",
-      "고양시",
-      "과천시",
-      "구리시",
-      "남양주시",
-      "오산시",
-      "시흥시",
-      "군포시",
-      "의왕시",
-      "하남시",
-      "용인시",
-      "파주시",
-      "이천시",
-      "안성시",
-      "김포시",
-      "화성시",
-      "광주시",
-      "양주시",
-      "포천시",
-      "여주시",
-    ];
+    /* 시, 구, 군 연결*/
     let selectContents = document.getElementsByClassName("selectContent");
     for (let content of selectContents) {
       content.addEventListener("click", function () {
@@ -331,6 +347,7 @@
       });
     }
 
+    /* 시, 구, 군 list 설정 */
     function addGuList(si) {
       let arr;
       switch (si) {
@@ -341,6 +358,62 @@
         case "경기":
           console.log("경기");
           arr = gyeongiArr;
+          break;
+        case "부산":
+          console.log("부산");
+          arr = busanArr;
+          break;
+        case "대구":
+          console.log("대구");
+          arr = daeguArr;
+          break;
+        case "인천":
+          console.log("인천");
+          arr = incheonArr;
+          break;
+        case "대전":
+          console.log("대전");
+          arr = daejeonArr;
+          break;
+        case "광주":
+          console.log("광주");
+          arr = gwangjuArr;
+          break;
+        case "울산":
+          console.log("울산");
+          arr = ulsanArr;
+          break;
+        case "강원":
+          console.log("강원");
+          arr = gangwonArr;
+          break;
+        case "충북":
+          console.log("충북");
+          arr = chungbukArr;
+          break;
+        case "충남":
+          console.log("충남");
+          arr = chnngnamArr;
+          break;
+        case "전북":
+          console.log("전북");
+          arr = jeonbukArr;
+          break;
+        case "전남":
+          console.log("전남");
+          arr = jeonnamArr;
+          break;
+        case "경북":
+          console.log("경북");
+          arr = gyeongbukArr;
+          break;
+        case "경남":
+          console.log("경남");
+          arr = gyeongnamArr;
+          break;
+        case "제주":
+          console.log("제주");
+          arr = jejuArr;
           break;
           deafult: break;
       }
@@ -354,6 +427,7 @@
         $(guList).append(p);
       }
 
+      /* 시, 구, 군 선택 시 */
       let guLists = document.getElementById("gu-list").children;
       for (let gu of guLists) {
         gu.addEventListener("click", function () {
@@ -364,6 +438,7 @@
       }
     }
 
+    /* 시, 구, 군 list 숨김,보임 */
     function showAndHide() {
       let guList = document.getElementById("gu-list");
       if (guList.style.display == "block") {
@@ -372,5 +447,20 @@
         guList.style.display = "block";
       }
     }
+
+    /* modal */
+    let modalCost = document.getElementById("costs");
+    let modal = document.getElementById("modalWrap");
+    let closeBtn = document.getElementById("closeBtn");
+
+    modalCost.addEventListener("click", function () {
+      modal.style.display = "block";
+    });
+
+    closeBtn.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
   </script>
+
+  <script src="./js/navermap.js"></script>
 </html>
