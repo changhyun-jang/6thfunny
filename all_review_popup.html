@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>팝업 1</title>
+    <link rel="stylesheet" href="css/review_all_popup.css" />
+    <script type="text/javascript">
+      window.resizeTo(600, 550);
+      function win_close() {
+        window.close();
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="review">
+      <img src="/img/review_img_example01.jpg" alt="" />
+      <h4>VIP석 1층 4열 20번</h4>
+      <p>
+        배우들의 얼굴 표정까지 모두 보여 오페라 글라스 대여는 안해도 되요!
+        배우님들의 연기를 실감나게 관람할 수 있는 자리에요!
+      </p>
+      <div>
+        <p class="sight" data-hover="시야가 탁 트였어요">
+          🔭시야가 탁 트였어요
+        </p>
+        <p class="face" data-hover="배우들의 얼굴이 잘보여요">
+          😊배우들의 얼굴이 잘보여요
+        </p>
+        <p class="money" data-hover="가격이 좀 비싸요">💸가격이 좀 비싸요</p>
+      </div>
+    </div>
+    <a href="#" onclick="win_close()">[닫기]</a>
+  </body>
+</html>
