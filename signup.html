@@ -8,9 +8,16 @@
   <body>
     <input type="text" name="" id="test1" />
     <input type="text" name="" id="test2" />
+    <button id="btn">asd</button>
   </body>
   <script>
-    let test1 = document.getElementById("test1").value;
-    let test2 = document.getElementById("test2").value;
+    document.getElementById("btn").addEventListener("click", function () {
+      let test1 = document.getElementById("test1").value;
+      let test2 = document.getElementById("test2").value;
+
+      document.cookie = `username=${test1}; expires=Thu, 20 Jul 2023 12:00:00 GMT`;
+
+      console.log(document.cookie);
+    });
   </script>
 </html>
