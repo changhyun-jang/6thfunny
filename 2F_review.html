@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/review_popup.css" />
   </head>
   <body>
@@ -24,42 +23,37 @@
             <div class="list_reviews">
               <div class="reviews">
                 <div class="review">
-                  <img src="/img/review_img_example01.jpg" alt="" />
-                  <h4>VIP석 1층 4열 20번</h4>
+                  <img src="/img/review_img_example06.jpg" alt="" />
+                  <h4>R석 2층 1열 7번</h4>
                   <p>
-                    배우들의 얼굴 표정까지 모두 보여 오페라 글라스 대여는 안해도
-                    되요! 배우님들의 연기를 실감나게 관람할 수 있는 자리에요!
+                    생각보다 멀게 느껴지지 않아요. 개인적으로는 1층의 뒷좌석보다
+                    2층의 1열 자리가 시야 가림이 없어 더 좋은 것 같아요.
+                    배우들의 얼굴 표정이 1층보다 잘 보이진 않지만 전체적인 동선,
+                    극의 흐름은 더 잘 보였어요.
                   </p>
                   <div>
                     <p class="sight" data-hover="시야가 탁 트였어요">
                       🔭시야가 탁 트였어요
                     </p>
-                    <p class="face" data-hover="배우들의 얼굴이 잘보여요">
-                      😊배우들의 얼굴이 잘보여요
-                    </p>
-                    <p class="money" data-hover="가격이 좀 비싸요">
-                      💸가격이 좀 비싸요
+                    <p class="gsight" data-hover="전체적인 시야가 다보여요">
+                      😧전체적인 시야가 다보여요.
                     </p>
                   </div>
                 </div>
                 <div class="review hidden">
-                  <img src="/img/review_img_example02.jpg" alt="" />
-                  <h4>VIP석 1층 4열 20번</h4>
+                  <img src="/img/review_img_example05.jpg" alt="" />
+                  <h4>R석 2층 1열 7번</h4>
                   <p>
-                    처음에 고개를 젖히고 봐야할까봐 걱정했는데 생각보다 목이
-                    아플 정도는 아니었어요. 전체적인 장면을 눈에 모두 담기에는
-                    조금 힘들었습니다. 앞사람머리에 시야가 방해되지는 않아요.
-                    배우님들의 연기는 한번에 볼 수 있습니다.
+                    배우님들의 성량과 발성이 좋아선지 매우 소리가
+                    잘들렸습니다.생각보다 무대가 가까웠지만 오페라 글라스는
+                    필수에요!
                   </p>
                   <div>
-                    <p class="sad" data-hover="전체적인 시야를 볼 수 없어요">
-                      😥전체적인 시야를 볼 수 없어요
+                    <p class="gsight" data-hover="전체적인 시야가 다보여요">
+                      😧전체적인 시야가 다보여요.
                     </p>
-                    <p class="sight" data-hover="시야가 탁 트였어요">
-                      🔭시야가 탁 트였어요
-                    </p>
-                    <p class="face" data-hover="배우들의 얼굴이 잘보여요">
-                      😊배우들의 얼굴이 잘보여요
+                    <p class="sound" data-hover="소리가 잘들려요">
+                      🔊소리가 잘들려요
                     </p>
                   </div>
                 </div>
@@ -79,7 +73,6 @@
       let bg = document.querySelector(".bg");
       //review 클래스를 가진 div 태그들 모두 배열에 담기
       let list = document.querySelectorAll(".review");
-      bg.setAttribute("background-image", "url(/img/vip_review_bg.gif)");
       //팝업 열음 함수
       const open = () => {
         document.querySelector(".modal").classList.remove("hidden");

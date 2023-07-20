@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/review_all.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <script
+      src="https://kit.fontawesome.com/5286d2d6db.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript">
+      function win_open(page, name) {
+        // window.open("팝업될 문서 경로","팝업될 문서 이름","옵션(위치, bar표시, 크기 등)");
+        window.open(page, name, "width=300, height=400, left=0, top=0");
+      }
+    </script>
+  </head>
+  <body>
+    <div class="main">
+      <ul class="nav">
+        <!--984px 부터 줄바꿈 -->
+        <li class="navcontent">회원가입</li>
+        <li class="navcontent" style="color: red">전체 후기</li>
+        <li class="navcontent">진행중인 공연</li>
+      </ul>
+      <div class="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+          type="search"
+          id="search_review"
+          placeholder="예시) VIP석 1층 4열"
+          onchange="f_search_review()"
+        />
+        <button class="logo">로고</button>
+      </div>
+      <div class="ticketContents">
+        <div class="card">
+          <div class="num"></div>
+          <img src="./img/review_img_example01.jpg" alt="" class="cardImg" />
+          <div class="cardContent">
+            <p class="title">VIP석 1층 4열 20번</p>
+            <br />
+            <ul class="info">
+              <li>
+                <strong class="infolabel">장소</strong>
+                <div class="infocontent" id="locat">
+                  신한 블루스퀘어
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li>
+                <strong class="infolabel">가격</strong>
+                <div class="infocontent" id="costs">170,000원</div>
+              </li>
+              <li>
+                <strong class="infolabel">추가 후기글</strong>
+                <br />
+                <div class="infocontent word" id="" style="margin-top: 3px">
+                  배우들의 얼굴 표정까지 모두 보여 오페라 글라스 대여는 안해도
+                  되요! 배우님들의 연기를 실감나게 관람할 수 있는 자리에요!
+                </div>
+              </li>
+            </ul>
+            <button
+              class="btn"
+              onclick="win_open('all_review_popup.html','a','width=1000px height=500px')"
+            >
+              더보기
+            </button>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="num"></div>
+          <img src="./img/review_img_example02.jpg" alt="" class="cardImg" />
+          <div class="cardContent">
+            <p class="title">VIP석 1층 4열 20번</p>
+            <br />
+            <ul class="info">
+              <li>
+                <strong class="infolabel">장소</strong>
+                <div class="infocontent" id="locat">
+                  신한 블루스퀘어
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li>
+                <strong class="infolabel">가격</strong>
+                <div class="infocontent" id="costs">170,000원</div>
+              </li>
+              <li>
+                <strong class="infolabel">추가 후기글</strong>
+                <div class="infocontent word" id="" style="margin-top: 3px">
+                  처음에 고개를 젖히고 봐야할까봐 걱정했는데 생각보다 목이 아플
+                  정도는 아니었어요. 전체적인 장면을 눈에 모두 담기에는 조금
+                  힘들었습니다. 앞사람머리에 시야가 방해되지는 않아요.
+                  배우님들의 연기는 한번에 볼 수 있습니다.
+                </div>
+              </li>
+            </ul>
+            <button class="btn">더보기</button>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="num"></div>
+          <img
+            src="./img/review_img_example05.jpg"
+            width=""
+            alt=""
+            class="cardImg"
+          />
+          <div class="cardContent">
+            <p class="title">R석 2층 1열 7번</p>
+            <br />
+            <ul class="info">
+              <li>
+                <strong class="infolabel">장소</strong>
+                <div class="infocontent" id="locat">
+                  신한 블루스퀘어
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li>
+                <strong class="infolabel">가격</strong>
+                <div class="infocontent" id="costs">140,000원</div>
+              </li>
+              <li>
+                <strong class="infolabel">추가 후기글</strong>
+                <div class="infocontent word" id="" style="margin-top: 3px">
+                  생각보다 멀게 느껴지지 않아요. 개인적으로는 1층의 뒷좌석보다
+                  2층의 1열 자리가 시야 가림이 없어 더 좋은 것 같아요. 배우들의
+                  얼굴 표정이 1층보다 잘 보이진 않지만 전체적인 동선, 극의
+                  흐름은 더 잘 보였어요.
+                </div>
+              </li>
+            </ul>
+            <button class="btn">더보기</button>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="num"></div>
+          <img src="./img/review_img_example04.jpg" alt="" class="cardImg" />
+          <div class="cardContent">
+            <p class="title">1층 B구역 8열</p>
+            <br />
+            <ul class="info">
+              <li>
+                <strong class="infolabel">장소</strong>
+                <div class="infocontent" id="locat">
+                  경기아트센터 소극장
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li>
+                <strong class="infolabel">가격</strong>
+                <div class="infocontent" id="costs">50,000원</div>
+              </li>
+              <li>
+                <strong class="infolabel">추가 후기글</strong>
+                <div class="infocontent word" id="" style="margin-top: 3px">
+                  사진처럼 전체적인 시야는 정말 눈에 잘들어옵니다. 하지만 자리가
+                  너무 좁아서 관람하는 동안 너무 불편했어요. 자리를 넓히는
+                  보수가 필요한 것 같아요!!
+                </div>
+              </li>
+            </ul>
+            <button class="btn">더보기</button>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="num"></div>
+          <img src="./img/review_img_example06.jpg" alt="" class="cardImg" />
+          <div class="cardContent">
+            <p class="title">R석 2층 1열 7번</p>
+            <br />
+            <ul class="info">
+              <li>
+                <strong class="infolabel">장소</strong>
+                <div class="infocontent" id="locat">
+                  신한 블루스퀘어
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li>
+                <strong class="infolabel">가격</strong>
+                <div class="infocontent" id="costs">140,000원</div>
+              </li>
+              <li>
+                <strong class="infolabel">추가 후기글</strong>
+                <div class="infocontent word" id="" style="margin-top: 3px">
+                  배우님들의 성량과 발성이 좋아선지 매우 소리가
+                  잘들렸습니다.생각보다 무대가 가까웠지만 오페라 글라스는
+                  필수에요!
+                </div>
+              </li>
+            </ul>
+            <button
+              class="btn btn-primary"
+              data-toggle="popover"
+              title="Popover title"
+              data-content="Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor"
+            >
+              더보기
+            </button>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="num"></div>
+          <img src="./img/review_img_example03.jpg" alt="" class="cardImg" />
+          <div class="cardContent">
+            <p class="title">1층 B구역 8열</p>
+            <br />
+            <ul class="info">
+              <li>
+                <strong class="infolabel">장소</strong>
+                <div class="infocontent" id="locat">
+                  경기아트센터 소극장
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li>
+                <strong class="infolabel">가격</strong>
+                <div class="infocontent" id="costs">50,000원</div>
+              </li>
+              <li>
+                <strong class="infolabel">추가 후기글</strong>
+                <div class="infocontent word" id="" style="margin-top: 3px">
+                  최악의 자리입니다. 디스크가 있는 분들에게는 정말 고통스러운
+                  시간을 선사하는 자리입니다. 좋은 작품이 좌석때문에 망쳐졌다.
+                  시야만 좋은 자리다....
+                </div>
+              </li>
+            </ul>
+            <button class="btn">더보기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let num = document.querySelectorAll(".num");
+    let list = document.querySelectorAll(".card");
+    function f_search_review() {
+      var search = document.getElementById("search_review").value;
+      var title = document.querySelectorAll(".title");
+      var place = document.querySelectorAll("#locat");
+      for (let i = 0; i < title.length; i++) {
+        if (!title[i].innerText.includes(search)) {
+          list[i].classList.add("hidden");
+        } else {
+          list[i].classList.remove("hidden");
+        }
+        if (!place[i].innerText.includes(search)) {
+          list[i].classList.add("hidden");
+        } else {
+          list[i].classList.remove("hidden");
+        }
+      }
+    }
+    for (let i = 0; i < num.length; i++) {
+      num[i].innerText = "[" + (i + 1) + "]";
+    }
+  </script>
+</html>

@@ -1,0 +1,62 @@
+body {
+  text-align: center;
+}
+.review {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.review > img {
+  width: 80%;
+  height: 55%;
+  margin: auto;
+  border-radius: 10px;
+}
+.review > p {
+  height: 20%;
+  margin: auto;
+  padding: 5px;
+  font-size: 1.3vw;
+  overflow: auto;
+}
+.review > div {
+  height: 10%;
+  margin: auto;
+  display: flex;
+}
+.review > div > p {
+  display: inline-block;
+  font-size: 0.8vw;
+  border-radius: 5px;
+  padding: 0 0.5vw;
+  margin-left: 5px;
+  overflow: hidden;
+}
+.review > h4 {
+  margin: auto;
+}
+
+/* 카테고리 관련 css*/
+.sight {
+  background: skyblue;
+}
+.face {
+  background-color: beige;
+}
+.money {
+  background-color: turquoise;
+}
+.sad {
+  background-color: rgb(131, 224, 64);
+}
+.space {
+  background-color: plum;
+}
+.sound {
+  background-color: peru;
+}
+.gsight {
+  background-color: paleturquoise;
+}
