@@ -1,24 +1,30 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-.main {
-  background-color: var(--color-main);
-  border-radius: 70px;
-  width: 95vw;
-  height: 150vw;
-  margin: 20px;
-}
-.nav {
-  list-style: none;
-  display: flex;
-  flex-direction: row-reverse;
-  padding: 50px;
-}
 
-.navcontent {
-  margin: 0px 50px;
-  font-family: "Humanbumsuk";
-  font-size: 30px;
+* {
+  margin: 0;
+  padding: 0;
+}
+header {
+  height: 50px;
+  background-color: #f2cb7e;
+  color: white;
+  border-bottom: 1px solid gray;
+}
+.menuBar {
+  display: flex;
+  flex-direction: row;
+  float: right;
+}
+.menuBar span {
+  padding: 12px;
+  font-size: 18px;
+}
+.menuBar span:hover {
+  font-size: 20px;
+  font-weight: 800;
   cursor: pointer;
 }
+
 .fa-magnifying-glass {
   display: inline-block;
   margin: auto;
