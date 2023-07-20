@@ -160,4 +160,18 @@ button {
     opacity: 1;
     visibility: visible;
   }
+  .modalBox {
+    width: 100%;
+    height: 70%;
+  }
+  .container {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+@media screen and (max-width: 1045px) {
+  .review > div > p {
+    width: 20px;
+  }
 }

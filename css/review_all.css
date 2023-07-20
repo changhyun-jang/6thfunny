@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 .main {
   background-color: var(--color-main);
   border-radius: 70px;
@@ -19,14 +20,16 @@
   cursor: pointer;
 }
 .fa-magnifying-glass {
-  display: inline;
+  display: inline-block;
   margin: auto;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
 }
 
 .search {
   background-color: white;
-  width: 30vw;
-  height: 2.5vw;
+  width: 470px;
+  height: 47px;
   margin: 0 auto;
   margin-bottom: 2vw;
   border-radius: 10px;
@@ -34,7 +37,7 @@
   overflow: hidden;
 }
 .search > input {
-  width: 80%;
+  width: 75%;
   height: 100%;
   margin: 0;
   border: none;
@@ -143,4 +146,19 @@ hr {
 
 .hidden {
   display: none;
+}
+
+/* dropdown */
+#selectbox {
+  width: 20%;
+  border-radius: 10px 0 0 10px;
+}
+
+/* 미디어쿼리 */
+@media screen and (max-width: 860px) {
+  .btn {
+    bottom: 85%;
+  }
+}
+@media screen and (max-width: 745px) {
 }
