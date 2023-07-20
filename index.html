@@ -151,17 +151,17 @@
         <div class="empty"></div>
       </div>
       <div class="ticketContents">
-        <p>🔥</p>
+        <p class="top">🔥 인기있는 공연/콘서트</p>
         <div class="card">
           <img src="./indexImage/indexImg1.gif" alt="" class="cardImg" />
           <div class="cardContent">
             <p class="title">2F(신용재, 김원주) 1st Fan Concert ［2F Only］</p>
             <p class="date">2023.08.14 ~2023.08.15</p>
-            <br />
+            <!-- <br /> -->
             <ul class="info">
               <li>
                 <strong class="infolabel">장소</strong>
-                <div class="infocontent">
+                <div class="infocontent mapopen">
                   구름아래소극장
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -187,7 +187,7 @@
               </li>
               <li>
                 <strong class="infolabel">가격</strong>
-                <div class="infocontent" id="costs">
+                <div class="infocontent costs">
                   전체가격보기
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -217,11 +217,11 @@
           <div class="cardContent">
             <p class="title">2023 샘 스미스 내한공연 GLORIA the tour</p>
             <p class="date">2023.10.17</p>
-            <br />
+            <!-- <br /> -->
             <ul class="info">
               <li>
                 <strong class="infolabel">장소</strong>
-                <div class="infocontent">
+                <div class="infocontent mapopen">
                   KSPO DOME
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -247,7 +247,7 @@
               </li>
               <li>
                 <strong class="infolabel">가격</strong>
-                <div class="infocontent" id="costs">
+                <div class="infocontent costs">
                   전체가격보기
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -278,8 +278,8 @@
       <div id="modalContent">
         <div id="modalBody">
           <span id="closeBtn">&times;</span>
-          <p>modal-popup 입니다.</p>
-          //팝업창 내 글귀
+          <strong id="modalstrong">전체 가격보기</strong>
+          <hr />
         </div>
       </div>
     </div>
@@ -287,15 +287,6 @@
   <img src="./indexImage/음표1.png" alt="" class="backImg1" />
 
   <script>
-    /* animate test*/
-    // let test = document.getElementById("test1");
-    // let navs = document.getElementsByClassName("navcontent");
-    // test.addEventListener("animationend", () => {
-    //   for (let nav of navs) {
-    //     nav.classList.add("animate__animated", "animate__bounce");
-    //   }
-    // });
-
     window.onload = function () {
       /* 시, 도 onclick */
       let siList = document.getElementById("si-list");
@@ -448,19 +439,14 @@
       }
     }
 
-    /* modal */
-    let modalCost = document.getElementById("costs");
-    let modal = document.getElementById("modalWrap");
-    let closeBtn = document.getElementById("closeBtn");
-
-    modalCost.addEventListener("click", function () {
-      modal.style.display = "block";
-    });
-
-    closeBtn.addEventListener("click", function () {
-      modal.style.display = "none";
+    /* sign up */
+    let test1 = document.getElementById("test1");
+    test1.addEventListener("click", function () {
+      location.href = "signup.html";
     });
   </script>
-
+  <!--모달 js-->
+  <script src="./js/priceModal.js"></script>
+  <!--mavermap api js-->
   <script src="./js/navermap.js"></script>
 </html>

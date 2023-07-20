@@ -17,18 +17,10 @@
   margin: 0px 50px;
   font-family: "Humanbumsuk";
   font-size: 3vw;
+  font-weight: bold;
   cursor: pointer;
 }
 
-#test1 {
-  --animate-delay: 1s;
-}
-#test2 {
-  --animate-delay: 2s;
-}
-#test3 {
-  --animate-delay: 3s;
-}
 .logoarea {
   background-color: var(--color-main-light);
   width: 50vw;
@@ -66,12 +58,13 @@
   border-radius: 0px 3vw 3vw 0px;
 }
 
-.si {
-  margin-right: auto;
+.top {
+  font-family: "Humanbumsuk";
+  font-weight: bold;
 }
-.gu {
-  margin-right: auto;
-}
+
+.si,
+.gu,
 .cate {
   margin-right: auto;
 }
@@ -192,6 +185,7 @@
   font-size: 1.5vw;
   list-style: none;
   padding: 0;
+  margin-top: 4vw;
 }
 
 .info li {
@@ -258,6 +252,15 @@
   color: #777;
   font-size: 25px;
   cursor: pointer;
+}
+
+#modalstrong {
+  font-family: "BookkMyungjo-Bd";
+}
+
+.mil,
+.mit {
+  font-family: "OTWelcomeRA";
 }
 
 .backImg1 {

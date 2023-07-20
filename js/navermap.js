@@ -32,7 +32,7 @@ function mapToggle(tag) {
 }
 
 /* 메인 로직 */
-let infoContents = document.getElementsByClassName("infocontent");
+let infoContents = document.getElementsByClassName("mapopen");
 for (let i = 0; i < infoContents.length; i++) {
   infoContents[i].addEventListener("click", function () {
     let map = this.parentNode.parentNode.nextElementSibling.nextElementSibling;
