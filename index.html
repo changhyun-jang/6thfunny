@@ -38,7 +38,9 @@
         <li class="navcontent animate__animated animate__bounce" id="test1">
           회원가입
         </li>
-        <li class="navcontent animate__animated animate__bounce">전체 후기</li>
+        <li class="navcontent animate__animated animate__bounce" id="test2">
+          전체 후기
+        </li>
         <li class="navcontent animate__animated animate__bounce">
           진행중인 공연
         </li>
@@ -443,6 +445,11 @@
     let test1 = document.getElementById("test1");
     test1.addEventListener("click", function () {
       location.href = "signup.html";
+    });
+
+    let test2 = document.getElementById("test2");
+    test2.addEventListener("click", function () {
+      location.href = "all_review.html";
     });
   </script>
   <!--모달 js-->
