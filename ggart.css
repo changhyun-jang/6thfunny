@@ -1,18 +1,14 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 header {
-  height: 60px;
+  height: 50px;
   background-color: #f2cb7e;
   color: white;
   border-bottom: 1px solid gray;
 }
 .menuBar {
-  margin-right: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
   display: flex;
   flex-direction: row;
   float: right;
@@ -58,16 +54,15 @@ td {
   padding: 5px;
 }
 .reviewP {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-size: 20px;
-  position: relative;
 }
 .reviewSection {
   display: flex;
   flex-wrap: wrap;
 }
 footer {
-  height: 60px;
+  height: 50px;
   margin-top: 10px;
   background-color: #f2cb7e;
   border-top: 1px solid gray;
