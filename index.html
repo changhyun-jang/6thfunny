@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css" />
+
+    <link
+      rel="stylesheet"
+      media="screen and (min-width : 769px)"
+      href="./css/desktopIndex.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width : 768px)"
+      href="./css/mobileIndex.css"
+    />
+  </head>
+  <script
+    src="https://code.jquery.com/jquery-3.7.0.js"
+    integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=xpmj5g73ov"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <script src="./js/adm_district.js"></script>
+  <body id="body">
+    <div class="main">
+      <ul class="nav">
+        <!--984px 부터 줄바꿈 -->
+        <li class="navcontent animate__animated animate__bounce" id="test1">
+          회원가입
+        </li>
+        <li class="navcontent animate__animated animate__bounce" id="test2">
+          전체 후기
+        </li>
+        <li class="navcontent animate__animated animate__bounce">
+          진행중인 공연
+        </li>
+      </ul>
+
+      <div class="logoarea"></div>
+      <div class="select">
+        <div
+          class="selectContent"
+          style="border-radius: 3vw 0px 0px 3vw"
+          id="si"
+        >
+          <div id="si-val">시 · 도</div>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-arrow-down icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="selectContent" id="gu">
+          <!-- 642px부터 깨짐 -->
+          <div id="gu-val">시 · 구 · 군</div>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-arrow-down icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="selectContent" id="cate">
+          <div class="cate" id="cate-val">카테고리</div>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-arrow-down icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="search">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-search"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="option">
+        <div class="optionlist close" id="si-list">
+          <p>서울</p>
+          <p>경기</p>
+          <p>부산</p>
+          <p>대구</p>
+          <p>인천</p>
+          <p>대전</p>
+          <p>광주</p>
+          <p>울산</p>
+          <p>강원</p>
+          <p>충북</p>
+          <p>충남</p>
+          <p>전북</p>
+          <p>전남</p>
+          <p>경북</p>
+          <p>경남</p>
+          <p>제주</p>
+        </div>
+        <div class="optionlist close" id="gu-list"></div>
+        <div class="optionlist close" id="cate-list">
+          <p>뮤지컬</p>
+          <p>콘서트</p>
+          <p>연극</p>
+          <p>클래식/무용</p>
+          <p>스포츠</p>
+          <p>페스티벌</p>
+        </div>
+        <div class="empty"></div>
+      </div>
+      <div class="ticketContents">
+        <p class="top">🔥 인기있는 공연/콘서트</p>
+        <div class="card">
+          <img src="./indexImage/indexImg1.gif" alt="" class="cardImg" />
+          <div class="cardContent">
+            <p class="title">2F(신용재, 김원주) 1st Fan Concert ［2F Only］</p>
+            <p class="date">2023.08.14 ~2023.08.15</p>
+            <!-- <br /> -->
+            <ul class="info">
+              <li>
+                <strong class="infolabel">장소</strong>
+                <div class="infocontent mapopen">
+                  구름아래소극장
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li>
+                <strong class="infolabel">공연시간</strong>
+                <div class="infocontent">120분</div>
+              </li>
+              <li>
+                <strong class="infolabel">관람연령</strong>
+                <div class="infocontent">만 7세이상</div>
+              </li>
+              <li>
+                <strong class="infolabel">가격</strong>
+                <div class="infocontent costs">
+                  전체가격보기
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li>
+                <strong class="infolabel">좌석</strong>
+                <div class="infocontent" id="">0 / 0</div>
+              </li>
+            </ul>
+            <button class="btn">후기 보러가기</button>
+            <div class="map"></div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./indexImage/indexImg2.gif" alt="" class="cardImg" />
+          <div class="cardContent">
+            <p class="title">2023 샘 스미스 내한공연 GLORIA the tour</p>
+            <p class="date">2023.10.17</p>
+            <!-- <br /> -->
+            <ul class="info">
+              <li>
+                <strong class="infolabel">장소</strong>
+                <div class="infocontent mapopen">
+                  KSPO DOME
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li>
+                <strong class="infolabel">공연시간</strong>
+                <div class="infocontent">120분</div>
+              </li>
+              <li>
+                <strong class="infolabel">관람연령</strong>
+                <div class="infocontent">만 19세이상</div>
+              </li>
+              <li>
+                <strong class="infolabel">가격</strong>
+                <div class="infocontent costs">
+                  전체가격보기
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li>
+                <strong class="infolabel">좌석</strong>
+                <div class="infocontent" id="">0 / 0</div>
+              </li>
+            </ul>
+            <button class="btn" id="test3">후기 보러가기</button>
+            <div class="map"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modalWrap">
+      <div id="modalContent">
+        <div id="modalBody">
+          <span id="closeBtn">&times;</span>
+          <strong id="modalstrong">전체 가격보기</strong>
+          <hr />
+        </div>
+      </div>
+    </div>
+  </body>
+  <img src="./indexImage/음표1.png" alt="" class="backImg1" />
+
+  <script>
+    window.onload = function () {
+      /* 시, 도 onclick */
+      let siList = document.getElementById("si-list");
+      let siLists = siList.children;
+      for (let si of siLists) {
+        si.addEventListener("click", function () {
+          document.getElementById("si-val").innerText = this.innerText;
+          $(siList).toggleClass("close open");
+          document.getElementById("gu-val").innerText = "시 · 구 · 군";
+        });
+      }
+
+      /* 카테고리 onclick */
+      let cate = document.getElementById("cate-val");
+      let cateList = document.getElementById("cate-list");
+      cate.addEventListener("click", function () {
+        $(cateList).toggleClass("close open");
+      });
+
+      let cateLists = cateList.children;
+      for (let ca of cateLists) {
+        ca.addEventListener("click", function () {
+          console.log(ca);
+          cate.innerText = this.innerText;
+          $(cateList).toggleClass("close open");
+        });
+      }
+    };
+
+    /* 시, 구, 군 연결*/
+    let selectContents = document.getElementsByClassName("selectContent");
+    for (let content of selectContents) {
+      content.addEventListener("click", function () {
+        let id = $(this).attr("id");
+
+        if (id === "si") {
+          let siList = document.getElementById("si-list");
+          $(siList).toggleClass("close open");
+        } else if (id === "gu") {
+          let si_val = document.getElementById("si-val").innerText;
+
+          if (si_val === "시 · 도") {
+            alert("시 · 도를 선택해주세요. ");
+          } else {
+            addGuList(si_val);
+            showAndHide();
+          }
+        }
+      });
+    }
+
+    /* 시, 구, 군 list 설정 */
+    function addGuList(si) {
+      let arr;
+      switch (si) {
+        case "서울":
+          console.log("서울");
+          arr = seoulArr;
+          break;
+        case "경기":
+          console.log("경기");
+          arr = gyeongiArr;
+          break;
+        case "부산":
+          console.log("부산");
+          arr = busanArr;
+          break;
+        case "대구":
+          console.log("대구");
+          arr = daeguArr;
+          break;
+        case "인천":
+          console.log("인천");
+          arr = incheonArr;
+          break;
+        case "대전":
+          console.log("대전");
+          arr = daejeonArr;
+          break;
+        case "광주":
+          console.log("광주");
+          arr = gwangjuArr;
+          break;
+        case "울산":
+          console.log("울산");
+          arr = ulsanArr;
+          break;
+        case "강원":
+          console.log("강원");
+          arr = gangwonArr;
+          break;
+        case "충북":
+          console.log("충북");
+          arr = chungbukArr;
+          break;
+        case "충남":
+          console.log("충남");
+          arr = chnngnamArr;
+          break;
+        case "전북":
+          console.log("전북");
+          arr = jeonbukArr;
+          break;
+        case "전남":
+          console.log("전남");
+          arr = jeonnamArr;
+          break;
+        case "경북":
+          console.log("경북");
+          arr = gyeongbukArr;
+          break;
+        case "경남":
+          console.log("경남");
+          arr = gyeongnamArr;
+          break;
+        case "제주":
+          console.log("제주");
+          arr = jejuArr;
+          break;
+          deafult: break;
+      }
+
+      let guList = document.getElementById("gu-list");
+      guList.innerHTML = "";
+
+      for (let val of arr) {
+        let p = document.createElement("p");
+        p.innerText = val;
+        $(guList).append(p);
+      }
+
+      /* 시, 구, 군 선택 시 */
+      let guLists = document.getElementById("gu-list").children;
+      for (let gu of guLists) {
+        gu.addEventListener("click", function () {
+          console.log(gu);
+          document.getElementById("gu-val").innerText = this.innerText;
+          showAndHide();
+        });
+      }
+    }
+
+    /* 시, 구, 군 list 숨김,보임 */
+    function showAndHide() {
+      let guList = document.getElementById("gu-list");
+      if (guList.style.display == "block") {
+        guList.style.display = "none";
+      } else {
+        guList.style.display = "block";
+      }
+    }
+
+    /* sign up */
+    let test1 = document.getElementById("test1");
+    test1.addEventListener("click", function () {
+      location.href = "signup.html";
+    });
+
+    /* test */
+    let test2 = document.getElementById("test2");
+    test2.addEventListener("click", function () {
+      location.href = "all_review.html";
+    });
+    let test3 = document.getElementById("test3");
+    test3.addEventListener("click", function () {
+      location.href = "ggart.html";
+    });
+  </script>
+  <!--모달 js-->
+  <script src="./js/priceModal.js"></script>
+  <!--mavermap api js-->
+  <script src="./js/navermap.js"></script>
+</html>

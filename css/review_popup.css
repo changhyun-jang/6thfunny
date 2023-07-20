@@ -1,0 +1,197 @@
+/* 팝업 */
+/* 전체 코드 적용 */
+* {
+  box-sizing: border-box;
+}
+/* 버튼 */
+button {
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* 전체적인 틀 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 팝업쪽을 제외한 나머지 부분 색설정 */
+.modal .bg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* background-image: url(/img/vip_review_bg.gif);
+  background-size: 100%;
+  filter: blur(5px); */
+}
+/* 팝업창 설정 */
+/* 16px=1vw; */
+.modalBox {
+  position: absolute;
+  background-color: #fff;
+  width: 55vw;
+  height: 37.5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* 닫기 버튼*/
+.modalBox button {
+  display: block;
+  width: 80px;
+  margin: 0 auto;
+  border: none;
+  background-color: white;
+}
+
+/* slide */
+.container {
+  width: 41vw;
+  height: 31.25vw;
+  margin: auto;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.forBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list_reviews {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.reviews {
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+.review {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.review > img {
+  width: 80%;
+  height: 55%;
+  margin: auto;
+  border-radius: 10px;
+}
+.review > p {
+  height: 20%;
+  margin: auto;
+  padding: 5px;
+  font-size: 1.3vw;
+  overflow: auto;
+}
+.review > div {
+  height: 10%;
+  margin: auto;
+  display: flex;
+}
+.review > div > p {
+  position: relative;
+  display: inline-block;
+  font-size: 0.8vw;
+  border-radius: 5px;
+  padding: 0 0.5vw;
+  margin-left: 5px;
+  overflow: hidden;
+}
+.review > h4 {
+  margin: auto;
+}
+.forBtn > button,
+.forBtn > button:active,
+.forBtn > button:focus {
+  width: 60px;
+  height: 25px;
+  border: none;
+  color: black;
+  background-color: white;
+  outline: none;
+}
+.forBtn > button:disabled {
+  background-color: gray;
+}
+
+/* 숨김을 위한 CSS */
+.hidden {
+  display: none;
+}
+
+/* 카테고리 관련 css*/
+.sight {
+  background: skyblue;
+}
+.face {
+  background-color: beige;
+}
+.money {
+  background-color: turquoise;
+}
+.sad {
+  background-color: rgb(131, 224, 64);
+}
+.space {
+  background-color: plum;
+}
+.sound {
+  background-color: peru;
+}
+.gsight {
+  background-color: paleturquoise;
+}
+
+@media screen and (max-width: 1045px) {
+  .review > div > p > .imo_text {
+    display: none;
+  }
+}
+@media screen and (max-width: 860px) {
+  .hovertext:hover:before {
+    opacity: 1;
+    visibility: visible;
+  }
+  .modalBox {
+    width: 80vw;
+    height: 55vw;
+  }
+  .container {
+    width: 60vw;
+    height: 45vw;
+  }
+  .review > p {
+    font-size: 2vw;
+  }
+  .review > div > p {
+    font-size: 1.3vw;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  .modalBox {
+    width: 100vw;
+    height: 80vw;
+  }
+  .container {
+    width: 80vw;
+    height: 60vw;
+  }
+  .review > p {
+    font-size: 3vw;
+  }
+}

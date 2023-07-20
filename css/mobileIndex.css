@@ -1,0 +1,326 @@
+body {
+  min-width: 340px;
+}
+
+.main {
+  background-color: var(--color-main);
+  border-radius: 70px;
+  width: 95vw;
+  height: 200vw;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+  padding: 20px 10px;
+}
+
+.navcontent {
+  margin: 0px 30px;
+  font-family: "Humanbumsuk";
+  font-size: 3vw;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logoarea {
+  background-color: var(--color-main-light);
+  width: 70vw;
+  height: 40vw;
+  border-radius: 30px;
+  margin: 0 auto;
+}
+
+.select {
+  display: flex;
+  margin: 20px 0px;
+  justify-content: center;
+}
+
+.selectContent {
+  width: 20vw;
+  height: 7vw;
+  background-color: white;
+  padding: 0.5vw 2vw;
+  text-align: center;
+  line-height: 8vw;
+  display: flex;
+  font-family: "OTWelcomeRA";
+  font-size: 1.8vw;
+  cursor: pointer;
+  text-overflow: ellipsis;
+}
+
+.search {
+  width: 10vw;
+  height: 8vw;
+  background-color: white;
+  pad: 0.5vw 2vw;
+  text-align: center;
+  line-height: 8vw;
+  border-radius: 0px 3vw 3vw 0px;
+}
+
+.top {
+  font-family: "Humanbumsuk";
+  font-weight: bold;
+}
+
+.si,
+.gu,
+.cate {
+  margin-right: auto;
+}
+
+.icon {
+  margin-left: auto;
+  width: 1.5vw;
+  height: 1.5vw;
+}
+
+.bi-search {
+  width: 1.5vw;
+  height: 1.5vw;
+}
+
+.ticketContents {
+  background-color: var(--color-main-lighter);
+  width: 83vw;
+  height: 80vw;
+  margin: 0 auto;
+  padding: 3vw;
+}
+
+.option {
+  display: flex;
+  margin: 10px 0px;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.optionlist {
+  width: 22vw;
+  background-color: white;
+  padding: 0.5vw 1.5vw;
+  text-align: center;
+  position: absolute;
+  font-family: "OTWelcomeRA";
+  font-size: 1.5vw;
+  border-radius: 3vw;
+}
+
+.open {
+  display: block;
+}
+
+.close {
+  display: none;
+}
+.empty {
+  width: 6vw;
+  height: 6vw;
+  background-color: white;
+  visibility: hidden;
+  position: absolute;
+}
+
+#si-val,
+#gu-val {
+  margin-right: auto;
+  /* margin-top: 5px; */
+}
+
+#si-list {
+  left: 6vw;
+}
+
+#gu-list {
+  left: 30vw;
+}
+
+#cate-list {
+  left: 54vw;
+}
+
+.card {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  padding: 10px 0px;
+}
+
+.cardImg {
+  width: 30%;
+  height: 100%;
+  display: inline;
+}
+
+.cardContent {
+  padding: 1vw;
+  display: inline-block;
+  width: 100%;
+}
+
+.title {
+  font-family: "OTWelcomeRA";
+  font-size: 2vw;
+  margin: 0;
+  font-weight: bold;
+}
+
+.date {
+  font-family: "BookkMyungjo-Bd";
+  font-size: 1.5vw;
+  margin: 0;
+}
+
+.infolabel {
+  display: inline-block;
+  /* width: 9vw; */
+}
+
+.infocontent {
+  display: inline-block;
+  /* width: 15vw; */
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "SUITE-Regular";
+  font-size: 2vw;
+  list-style: none;
+  padding: 0;
+}
+
+.info li {
+  margin: 2px;
+}
+
+.btn {
+  border: none;
+  float: right;
+  position: relative;
+  top: -50px;
+  width: 8vw;
+  height: 10vw;
+  cursor: pointer;
+  border-radius: 2vw;
+  font-size: 0.3vw;
+  font-family: "OTWelcomeRA";
+  margin-left: 5px;
+  background-color: var(--color-main);
+}
+
+@media screen and (max-width: 435px) {
+  .btn {
+    border: none;
+    float: right;
+    position: relative;
+    top: -10px;
+    width: 19vw;
+    height: 6vw;
+    cursor: pointer;
+    border-radius: 2vw;
+    font-size: 0.3vw;
+    font-family: "OTWelcomeRA";
+    margin-left: 5px;
+    background-color: var(--color-main);
+  }
+
+  .search {
+    width: 10vw;
+    height: 8vw;
+    background-color: white;
+    pad: 0.5vw 2vw;
+    text-align: center;
+    border-radius: 0px 3vw 3vw 0px;
+  }
+}
+
+.bi-caret-right-fill {
+  width: 1.3vw;
+  height: 1.3vw;
+  line-height: 1.3vw;
+}
+
+.map {
+  width: 30vw;
+  height: 30vw;
+  display: inline-block;
+  position: relative;
+  top: -20vw;
+  left: 25vw;
+  display: none;
+}
+
+/* 모달 */
+#modalWrap {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  display: none;
+}
+
+#modalBody {
+  width: 300px;
+  height: 200px;
+  padding: 30px 30px;
+  margin: 0 auto;
+  border: 1px solid #777;
+  background-color: #fff;
+}
+
+@media screen and (max-width: 450px) {
+  #modalBody {
+    width: 200px;
+    height: 200px;
+    padding: 30px 30px;
+    margin: 0 auto;
+    border: 1px solid #777;
+    background-color: #fff;
+  }
+
+  #modalWrap {
+    padding-top: 50vh;
+  }
+}
+
+#closeBtn {
+  float: right;
+  font-weight: bold;
+  color: #777;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.backImg1 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 20vw;
+  left: 40vw;
+  z-index: 9999;
+}
+
+#modalstrong {
+  font-family: "BookkMyungjo-Bd";
+}
+
+.mil,
+.mit {
+  font-family: "OTWelcomeRA";
+}
+
+.mil {
+  width: 40%;
+}

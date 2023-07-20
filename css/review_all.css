@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+header {
+  height: 50px;
+  background-color: #f2cb7e;
+  color: white;
+  border-bottom: 1px solid gray;
+}
+.menuBar {
+  display: flex;
+  flex-direction: row;
+  float: right;
+}
+.menuBar span {
+  padding: 12px;
+  font-size: 18px;
+}
+.menuBar span:hover {
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.fa-magnifying-glass {
+  display: inline-block;
+  margin: auto;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+}
+
+.search {
+  background-color: white;
+  width: 470px;
+  height: 47px;
+  margin: 0 auto;
+  margin-bottom: 2vw;
+  border-radius: 10px;
+  display: flex;
+  overflow: hidden;
+}
+.search > input {
+  width: 75%;
+  height: 100%;
+  margin: 0;
+  border: none;
+}
+.logo {
+  border: none;
+  background-color: white;
+}
+.ticketContents {
+  background-color: var(--color-main-lighter);
+  width: 70vw;
+  height: 80%;
+  margin: 0 auto;
+  overflow: auto;
+  border-radius: 10px;
+}
+/* 1vw=7.8px */
+.card {
+  width: 100%;
+  height: 20vw;
+  display: flex;
+  padding: 10px 0px;
+}
+
+.cardImg {
+  width: 27vw;
+  height: 20vw;
+  display: inline;
+  border-radius: 10px;
+}
+
+.cardContent {
+  padding: 2vw;
+  display: inline-block;
+  width: 100%;
+  height: 20vw;
+}
+
+.title {
+  font-family: "OTWelcomeRA";
+  font-size: 2vw;
+  margin: 0;
+  font-weight: bold;
+}
+
+.date {
+  font-family: "BookkMyungjo-Bd";
+  font-size: 1.3vw;
+  margin: 0;
+}
+
+.infolabel {
+  display: inline-block;
+  width: 8vw;
+}
+
+.infocontent {
+  display: inline-block;
+}
+
+.info {
+  font-family: "SUITE-Regular";
+  font-size: 1.5vw;
+  list-style: none;
+  padding: 0;
+}
+
+.info li {
+  margin: 2px;
+}
+
+hr {
+  display: block;
+  margin: auto;
+  width: 95%;
+}
+
+.word {
+  width: 35vw;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.btn {
+  border: none;
+  float: right;
+  position: relative;
+  width: 8vw;
+  height: 2vw;
+  cursor: pointer;
+  border-radius: 2vw;
+  font-size: 1vw;
+  font-family: "OTWelcomeRA";
+  background-color: var(--color-main);
+  text-align: center;
+}
+
+.num {
+  margin: 0 0.5vw;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* dropdown */
+#selectbox {
+  width: 20%;
+  border-radius: 10px 0 0 10px;
+}
+
+/* 미디어쿼리 */
+@media screen and (max-width: 860px) {
+  .btn {
+    bottom: 85%;
+  }
+}
+@media screen and (max-width: 745px) {
+}

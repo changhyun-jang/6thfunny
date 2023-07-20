@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/review.css" />
+    <title>Document</title>
+    <style>
+      /* .body {
+        background-color: rgba(227, 213, 213, 0.497);
+      }
+      .stage {
+        background-color: white;
+        width: 500px;
+        height: 50px;
+        border: 1px solid black;
+        text-align: center;
+      }
+      .openBtn {
+        background-color: gray;
+        width: 15px;
+        height: 12px;
+        margin: 3px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        cursor: pointer;
+      }
+      .row {
+        display: flex;
+      } */
+      /* this is a _demo_ container. remember the importance of relative and absolute positioning */
+      .tooltip-container {
+        position: relative;
+        display: flex;
+        place-content: center;
+        margin-top: 100px;
+      }
+
+      /* styling of the tooltip display */
+      p#tooltip-text {
+        display: none;
+        position: absolute;
+        top: -60px;
+        z-index: 1;
+        background: #00732c;
+        padding: 8px;
+        font-size: 1rem;
+        color: #fff;
+        border-radius: 2px;
+        animation: fadeIn 0.6s;
+      }
+
+      /* optional styling to add a "wedge" to the tooltip */
+      p#tooltip-text:before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -8px;
+        border: 8px solid transparent;
+        border-top: 8px solid #00732c;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="seatContainer">
+      <div class="stage">무대<br />STAGE</div>
+      <div class="row">
+        <button class="openBtn"></button>
+        <button class="openBtn"></button>
+        <button class="openBtn"></button>
+        <button class="openBtn"></button>
+        <button class="openBtn"></button>
+        <button class="openBtn"></button>
+        <div class="modal hidden">
+          <div class="bg"></div>
+          <div class="modalBox">
+            <button class="closeBtn">✖</button>
+            <div class="slider">
+              <div class="slider_01">
+                <img src="/img/review_img_example01.jpg" alt="" width="400px" />
+                <p>후기내용 추가 작성란</p>
+                <div>카테고리 표시란</div>
+              </div>
+            </div>
+            <div class="arrow">
+              <a href="" class="prev">이전</a>
+              <a href="" class="next">다음</a>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          const open = () => {
+            document.querySelector(".modal").classList.remove("hidden");
+          };
+
+          const close = () => {
+            document.querySelector(".modal").classList.add("hidden");
+          };
+
+          document.querySelector(".openBtn").addEventListener("click", open);
+          document.querySelector(".closeBtn").addEventListener("click", close);
+          document.querySelector(".bg").addEventListener("click", close);
+        </script>
+           </div>
+    </div>-->
+    <div class="tooltip-container">
+      <p id="tooltip-text">The tooltip text.</p>
+      <button id="tooltip-button">
+        A paragraph/button with a hover effect.
+      </button>
+    </div>
+    <script>
+      // window.onload is optional since it depends on the way in which you fire events
+      window.onload = function () {
+        // selecting the elements for which we want to add a tooltip
+        const target = document.getElementById("tooltip-button");
+        const tooltip = document.getElementById("tooltip-text");
+
+        // change display to 'block' on mouseover
+        target.addEventListener(
+          "mouseover",
+          () => {
+            tooltip.style.display = "block";
+          },
+          false
+        );
+
+        // change display to 'none' on mouseleave
+        target.addEventListener(
+          "mouseleave",
+          () => {
+            tooltip.style.display = "none";
+          },
+          false
+        );
+      };
+    </script>
+  </body>
+</html>

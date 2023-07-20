@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/review_popup.css" />
+  </head>
+  <body>
+    <!-- 각 포도알에 적용할 버튼 클래스 -->
+    <button class="openBtn">포도알역할 대신할 친구</button>
+    <!-- 팝업창 구현 처음에는 hidden클래스를 통해 안보이는 상태-->
+    <div class="modal hidden">
+      <!-- bg클래스는 팝업창밖의 배경색 설정  -->
+      <div class="bg"></div>
+      <!-- 팝업창 -->
+      <div class="modalBox">
+        <!-- 닫기 버튼 -->
+        <button class="closeBtn">✖</button>
+        <div class="forBtn">
+          <button class="prev" disabled>&#10094;</button>
+          <div class="container">
+            <div class="list_reviews">
+              <div class="reviews">
+                <div class="review">
+                  <img src="/img/review_img_example04.jpg" alt="" />
+                  <h4>1층 B구역 8열</h4>
+                  <p>
+                    최악의 자리입니다. 디스크가 있는 분들에게는 정말 고통스러운
+                    시간을 선사하는 자리입니다. 좋은 작품이 좌석때문에 망쳐졌다.
+                    시야만 좋은 자리다....
+                  </p>
+                  <div>
+                    <p class="space" data-hover="자리가 불편해요">
+                      <span title="자리가 불편해요">💺</span>
+                      <span class="imo_text">자리가 불편해요</span>
+                    </p>
+                    <p class="face" data-hover="배우들의 얼굴이 잘보여요">
+                      <span title="배우들의 얼굴이 잘보여요">😊</span
+                      ><span class="imo_text">배우들의 얼굴이 잘보여요</span>
+                    </p>
+                    <p class="money" data-hover="시야가 잘보여요">
+                      <span title="시야가 잘보여요">😮</span
+                      ><span class="imo_text">시야가 잘보여요</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="review hidden">
+                  <img src="/img/review_img_example03.jpg" alt="" />
+                  <h4>1층 B구역 8열</h4>
+                  <p>
+                    사진처럼 전체적인 시야는 정말 눈에 잘들어옵니다. 하지만
+                    자리가 너무 좁아서 관람하는 동안 너무 불편했어요. 자리를
+                    넓히는 보수가 필요한 것 같아요!!
+                  </p>
+                  <div>
+                    <p class="space" data-hover="자리가 불편해요">
+                      <span title="자리가 불편해요">💺</span
+                      ><span class="imo_text">자리가 불편해요</span>
+                    </p>
+                    <p class="sight" data-hover="시야가 탁 트였어요">
+                      <span title="시야가 탁 트였어요">🔭</span
+                      ><span class="imo_text">시야가 탁 트였어요</span>
+                    </p>
+                    <p class="face" data-hover="배우들의 얼굴이 잘보여요">
+                      <span title="배우들의 얼굴이 잘보여요">😊</span
+                      ><span class="imo_text">배우들의 얼굴이 잘보여요</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="next">&#10095;</button>
+        </div>
+        <!-- 각 후기들 슬라이더를 통해 하나씩 볼 수 있게 설정하기 위한 클래스 -->
+      </div>
+    </div>
+    <script>
+      let curPos = 0;
+      let postion = 0;
+      let now = 0;
+      //review 클래스를 가진 div 태그들 모두 배열에 담기
+      let list = document.querySelectorAll(".review");
+      //팝업 열음 함수
+      const open = () => {
+        document.querySelector(".modal").classList.remove("hidden");
+      };
+
+      //팝업 닫음 함수
+      const close = () => {
+        document.querySelector(".modal").classList.add("hidden");
+      };
+      //이전 버튼 함수
+      const prev = () => {
+        let target1 = document.querySelector(".next");
+        if (target1.disabled === true) {
+          target1.disabled = false;
+        }
+        let list = document.querySelectorAll(".review");
+        list[now].classList.add("hidden");
+        now--;
+        list[now].classList.remove("hidden");
+        if (now === 0) {
+          let target2 = document.querySelector(".prev");
+          target2.disabled = true;
+        }
+      };
+      //다음 버튼 함수
+      const next = () => {
+        let target1 = document.querySelector(".prev");
+        if (target1.disabled === true) {
+          target1.disabled = false;
+        }
+        let list = document.querySelectorAll(".review");
+        list[now].classList.add("hidden");
+        now++;
+        list[now].classList.remove("hidden");
+        if (now === list.length - 1) {
+          let target2 = document.querySelector(".next");
+          target2.disabled = true;
+        }
+      };
+
+      // 포도알역할 대신 친구 선택시 팝업 열림(open함수 실행)
+      document.querySelector(".openBtn").addEventListener("click", open);
+      // x표시 선택시 팝업 닫힘(close함수 실행)
+      document.querySelector(".closeBtn").addEventListener("click", close);
+      // 팝업이 아닌 배경 선택시 닫힘(close함수 실행)
+      document.querySelector(".bg").addEventListener("click", close);
+      // 팝업에서 이전 버튼 클릭했을때
+      document.querySelector(".prev").addEventListener("click", prev);
+      // 팝업에서 다음 버튼 클릭했을때
+      document.querySelector(".next").addEventListener("click", next);
+    </script>
+  </body>
+</html>
