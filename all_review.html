@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="css/review_all.css" />
     <link rel="stylesheet" href="css/common.css" />
     <script
+      type="text/javascript"
+      src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=xpmj5g73ov"
+    ></script>
+
+    <script
       src="https://kit.fontawesome.com/5286d2d6db.js"
       crossorigin="anonymous"
     ></script>
@@ -19,14 +24,14 @@
     </script>
   </head>
   <body>
+    <header>
+      <div class="menuBar">
+        <span>찾아보기</span>
+        <span>작성하기</span>
+        <button class="sign">로그인</button>
+      </div>
+    </header>
     <div class="main">
-      <ul class="nav">
-        <!--984px 부터 줄바꿈 -->
-        <li class="navcontent">회원가입</li>
-
-        <li class="navcontent" style="color: red">전체 후기</li>
-        <li class="navcontent">진행중인 공연</li>
-      </ul>
       <div class="search">
         <select name="selectBox" id="selectbox" onchange="changeThemeSelect()">
           <option value="" selected disabled>검색테마</option>
@@ -53,7 +58,7 @@
               <ul class="info">
                 <li>
                   <strong class="infolabel">장소</strong>
-                  <div class="infocontent">
+                  <div class="infocontent mapopen">
                     <span class="infocontent_title">신한 블루스퀘어</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -88,6 +93,7 @@
               >
                 더보기
               </button>
+              <div class="map"></div>
             </div>
           </div>
           <hr />
@@ -103,7 +109,7 @@
               <ul class="info">
                 <li>
                   <strong class="infolabel">장소</strong>
-                  <div class="infocontent">
+                  <div class="infocontent mapopen">
                     <span class="infocontent_title">신한 블루스퀘어</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -134,6 +140,7 @@
                 </li>
               </ul>
               <button class="btn">더보기</button>
+              <div class="map"></div>
             </div>
           </div>
           <hr />
@@ -154,7 +161,7 @@
               <ul class="info">
                 <li>
                   <strong class="infolabel">장소</strong>
-                  <div class="infocontent">
+                  <div class="infocontent mapopen">
                     <span class="infocontent_title">신한 블루스퀘어</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -185,6 +192,7 @@
                 </li>
               </ul>
               <button class="btn">더보기</button>
+              <div class="map"></div>
             </div>
           </div>
           <hr />
@@ -200,7 +208,7 @@
               <ul class="info">
                 <li>
                   <strong class="infolabel">장소</strong>
-                  <div class="infocontent">
+                  <div class="infocontent mapopen">
                     <span class="infocontent_title"> 경기아트센터 소극장</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -230,6 +238,7 @@
                 </li>
               </ul>
               <button class="btn">더보기</button>
+              <div class="map"></div>
             </div>
           </div>
           <hr />
@@ -245,7 +254,7 @@
               <ul class="info">
                 <li>
                   <strong class="infolabel">장소</strong>
-                  <div class="infocontent">
+                  <div class="infocontent mapopen">
                     <span class="infocontent_title">신한 블루스퀘어</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -282,6 +291,7 @@
               >
                 더보기
               </button>
+              <div class="map"></div>
             </div>
           </div>
           <hr />
@@ -297,7 +307,7 @@
               <ul class="info">
                 <li>
                   <strong class="infolabel">장소</strong>
-                  <div class="infocontent">
+                  <div class="infocontent mapopen">
                     <span class="infocontent_title">경기아트센터 소극장</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -327,16 +337,19 @@
                 </li>
               </ul>
               <button class="btn">더보기</button>
+              <div class="map"></div>
             </div>
           </div>
+          <hr />
         </div>
-        <hr />
       </div>
     </div>
+    <footer class="footer"></footer>
   </body>
+  <script src="/js/review_navermap.js"></script>
   <script>
     let num = document.querySelectorAll(".num");
-    let list = document.querySelectorAll(".card");
+    let list = document.querySelectorAll(".forhr");
     var selectText;
     function f_search_review() {
       var search = document.getElementById("search_review").value;
@@ -355,6 +368,16 @@
           } else {
             list[i].classList.remove("hidden");
           }
+        } else {
+          alert("검색테마를 선택해주세요.");
+          break;
+        }
+      }
+      let count = 0;
+      for (let i = 0; i < list.length; i++) {
+        if (!list[i].classList.contains("hidden")) {
+          count += 1;
+          num[i].innerText = "[" + count + "]";
         }
       }
     }

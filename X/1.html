@@ -3,148 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/review.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="/X/ggartX.css" />
+    <link rel="stylesheet" href="/css/seat_review.css" />
+    <title>미디어쿼리 시험용</title>
     <style>
-      /* .body {
-        background-color: rgba(227, 213, 213, 0.497);
-      }
-      .stage {
-        background-color: white;
-        width: 500px;
-        height: 50px;
-        border: 1px solid black;
-        text-align: center;
-      }
-      .openBtn {
-        background-color: gray;
-        width: 15px;
-        height: 12px;
-        margin: 3px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        cursor: pointer;
-      }
-      .row {
-        display: flex;
-      } */
-      /* this is a _demo_ container. remember the importance of relative and absolute positioning */
-      .tooltip-container {
-        position: relative;
-        display: flex;
-        place-content: center;
-        margin-top: 100px;
-      }
-
-      /* styling of the tooltip display */
-      p#tooltip-text {
-        display: none;
-        position: absolute;
-        top: -60px;
-        z-index: 1;
-        background: #00732c;
-        padding: 8px;
-        font-size: 1rem;
-        color: #fff;
-        border-radius: 2px;
-        animation: fadeIn 0.6s;
-      }
-
-      /* optional styling to add a "wedge" to the tooltip */
-      p#tooltip-text:before {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -8px;
-        border: 8px solid transparent;
-        border-top: 8px solid #00732c;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
+      @media screen and (max-width: 700px) {
+        section {
+          flex-direction: column;
         }
-        to {
-          opacity: 1;
+
+        .centerInfo {
+          width: auto;
+          height: auto;
+          margin-left: 0;
+        }
+        .ggimg {
+          width: auto;
+          height: auto;
+        }
+      }
+      @media screen and (min-width: 380px) {
+        .centerInfo {
+          width: 410px;
+          height: 380px;
+          margin-left: 0;
         }
       }
     </style>
   </head>
   <body>
-    <!-- <div class="seatContainer">
-      <div class="stage">무대<br />STAGE</div>
-      <div class="row">
-        <button class="openBtn"></button>
-        <button class="openBtn"></button>
-        <button class="openBtn"></button>
-        <button class="openBtn"></button>
-        <button class="openBtn"></button>
-        <button class="openBtn"></button>
-        <div class="modal hidden">
-          <div class="bg"></div>
-          <div class="modalBox">
-            <button class="closeBtn">✖</button>
-            <div class="slider">
-              <div class="slider_01">
-                <img src="/img/review_img_example01.jpg" alt="" width="400px" />
-                <p>후기내용 추가 작성란</p>
-                <div>카테고리 표시란</div>
-              </div>
-            </div>
-            <div class="arrow">
-              <a href="" class="prev">이전</a>
-              <a href="" class="next">다음</a>
-            </div>
-          </div>
-        </div>
-
-        <script>
-          const open = () => {
-            document.querySelector(".modal").classList.remove("hidden");
-          };
-
-          const close = () => {
-            document.querySelector(".modal").classList.add("hidden");
-          };
-
-          document.querySelector(".openBtn").addEventListener("click", open);
-          document.querySelector(".closeBtn").addEventListener("click", close);
-          document.querySelector(".bg").addEventListener("click", close);
-        </script>
-           </div>
-    </div>-->
-    <div class="tooltip-container">
-      <p id="tooltip-text">The tooltip text.</p>
-      <button id="tooltip-button">
-        A paragraph/button with a hover effect.
-      </button>
-    </div>
-    <script>
-      // window.onload is optional since it depends on the way in which you fire events
-      window.onload = function () {
-        // selecting the elements for which we want to add a tooltip
-        const target = document.getElementById("tooltip-button");
-        const tooltip = document.getElementById("tooltip-text");
-
-        // change display to 'block' on mouseover
-        target.addEventListener(
-          "mouseover",
-          () => {
-            tooltip.style.display = "block";
-          },
-          false
-        );
-
-        // change display to 'none' on mouseleave
-        target.addEventListener(
-          "mouseleave",
-          () => {
-            tooltip.style.display = "none";
-          },
-          false
-        );
-      };
-    </script>
+    <!-- 헤더의 메뉴 -->
+    <header>
+      <div class="menuBar">
+        <span>찾아보기</span>
+        <span>작성하기</span>
+        <span>문의하기</span>
+        <button class="sign">로그인</button>
+      </div>
+    </header>
+    <!-- 선택한 공연장 상세 정보 -->
+    <h2>공연장 정보</h2>
+    <section class="infoSection">
+      <img
+        src="/img/ggartcenter.jpg"
+        alt="경기아트센터"
+        width="410px"
+        class="ggimg"
+      />
+      <div class="infoRight">
+        <table class="centerInfo">
+          <tr>
+            <th>공연장명</th>
+            <td>경기아트센터 - 소극장</td>
+          </tr>
+          <tr>
+            <th>주소안내</th>
+            <td>
+              경기도 수원시 팔달구 효원로 307번길 20(인계동) 경기아트센터 (우
+              16488)
+            </td>
+          </tr>
+          <tr>
+            <th>홈페이지</th>
+            <td><a href="http://www.ggac.or.kr/">http://www.ggac.or.kr/</a></td>
+          </tr>
+          <tr>
+            <th>전화번호</th>
+            <td><a href="tel:031-230-3200">031-230-3200</a></td>
+          </tr>
+          <tr>
+            <th>좌석안내</th>
+            <td>502석 (1층 301석, 2층 195석, 장애인석 6석)</td>
+          </tr>
+          <tr>
+            <th>주차안내</th>
+            <td>유료 주차장 보유 / 관람객 할인 적용</td>
+          </tr>
+          <tr>
+            <th>편의시설</th>
+            <td>장애인 이용 시설, 유아 시설, 카페 마련</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <!-- 좌석 후기 안내 -->
+    <h2>좌석 후기 찾아보기</h2>
+    <section class="reviewSection">
+      <p class="reviewP">
+        <strong>TIP!</strong> 주황색 좌석을 누르면 이용객의
+        <strong>생생한 후기</strong>를 확인할 수 있어요👀
+        <button class="reviewBu">후기 작성하기✍</button>
+      </p>
+    </section>
   </body>
 </html>

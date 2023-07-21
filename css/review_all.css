@@ -1,8 +1,13 @@
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-
 * {
   margin: 0;
   padding: 0;
+}
+html,
+body {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  font-family: "OTWelcomeRA";
 }
 header {
   height: 50px;
@@ -11,9 +16,11 @@ header {
   border-bottom: 1px solid gray;
 }
 .menuBar {
+  height: 100%;
   display: flex;
   flex-direction: row;
   float: right;
+  align-items: center;
 }
 .menuBar span {
   padding: 12px;
@@ -23,6 +30,29 @@ header {
   font-size: 20px;
   font-weight: 800;
   cursor: pointer;
+}
+main {
+  margin: auto;
+}
+.map {
+  width: 20vw;
+  height: 20vw;
+  display: inline-block;
+  position: relative;
+  top: -10vw;
+  left: 22vw;
+  display: none;
+}
+.sign {
+  height: 100%;
+  padding: 5px 12px;
+  font-size: 18px;
+  background-color: sandybrown;
+  color: white;
+  border-radius: 10%;
+  border-style: none;
+  cursor: pointer;
+  margin-right: 1vw;
 }
 
 .fa-magnifying-glass {
@@ -34,19 +64,22 @@ header {
 
 .search {
   background-color: white;
-  width: 470px;
+  width: 35vw;
   height: 47px;
   margin: 0 auto;
+  margin-top: 2vw;
   margin-bottom: 2vw;
   border-radius: 10px;
   display: flex;
   overflow: hidden;
+  border: 1px solid black;
 }
 .search > input {
   width: 75%;
   height: 100%;
   margin: 0;
   border: none;
+  outline: none;
 }
 .logo {
   border: none;
@@ -54,7 +87,7 @@ header {
 }
 .ticketContents {
   background-color: var(--color-main-lighter);
-  width: 70vw;
+  width: 75vw;
   height: 80%;
   margin: 0 auto;
   overflow: auto;
@@ -157,14 +190,58 @@ hr {
 /* dropdown */
 #selectbox {
   width: 20%;
+  border-left: none;
+  border-top: none;
+  border-bottom: none;
   border-radius: 10px 0 0 10px;
+}
+footer {
+  height: 50px;
+  margin-top: 10px;
+  background-color: #f2cb7e;
+  border-top: 1px solid gray;
+  color: white;
 }
 
 /* 미디어쿼리 */
+@media screen and (max-width: 1200px) {
+  .search {
+    width: 50vw;
+  }
+}
+
 @media screen and (max-width: 860px) {
   .btn {
     bottom: 85%;
   }
+  .search {
+    width: 80vw;
+  }
 }
-@media screen and (max-width: 745px) {
+@media screen and (max-width: 560px) {
+  .search {
+    width: 95vw;
+  }
+  .infolabel {
+    width: 10vw;
+  }
+  br {
+    display: none;
+  }
+}
+@media screen and (max-width: 450px) {
+  .btn {
+    bottom: 95%;
+  }
+  .infolabel {
+    width: 14vw;
+  }
+  .card {
+    height: 22vw;
+  }
+}
+@media screen and (max-width: 400px) {
+  .cardImg {
+    height: 23vw;
+  }
 }
