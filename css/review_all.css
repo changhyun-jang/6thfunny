@@ -1,11 +1,12 @@
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-
 * {
   margin: 0;
   padding: 0;
 }
+html,
 body {
-  min-width: 390px;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
   font-family: "OTWelcomeRA";
 }
 header {
@@ -15,6 +16,7 @@ header {
   border-bottom: 1px solid gray;
 }
 .menuBar {
+  height: 100%;
   display: flex;
   flex-direction: row;
   float: right;
@@ -43,13 +45,14 @@ main {
 }
 .sign {
   height: 100%;
-  padding: 12px;
+  padding: 5px 12px;
   font-size: 18px;
   background-color: sandybrown;
   color: white;
   border-radius: 10%;
   border-style: none;
   cursor: pointer;
+  margin-right: 1vw;
 }
 
 .fa-magnifying-glass {

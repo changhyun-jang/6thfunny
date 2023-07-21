@@ -24,15 +24,14 @@
     </script>
   </head>
   <body>
+    <header>
+      <div class="menuBar">
+        <span>찾아보기</span>
+        <span>작성하기</span>
+        <button class="sign">로그인</button>
+      </div>
+    </header>
     <div class="main">
-      <header>
-        <div class="menuBar">
-          <span>찾아보기</span>
-          <span>작성하기</span>
-          <span>문의하기</span>
-          <button class="sign">로그인</button>
-        </div>
-      </header>
       <div class="search">
         <select name="selectBox" id="selectbox" onchange="changeThemeSelect()">
           <option value="" selected disabled>검색테마</option>
@@ -369,6 +368,16 @@
           } else {
             list[i].classList.remove("hidden");
           }
+        } else {
+          alert("검색테마를 선택해주세요.");
+          break;
+        }
+      }
+      let count = 0;
+      for (let i = 0; i < list.length; i++) {
+        if (!list[i].classList.contains("hidden")) {
+          count += 1;
+          num[i].innerText = "[" + count + "]";
         }
       }
     }

@@ -1,4 +1,4 @@
-/* naver map api */
+/* 리뷰 전용 naver map api */
 
 /* 지도 좌표 리스트 */
 var maps = [
@@ -49,12 +49,9 @@ function mapToggle(tag) {
 
 /* 메인 로직 */
 let infoContents = document.getElementsByClassName("mapopen");
-console.log(infoContents);
-console.log(infoContents.length);
 for (let i = 0; i < infoContents.length; i++) {
   infoContents[i].addEventListener("click", function () {
     let map = this.parentNode.parentNode.nextElementSibling.nextElementSibling;
-    console.log(map);
     map.setAttribute("id", "map");
     setMap(i);
     mapToggle(map);
