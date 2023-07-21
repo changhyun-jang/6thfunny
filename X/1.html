@@ -3,13 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/ggart.css" />
+    <link rel="stylesheet" href="/X/ggartX.css" />
     <link rel="stylesheet" href="/css/seat_review.css" />
     <title>미디어쿼리 시험용</title>
     <style>
-      @media screen and(max-width: 500px){
-        .section
+      @media screen and (max-width: 700px) {
+        section {
+          flex-direction: column;
+        }
+
+        .centerInfo {
+          width: auto;
+          height: auto;
+          margin-left: 0;
+        }
+        .ggimg {
+          width: auto;
+          height: auto;
+        }
       }
+      @media screen and (min-width: 380px) {
+        .centerInfo {
+          width: 410px;
+          height: 380px;
+          margin-left: 0;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- 헤더의 메뉴 -->
@@ -24,9 +44,12 @@
     <!-- 선택한 공연장 상세 정보 -->
     <h2>공연장 정보</h2>
     <section class="infoSection">
-      <div class="infoLeft">
-        <img src="/img/ggartcenter.jpg" alt="경기아트센터" width="410px" />
-      </div>
+      <img
+        src="/img/ggartcenter.jpg"
+        alt="경기아트센터"
+        width="410px"
+        class="ggimg"
+      />
       <div class="infoRight">
         <table class="centerInfo">
           <tr>
