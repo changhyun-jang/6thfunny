@@ -2,6 +2,7 @@
 /* 전체 코드 적용 */
 * {
   box-sizing: border-box;
+  font-family: "OTWelcomeRA";
 }
 /* 버튼 */
 button {

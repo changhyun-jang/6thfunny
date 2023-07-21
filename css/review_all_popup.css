@@ -1,5 +1,6 @@
 body {
   text-align: center;
+  font-family: "OTWelcomeRA";
 }
 .review {
   width: 100%;
@@ -18,7 +19,7 @@ body {
   height: 20%;
   margin: auto;
   padding: 5px;
-  font-size: 1.3vw;
+  font-size: 3vw;
   overflow: auto;
 }
 .review > div {
@@ -28,7 +29,7 @@ body {
 }
 .review > div > p {
   display: inline-block;
-  font-size: 0.8vw;
+  font-size: 2vw;
   border-radius: 5px;
   padding: 0 0.5vw;
   margin-left: 5px;
