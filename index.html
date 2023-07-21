@@ -33,20 +33,35 @@
   <script src="./js/adm_district.js"></script>
   <body id="body">
     <div class="main">
-      <ul class="nav">
+      <ul class="nav" id="nav">
         <!--984px 부터 줄바꿈 -->
-        <li class="navcontent animate__animated animate__bounce" id="test1">
+        <li class="navcontent animate__animated animate__bounce" id="gotoSignup">
           회원가입
+          <li class="navcontent animate__animated animate__bounce" id="loginBtn">
+            로그인
         </li>
-        <li class="navcontent animate__animated animate__bounce" id="test2">
+        </li>
+        <li class="navcontent animate__animated animate__bounce" id="goToAllReview">
           전체 후기
         </li>
-        <li class="navcontent animate__animated animate__bounce">
-          진행중인 공연
-        </li>
       </ul>
-
+      <div id="loginArea">
+        <div class="loginForm">
+          아이디<br />
+          <input type="text" name="" id="inputId" class="inputId" /> <br />
+          비밀번호<br />
+          <input type="text" name="" id="inputPwd" class="inputPwd" />
+          <br />
+          <div id="submitLogin">Log In</div>
+        </div>
+      </div>
       <div class="logoarea"></div>
+      <div class="venueArea">
+        <p class="top">새로훈 후기가 올라온 공연장</p>
+        <div class="venueCard">
+          <!-- 여기부터 -->
+        </div>
+      </div>
       <div class="select">
         <div
           class="selectContent"
@@ -205,12 +220,8 @@
                   </svg>
                 </div>
               </li>
-              <li>
-                <strong class="infolabel">좌석</strong>
-                <div class="infocontent" id="">0 / 0</div>
-              </li>
             </ul>
-            <button class="btn">후기 보러가기</button>
+            <button class="btn" onclick="window.open('https://tickets.interpark.com/goods/23009667')">예매 하러가기</button>
             <div class="map"></div>
           </div>
         </div>
@@ -265,12 +276,8 @@
                   </svg>
                 </div>
               </li>
-              <li>
-                <strong class="infolabel">좌석</strong>
-                <div class="infocontent" id="">0 / 0</div>
-              </li>
             </ul>
-            <button class="btn" id="test3">후기 보러가기</button>
+            <button class="btn" onclick="window.open('https://tickets.interpark.com/goods/23007654')">예매 하러가기</button>
             <div class="map"></div>
           </div>
         </div>
@@ -286,177 +293,12 @@
       </div>
     </div>
   </body>
-  <img src="./indexImage/음표1.png" alt="" class="backImg1" />
-
-  <script>
-    window.onload = function () {
-      /* 시, 도 onclick */
-      let siList = document.getElementById("si-list");
-      let siLists = siList.children;
-      for (let si of siLists) {
-        si.addEventListener("click", function () {
-          document.getElementById("si-val").innerText = this.innerText;
-          $(siList).toggleClass("close open");
-          document.getElementById("gu-val").innerText = "시 · 구 · 군";
-        });
-      }
-
-      /* 카테고리 onclick */
-      let cate = document.getElementById("cate-val");
-      let cateList = document.getElementById("cate-list");
-      cate.addEventListener("click", function () {
-        $(cateList).toggleClass("close open");
-      });
-
-      let cateLists = cateList.children;
-      for (let ca of cateLists) {
-        ca.addEventListener("click", function () {
-          console.log(ca);
-          cate.innerText = this.innerText;
-          $(cateList).toggleClass("close open");
-        });
-      }
-    };
-
-    /* 시, 구, 군 연결*/
-    let selectContents = document.getElementsByClassName("selectContent");
-    for (let content of selectContents) {
-      content.addEventListener("click", function () {
-        let id = $(this).attr("id");
-
-        if (id === "si") {
-          let siList = document.getElementById("si-list");
-          $(siList).toggleClass("close open");
-        } else if (id === "gu") {
-          let si_val = document.getElementById("si-val").innerText;
-
-          if (si_val === "시 · 도") {
-            alert("시 · 도를 선택해주세요. ");
-          } else {
-            addGuList(si_val);
-            showAndHide();
-          }
-        }
-      });
-    }
-
-    /* 시, 구, 군 list 설정 */
-    function addGuList(si) {
-      let arr;
-      switch (si) {
-        case "서울":
-          console.log("서울");
-          arr = seoulArr;
-          break;
-        case "경기":
-          console.log("경기");
-          arr = gyeongiArr;
-          break;
-        case "부산":
-          console.log("부산");
-          arr = busanArr;
-          break;
-        case "대구":
-          console.log("대구");
-          arr = daeguArr;
-          break;
-        case "인천":
-          console.log("인천");
-          arr = incheonArr;
-          break;
-        case "대전":
-          console.log("대전");
-          arr = daejeonArr;
-          break;
-        case "광주":
-          console.log("광주");
-          arr = gwangjuArr;
-          break;
-        case "울산":
-          console.log("울산");
-          arr = ulsanArr;
-          break;
-        case "강원":
-          console.log("강원");
-          arr = gangwonArr;
-          break;
-        case "충북":
-          console.log("충북");
-          arr = chungbukArr;
-          break;
-        case "충남":
-          console.log("충남");
-          arr = chnngnamArr;
-          break;
-        case "전북":
-          console.log("전북");
-          arr = jeonbukArr;
-          break;
-        case "전남":
-          console.log("전남");
-          arr = jeonnamArr;
-          break;
-        case "경북":
-          console.log("경북");
-          arr = gyeongbukArr;
-          break;
-        case "경남":
-          console.log("경남");
-          arr = gyeongnamArr;
-          break;
-        case "제주":
-          console.log("제주");
-          arr = jejuArr;
-          break;
-          deafult: break;
-      }
-
-      let guList = document.getElementById("gu-list");
-      guList.innerHTML = "";
-
-      for (let val of arr) {
-        let p = document.createElement("p");
-        p.innerText = val;
-        $(guList).append(p);
-      }
-
-      /* 시, 구, 군 선택 시 */
-      let guLists = document.getElementById("gu-list").children;
-      for (let gu of guLists) {
-        gu.addEventListener("click", function () {
-          console.log(gu);
-          document.getElementById("gu-val").innerText = this.innerText;
-          showAndHide();
-        });
-      }
-    }
-
-    /* 시, 구, 군 list 숨김,보임 */
-    function showAndHide() {
-      let guList = document.getElementById("gu-list");
-      if (guList.style.display == "block") {
-        guList.style.display = "none";
-      } else {
-        guList.style.display = "block";
-      }
-    }
-
-    /* sign up */
-    let test1 = document.getElementById("test1");
-    test1.addEventListener("click", function () {
-      location.href = "signup.html";
-    });
-
-    /* test */
-    let test2 = document.getElementById("test2");
-    test2.addEventListener("click", function () {
-      location.href = "all_review.html";
-    });
-    let test3 = document.getElementById("test3");
-    test3.addEventListener("click", function () {
-      location.href = "ggart.html";
-    });
-  </script>
+  <!-- 시, 구, 군, 카테고리 js-->
+  <script src="./js/sido.js"></script>
+  <!-- nav location, showAndHide js-->
+  <script src="./js/locatSAH.js"></script>
+  <!-- login js-->
+  <script src="./js/login.js"></script>
   <!--모달 js-->
   <script src="./js/priceModal.js"></script>
   <!--mavermap api js-->

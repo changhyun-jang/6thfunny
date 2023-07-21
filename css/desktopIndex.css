@@ -2,7 +2,7 @@
   background-color: var(--color-main);
   border-radius: 70px;
   width: 95vw;
-  height: 200vw;
+  height: 100%;
   margin: 20px;
 }
 
@@ -61,6 +61,7 @@
 .top {
   font-family: "Humanbumsuk";
   font-weight: bold;
+  font-size: 3vw;
 }
 
 .si,
@@ -215,7 +216,6 @@
 .map {
   width: 30vw;
   height: 30vw;
-  background-color: red;
   display: inline-block;
   position: relative;
   top: -20vw;
@@ -270,4 +270,57 @@
   top: 20vw;
   left: 40vw;
   z-index: 9999;
+}
+
+#loginArea {
+  background-color: var(--color-main-lighter);
+  width: 16vw;
+  height: 9vw;
+  position: absolute;
+  border-radius: 3vw;
+  left: 60vw;
+  top: 12vw;
+  display: none;
+  padding: 2vw;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 980px) {
+  #loginArea {
+    left: 55vw;
+  }
+}
+
+.loginForm {
+  margin: 0 auto;
+  font-family: "OTWelcomeRA";
+  font-size: 1.5vw;
+}
+
+.inputId,
+.inputPwd {
+  border: 0;
+  width: 15vw;
+}
+
+input:focus {
+  outline: none;
+}
+
+#submitLogin {
+  float: right;
+  background-color: var(--color-main-light);
+  padding: 2px;
+  border-radius: 5px;
+  font-size: 15px;
+  line-height: 100%;
+}
+
+.venueArea {
+  background-color: var(--color-main-lighter);
+  width: 70vw;
+  height: 80vw;
+  margin: 0 auto;
+  padding: 3vw;
+  margin-top: 2vw;
 }

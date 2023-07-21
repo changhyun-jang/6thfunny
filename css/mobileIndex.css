@@ -241,6 +241,22 @@ body {
   }
 }
 
+@media screen and (max-width: 380px) {
+  .btn {
+    border: none;
+    float: right;
+    position: relative;
+    top: -45px;
+    width: 10vw;
+    height: 10vw;
+    cursor: pointer;
+    border-radius: 2vw;
+    font-family: "OTWelcomeRA";
+    margin-left: 5px;
+    background-color: var(--color-main);
+  }
+}
+
 .bi-caret-right-fill {
   width: 1.3vw;
   height: 1.3vw;
@@ -323,4 +339,42 @@ body {
 
 .mil {
   width: 40%;
+}
+
+#loginArea {
+  background-color: var(--color-main-lighter);
+  width: 16vw;
+  height: 12vw;
+  position: absolute;
+  border-radius: 3vw;
+  left: 39vw;
+  top: 9vw;
+  display: none;
+  padding: 2vw;
+  margin: 0 auto;
+}
+
+.loginForm {
+  margin: 0 auto;
+  font-family: "OTWelcomeRA";
+  font-size: 1.5vw;
+}
+
+.inputId,
+.inputPwd {
+  border: 0;
+  width: 15vw;
+}
+
+input:focus {
+  outline: none;
+}
+
+#submitLogin {
+  float: right;
+  background-color: var(--color-main-light);
+  padding: 2px;
+  border-radius: 5px;
+  font-size: 15px;
+  line-height: 100%;
 }
