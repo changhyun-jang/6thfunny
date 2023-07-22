@@ -5,12 +5,15 @@ goToAllReview.addEventListener("click", function () {
 });
 
 /* 공연장 정보 보러가기 */
-// let goToGGart = document.getElementById("goToGGart");
-// console.log(goToGGart);
-// goToGGart.addEventListener("click", function () {
-//   location.href = "ggart.html";
-// });
+let goToGGart = document.getElementById("goToGGart");
+goToGGart.addEventListener("click", function () {
+  location.href = "ggart.html";
+});
 
+let goToShinhan = document.getElementById("goToShinhan");
+goToShinhan.addEventListener("click", function () {
+  location.href = "sinhanblue.html";
+});
 /* 로그인 창 */
 let login = function () {
   let loginArea = document.getElementById("loginArea");

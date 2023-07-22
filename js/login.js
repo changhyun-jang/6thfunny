@@ -3,9 +3,6 @@ let submitLogin = document.getElementById("submitLogin");
 submitLogin.addEventListener("click", function () {
   let id = document.getElementById("inputId").value;
   let pwd = document.getElementById("inputPwd").value;
-  console.log(id);
-  console.log(pwd);
-  console.log(document.cookie);
 
   let idCheck = false;
   let pwdCheck = false;

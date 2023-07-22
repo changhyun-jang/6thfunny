@@ -1,12 +1,12 @@
 body {
-  min-width: 340px;
+  min-width: 380px;
 }
 
 .main {
   background-color: var(--color-main);
   border-radius: 70px;
   width: 95vw;
-  height: 200vw;
+  height: 300vw;
 }
 
 .nav {
@@ -66,6 +66,7 @@ body {
 .top {
   font-family: "Humanbumsuk";
   font-weight: bold;
+  font-size: 4vw;
 }
 
 .si,
@@ -88,7 +89,7 @@ body {
 .ticketContents {
   background-color: var(--color-main-lighter);
   width: 83vw;
-  height: 80vw;
+  height: 150vw;
   margin: 0 auto;
   padding: 3vw;
 }
@@ -147,7 +148,7 @@ body {
 
 .card {
   width: 100%;
-  height: 30%;
+  height: 20%;
   display: flex;
   padding: 10px 0px;
 }
@@ -204,7 +205,7 @@ body {
   border: none;
   float: right;
   position: relative;
-  top: -50px;
+  top: -35px;
   width: 8vw;
   height: 10vw;
   cursor: pointer;
@@ -377,4 +378,73 @@ input:focus {
   border-radius: 5px;
   font-size: 15px;
   line-height: 100%;
+}
+
+.embla {
+  overflow: hidden;
+  width: 50vw;
+  height: 30vw;
+  margin: 0 auto;
+  font-family: "OTWelcomeRA";
+  font-size: 1vw;
+}
+
+.embla__container {
+  display: flex;
+  background-color: var(--color-main-lighter);
+  border-radius: 6vw;
+  width: 50vw;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  height: 25vw;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  background-color: var(--color-main-lighter);
+  border-radius: 6vw;
+  top: 50%;
+  justify-self: center;
+}
+
+.embla__slide > img {
+  width: 35vw;
+  height: 25vw;
+  border-radius: 6vw 0px 0px 6vw;
+}
+.embla__slide > div {
+  width: 10vw;
+  height: 10vw;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 459px) {
+  .embla__slide > div {
+    width: 15vw;
+    height: 10vw;
+    margin: 0 auto;
+  }
+}
+.embla__slide > div > ul {
+  list-style: none;
+  padding: 0;
+  margin: 2px;
+  position: relative;
+  top: -6vw;
+}
+
+.embla__slide > div > ul > li {
+  margin: 3px 0px;
+}
+@media screen and (max-width: 380px) {
+  .embla__slide > div > ul > li {
+    margin: 0;
+  }
+}
+
+.carouselArea {
+  margin: 0 auto;
+  background-color: var(--color-main-light);
+  width: 85vw;
+  border-radius: 5vw;
 }
