@@ -62,13 +62,6 @@ function checkLocalStroage() {
   }
 }
 
-// let fileInput = document.getElementById("fileUpload");
-// fileInput.onchange = function (e) {
-//   let files = e.target.files;
-//   console.log(files);
-//   console.log(files[0]);
-// };
-
 //리뷰 보기 모달창 열기
 function openReviewModal(seatId) {
   const reviewModal = document.querySelector(".reviewModal");

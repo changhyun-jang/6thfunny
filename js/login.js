@@ -45,7 +45,7 @@ window.onload = function () {
     }
 
     if (idx[0] == "name") {
-      name = idx[1];
+      name = decodeURIComponent(idx[1]);
     }
   }
   console.log(name);
