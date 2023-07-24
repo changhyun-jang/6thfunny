@@ -91,29 +91,22 @@
         pwdSpan.style.display = "none";
       }
     };
+
+    // if (idReg.test(inputId.value) && pwdReg.test(inputPwd.value)) {
     document.getElementById("submit").addEventListener("click", function () {
-      let date = new Date();
-      date.setDate(date.getDate() + 1);
+      if (idReg.test(inputId.value) && pwdReg.test(inputPwd.value)) {
+        sessionStorage.setItem("userid", inputId.value);
+        sessionStorage.setItem("userpwd", inputPwd.value);
+        sessionStorage.setItem(
+          "name",
+          document.getElementById("floatingName").value
+        );
 
-      let id = document.getElementById("floatingInput").value;
-      let pwd = document.getElementById("floatingPassword").value;
-      let name = document.getElementById("floatingName").value;
-
-      console.log(encodeURIComponent(id));
-      document.cookie = `userid=${encodeURIComponent(
-        id
-      )}; expires=${date.toUTCString()}`;
-      document.cookie = `password=${encodeURIComponent(
-        pwd
-      )}; expires=${date.toUTCString()}`;
-      document.cookie = `name=${encodeURIComponent(
-        name
-      )}; expires=${date.toUTCString()}`;
-
-      let cData = document.cookie;
-
-      alert("회원가입 되었습니다. ");
-      location.href = "index.html";
+        alert("회원가입 되었습니다. ");
+        location.href = "index.html";
+      } else {
+        alert("아이디, 비밀번호가 형식에 맞지 않습니다.");
+      }
     });
   </script>
 </html>
