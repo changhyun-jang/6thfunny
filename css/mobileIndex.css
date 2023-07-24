@@ -92,6 +92,7 @@ body {
   height: 150vw;
   margin: 0 auto;
   padding: 3vw;
+  overflow: scroll;
 }
 
 .option {
