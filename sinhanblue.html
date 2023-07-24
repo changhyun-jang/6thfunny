@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/sinhanblue.css" />
     <link rel="stylesheet" href="/css/seat_review.css" />
+    <link rel="stylesheet" href="/css/review_popup.css" />
     <title>블루스퀘어</title>
   </head>
   <body>
     <header>
       <div class="menuBar">
         <span>찾아보기</span>
-        <span>작성하기</span>
-        <span>문의하기</span>
-        <button class="sign">로그인</button>
+        <span>로그인</span>
       </div>
     </header>
     <h2>공연장 정보</h2>
@@ -113,8 +113,91 @@
         <div class="row_2_10"></div>
       </div>
     </div>
+    <!-- 좌석 리뷰를 등록할 수 있는 모달창 -->
+    <div class="modal" style="display: none">
+      <h3>리뷰 등록</h3>
+      <textarea id="reviewInput" placeholder="리뷰를 작성해주세요"></textarea>
+      <button onclick="submitReview()">등록</button>
+      <button onclick="closeModal()">취소</button>
+    </div>
+
+    <!-- 리뷰를 보여주는 모달창 -->
+    <div class="reviewModal" style="display: none">
+      <h3>리뷰</h3>
+      <p id="reviewContent"></p>
+      <button onclick="closeReviewModal()">닫기</button>
+    </div>
+    <!-- 팝업창 구현 처음에는 hidden클래스를 통해 안보이는 상태-->
+    <div class="modal hidden">
+      <!-- bg클래스는 팝업창밖의 배경색 설정  -->
+      <div class="bg"></div>
+      <!-- 팝업창 -->
+      <div class="modalBox">
+        <!-- 닫기 버튼 -->
+        <button class="closeBtn">✖</button>
+        <div class="forBtn">
+          <button class="prev" disabled>&#10094;</button>
+          <div class="container">
+            <div class="list_reviews">
+              <div class="reviews">
+                <div class="review">
+                  <img src="/img/review_img_example01.jpg" alt="" />
+                  <h4>VIP석 1층 4열 20번</h4>
+                  <p>
+                    배우들의 얼굴 표정까지 모두 보여 오페라 글라스 대여는 안해도
+                    되요! 배우님들의 연기를 실감나게 관람할 수 있는 자리에요!
+                  </p>
+                  <div>
+                    <p class="sight" data-hover="시야가 탁 트였어요">
+                      <span title="시야가 탁 트였어요">🔭</span
+                      ><span class="imo_text">시야가 탁 트였어요</span>
+                    </p>
+                    <p class="face" data-hover="배우들의 얼굴이 잘보여요">
+                      <span title="배우들의 얼굴이 잘보여요">😊</span
+                      ><span class="imo_text">배우들의 얼굴이 잘보여요</span>
+                    </p>
+                    <p class="money" data-hover="가격이 좀 비싸요">
+                      <span title="가격이 좀 비싸요">💸</span
+                      ><span class="imo_text"> 가격이 좀 비싸요</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="review hidden">
+                  <img src="/img/review_img_example02.jpg" alt="" />
+                  <h4>VIP석 1층 4열 20번</h4>
+                  <p>
+                    처음에 고개를 젖히고 봐야할까봐 걱정했는데 생각보다 목이
+                    아플 정도는 아니었어요. 전체적인 장면을 눈에 모두 담기에는
+                    조금 힘들었습니다. 앞사람머리에 시야가 방해되지는 않아요.
+                    배우님들의 연기는 한번에 볼 수 있습니다.
+                  </p>
+                  <div>
+                    <p class="sad" data-hover="전체적인 시야를 볼 수 없어요">
+                      <span title="전체적인 시야를 볼 수 없어요">😥</span
+                      ><span class="imo_text"
+                        >전체적인 시야를 볼 수 없어요</span
+                      >
+                    </p>
+                    <p class="sight" data-hover="시야가 탁 트였어요">
+                      <span title="시야가 탁 트였어요">🔭</span
+                      ><span class="imo_text">시야가 탁 트였어요</span>
+                    </p>
+                    <p class="face" data-hover="배우들의 얼굴이 잘보여요">
+                      <span title="배우들의 얼굴이 잘보여요">😊</span
+                      ><span class="imo_text">배우들의 얼굴이 잘보여요</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="next">&#10095;</button>
+        </div>
+        <!-- 각 후기들 슬라이더를 통해 하나씩 볼 수 있게 설정하기 위한 클래스 -->
+      </div>
+    </div>
     <footer class="footer"></footer>
   </body>
-  <script></script>
   <script src="js/shinhan.js"></script>
+  <script src="js/review_modal.js"></script>
 </html>

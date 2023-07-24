@@ -223,3 +223,13 @@ for (let i = 1; i < Object.keys(count2).length + 1; i++) {
     }
   }
 }
+
+let seats = document.querySelectorAll(".seat");
+for (let i = 0; i < seats.length; i++) {
+  seats[i].setAttribute("id", `seat_${i}`);
+}
+
+let seats_already1 = document.querySelector("#seat_117");
+seats_already1.classList.add("alreadyReview");
+let seats_already2 = document.querySelector("#seat_964");
+seats_already2.classList.add("alreadyReview");

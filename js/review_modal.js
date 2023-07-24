@@ -46,7 +46,7 @@ const next = () => {
 };
 
 // 포도알역할 대신 친구 선택시 팝업 열림(open함수 실행)
-document.querySelector(".openBtn").addEventListener("click", open);
+document.querySelector(".already").addEventListener("click", open);
 // x표시 선택시 팝업 닫힘(close함수 실행)
 document.querySelector(".closeBtn").addEventListener("click", close);
 // 팝업이 아닌 배경 선택시 닫힘(close함수 실행)
