@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/ggart.css" />
     <link rel="stylesheet" href="/css/seat_review.css" />
-    <link rel="stylesheet" href="css/review_popup.css" />
+    <link rel="stylesheet" href="/css/review_popup.css" />
     <style>
       .selected {
         /* 선택된 좌석에 대한 스타일 */
@@ -93,7 +93,7 @@
       <p class="reviewP">
         <strong>TIP!</strong> 주황색 좌석을 누르면 이용객의
         <strong>생생한 후기</strong>를 확인할 수 있어요👀
-        <button class="reviewBu" onclick="openPopup()">후기 작성하기✍</button>
+        <!-- <button class="reviewBu" onclick="openPopup()">후기 작성하기✍</button> -->
       </p>
     </section>
     <!-- 좌석 배치도 부분 시작 -->
@@ -221,6 +221,7 @@
           const seatIndex = seatData.findIndex(
             (data) => data.seatId === seatId
           );
+          console.log(seatIndex);
 
           // 좌석이 이미 선택된 경우, 리뷰 모달창 표시
           if (seat.classList.contains("reviewed")) {
@@ -238,6 +239,7 @@
         modal.style.display = "block";
 
         const reviewInput = document.getElementById("reviewInput");
+        console.log(reviewInput, index);
         reviewInput.value = seatData[index].review;
 
         // 리뷰 등록 후 선택된 좌석을 초록색으로 변경
