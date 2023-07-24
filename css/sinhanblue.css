@@ -61,10 +61,18 @@ td {
   display: flex;
   flex-wrap: wrap;
 }
+
 footer {
   height: 50px;
   margin-top: 10px;
   background-color: #f2cb7e;
   border-top: 1px solid gray;
   color: white;
+}
+
+hr {
+  position: absolute;
+  width: 839px;
+  top: 500px;
+  left: 75px;
 }
