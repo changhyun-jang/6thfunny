@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/ggart.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/seat_review.css" />
-    <link rel="stylesheet" href="/css/review_popup.css" />
+    <link rel="stylesheet" href="css/review_popup.css" />
     <title>경기아트센터</title>
   </head>
   <body>
@@ -147,13 +147,19 @@
         <div class="seat" style="top: 105px; left: 832px"></div>
       </div>
     </div>
-    <!-- <img
-        src="/img/ggart_seat.gif"
-        alt="경기아트센터 소극장 배치도"
-        width="100%"
-        height="600px"
-      /> -->
+    <div class="modal" style="display: none">
+      <h3>리뷰 등록</h3>
+      <textarea id="reviewInput" placeholder="리뷰를 작성해주세요"></textarea>
+      <button onclick="submitReview()">등록</button>
+      <button onclick="closeModal()">취소</button>
+    </div>
+    <div class="reviewModal" style="display: none">
+      <h3>리뷰</h3>
+      <p id="reviewContent"></p>
+      <button onclick="closeReviewModal()">닫기</button>
+    </div>
     <footer class="footer"></footer>
   </body>
   <script src="./js/cookieCheck.js"></script>
+  <script src="./js/seatEvent.js"></script>
 </html>
