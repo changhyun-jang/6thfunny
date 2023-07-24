@@ -33,6 +33,10 @@
       .reviewModal {
         display: none;
       }
+
+      .changeColor {
+        background-color: orange;
+      }
     </style>
     <title>연습3</title>
   </head>
@@ -186,6 +190,7 @@
       <div class="modal" style="display: none">
         <h3>리뷰 등록</h3>
         <textarea id="reviewInput" placeholder="리뷰를 작성해주세요"></textarea>
+        <input type="file" id="fileUpload" name="파일" />
         <button onclick="submitReview()">등록</button>
         <button onclick="closeModal()">취소</button>
       </div>
@@ -197,22 +202,23 @@
         <button onclick="closeReviewModal()">닫기</button>
       </div>
     </div>
+    <script src="../js/seatEvent.js"></script>
     <script>
-      const seatData = [
-        {
-          id: "A1", // 좌석 식별자
-          review: "", // 리뷰 데이터 (초기 값은 빈 문자열)
-          color: "", // 좌석 색깔 (리뷰 등록 시 변경될 예정)
-        },
-        {
-          id: "A2",
-          review: "",
-          color: "",
-        },
-      ];
+      // const seatData = [
+      //   {
+      //     id: "A1", // 좌석 식별자
+      //     review: "", // 리뷰 데이터 (초기 값은 빈 문자열)
+      //     color: "", // 좌석 색깔 (리뷰 등록 시 변경될 예정)
+      //   },
+      //   {
+      //     id: "A2",
+      //     review: "",
+      //     color: "",
+      //   },
+      // ];
 
       // 좌석 요소들을 선택합니다
-      const seats = document.querySelectorAll(".seat");
+      // const seats = document.querySelectorAll(".seat");
 
       // 각 좌석에 클릭 이벤트 리스너를 추가
       seats.forEach((seat) => {
@@ -221,77 +227,97 @@
           const seatIndex = seatData.findIndex(
             (data) => data.seatId === seatId
           );
-          console.log(seatIndex);
 
-          // 좌석이 이미 선택된 경우, 리뷰 모달창 표시
-          if (seat.classList.contains("reviewed")) {
-            openReviewModal(seatIndex);
-          } else {
-            // 좌석이 선택되지 않은 경우, 선택 모달창 표시
-            openModal(seatIndex);
-          }
-        });
-      });
-
+      //     console.log(seatIndex);
+      // 좌석이 이미 선택된 경우, 리뷰 모달창 표시
+      // if (seat.classList.contains("reviewed")) {
+      //   openReviewModal(seatIndex);
+      // } else {
+      // 좌석이 선택되지 않은 경우, 선택 모달창 표시
+      //       openModal(seatIndex);
+      //     }
+      //   });
+      // });
+      // let testIndex = 0;
       // 모달창 열기
-      function openModal(index) {
-        const modal = document.querySelector(".modal");
-        modal.style.display = "block";
+      // function openModal(index) {
+      //   const modal = document.querySelector(".modal");
+      //   modal.style.display = "block";
+      //   testIndex = index;
 
         const reviewInput = document.getElementById("reviewInput");
-        console.log(reviewInput, index);
         reviewInput.value = seatData[index].review;
 
-        // 리뷰 등록 후 선택된 좌석을 초록색으로 변경
-        document
-          .getElementById(seatData[index].seatId)
-          .classList.add("reviewed");
-      }
+      // 리뷰 등록 후 선택된 좌석을 초록색으로 변경
+      // document
+      //   .getElementById(seatData[index].seatId)
+      //   .classList.add("reviewed");
+      // }
 
       // 모달창 닫기
-      function closeModal() {
-        const modal = document.querySelector(".modal");
-        modal.style.display = "none";
-      }
+      // function closeModal() {
+      //   const modal = document.querySelector(".modal");
+      //   modal.style.display = "none";
+      // }
 
+      // 동준
+      // let dSeats = document.querySelectorAll(".seat");
+      // for (let i = 0; i < dSeats.length; i++) {
+      //   dSeats[i].classList.add(`seat_${i}`);
+      // }
       // 리뷰 등록
-      function submitReview() {
-        const reviewInput = document.getElementById("reviewInput");
-        const review = reviewInput.value;
+      // function submitReview() {
+      //   const reviewInput = document.getElementById("reviewInput");
+      //   const review = reviewInput.value;
+      //   console.log(review);
 
-        const selectedSeats = document.querySelectorAll(".seat.selected");
-        selectedSeats.forEach((seat) => {
-          const seatId = seat.getAttribute("data-seat-id");
-          const seatIndex = seatData.findIndex(
-            (data) => data.seatId === seatId
-          );
+      // const selectedSeats = document.querySelectorAll(".seat.selected");
+      // selectedSeats.forEach((seat) => {
+      //   const seatId = seat.getAttribute("data-seat-id");
+      //   const seatIndex = seatData.findIndex(
+      //     (data) => data.seatId === seatId
+      //   );
 
-          seatData[seatIndex].review = review;
-          seat.classList.remove("selected");
+      //동준
+      // addLS(testIndex, review);
 
-          // 등록된 리뷰가 있으면 좌석을 초록색으로 표시
-          if (review) {
-            seat.classList.add("reviewed");
-          }
-        });
+      // seatData[seatIndex].review = review;
+      // seat.classList.remove("selected");
 
-        closeModal();
-      }
+      // 등록된 리뷰가 있으면 좌석을 초록색으로 표시
+      // if (review) {
+      //   seat.classList.add("reviewed");
+      // }
+      // });
+
+      // closeModal();
+      // }
 
       // 리뷰 보기 모달창 열기
-      function openReviewModal(index) {
-        const reviewModal = document.querySelector(".reviewModal");
-        reviewModal.style.display = "block";
+      // function openReviewModal(index) {
+      //   const reviewModal = document.querySelector(".reviewModal");
+      //   reviewModal.style.display = "block";
 
-        const reviewContent = document.getElementById("reviewContent");
-        reviewContent.textContent = seatData[index].review;
-      }
+      //   const reviewContent = document.getElementById("reviewContent");
+      // reviewContent.textContent = seatData[index].review;
+      // }
 
       // 리뷰 보기 모달창 닫기
-      function closeReviewModal() {
-        const reviewModal = document.querySelector(".reviewModal");
-        reviewModal.style.display = "none";
-      }
+      // function closeReviewModal() {
+      //   const reviewModal = document.querySelector(".reviewModal");
+      //   reviewModal.style.display = "none";
+      // }
+
+      // let seatArr = document.querySelectorAll(".seat");
+      // console.log(seatArr);
+      // if (localStorage.length >= 2) {
+      //   for (let i = 0; i < localStorage.length; i++) {
+      //     let key = localStorage.key(i);
+      //     let seatNum = localStorage.getItem(key);
+      //     console.log(seatNum);
+      // seatArr[seatNum].classList.add("reviewd");
+      //   }
+      // }
     </script>
   </body>
 </html>

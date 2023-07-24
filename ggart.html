@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/ggart.css" />
+    <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/seat_review.css" />
     <link rel="stylesheet" href="/css/review_popup.css" />
     <style>
@@ -32,7 +33,7 @@
     <header>
       <div class="menuBar">
         <span>찾아보기</span>
-        <button class="sign">로그인</button>
+        <span>로그인</span>
       </div>
     </header>
     <!-- 선택한 공연장 상세 정보 -->
@@ -861,8 +862,19 @@
         <!-- 각 후기들 슬라이더를 통해 하나씩 볼 수 있게 설정하기 위한 클래스 -->
       </div>
     </div>
-    <script src="/js/review_modal.js"></script>
+    <div class="modal" style="display: none">
+      <h3>리뷰 등록</h3>
+      <textarea id="reviewInput" placeholder="리뷰를 작성해주세요"></textarea>
+      <button onclick="submitReview()">등록</button>
+      <button onclick="closeModal()">취소</button>
+    </div>
+    <div class="reviewModal" style="display: none">
+      <h3>리뷰</h3>
+      <p id="reviewContent"></p>
+      <button onclick="closeReviewModal()">닫기</button>
+    </div>
     <footer class="footer"></footer>
   </body>
   <script src="./js/cookieCheck.js"></script>
+  <script src="./js/seatEvent.js"></script>
 </html>
