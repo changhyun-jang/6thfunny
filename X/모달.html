@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/ggart.css" />
+    <link rel="stylesheet" href="/css/seat_review.css" />
+    <link rel="stylesheet" href="css/review_popup.css" />
+    <style>
+      .selected {
+        /* 선택된 좌석에 대한 스타일 */
+        background-color: blue; /* 예제에서는 파란색으로 표시 */
+      }
+
+      .reviewed {
+        /* 리뷰 등록된 좌석에 대한 스타일 */
+        background-color: green; /* 예제에서는 초록색으로 표시 */
+      }
+
+      /* 모달창 스타일 */
+      .modal,
+      .reviewModal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+      }
+
+      .reviewModal {
+        display: none;
+      }
+    </style>
+    <title>연습3</title>
+  </head>
+  <body>
+    <!-- 헤더의 메뉴 -->
+    <header>
+      <div class="menuBar">
+        <span>찾아보기</span>
+        <span>작성하기</span>
+        <button class="sign">로그인</button>
+      </div>
+    </header>
+    <!-- 선택한 공연장 상세 정보 -->
+    <h2>공연장 정보</h2>
+    <section class="infoSection">
+      <div class="infoLeft">
+        <img src="/img/ggartcenter.jpg" alt="경기아트센터" width="410px" />
+      </div>
+      <div class="infoRight">
+        <table class="centerInfo">
+          <tr>
+            <th>공연장명</th>
+            <td>경기아트센터 - 소극장</td>
+          </tr>
+          <tr>
+            <th>주소안내</th>
+            <td>
+              경기도 수원시 팔달구 효원로 307번길 20(인계동) 경기아트센터 (우
+              16488)
+            </td>
+          </tr>
+          <tr>
+            <th>홈페이지</th>
+            <td><a href="http://www.ggac.or.kr/">http://www.ggac.or.kr/</a></td>
+          </tr>
+          <tr>
+            <th>전화번호</th>
+            <td><a href="tel:031-230-3200">031-230-3200</a></td>
+          </tr>
+          <tr>
+            <th>좌석안내</th>
+            <td>502석 (1층 301석, 2층 195석, 장애인석 6석)</td>
+          </tr>
+          <tr>
+            <th>주차안내</th>
+            <td>유료 주차장 보유 / 관람객 할인 적용</td>
+          </tr>
+          <tr>
+            <th>편의시설</th>
+            <td>장애인 이용 시설, 유아 시설, 카페 마련</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <!-- 좌석 후기 안내 -->
+    <h2>좌석 후기 찾아보기</h2>
+    <section class="reviewSection">
+      <p class="reviewP">
+        <strong>TIP!</strong> 주황색 좌석을 누르면 이용객의
+        <strong>생생한 후기</strong>를 확인할 수 있어요👀
+        <button class="reviewBu" onclick="openPopup()">후기 작성하기✍</button>
+      </p>
+    </section>
+    <!-- 좌석 배치도 부분 시작 -->
+    <div class="seatLayout">
+      <div class="test">
+        <div class="stage">무대</div>
+        <div class="column" style="top: 65px; left: 220px">
+          <strong>A</strong>
+        </div>
+        <div class="column" style="top: 65px; left: 505px">
+          <strong>B</strong>
+        </div>
+        <div class="column" style="top: 65px; left: 799px">
+          <strong>C</strong>
+        </div>
+        <!-- A구역 1열 -->
+        <div
+          class="seat"
+          data-seat-id="A1"
+          style="top: 90px; left: 201px"
+        ></div>
+        <div
+          class="seat"
+          data-seat-id="A2"
+          style="top: 90px; left: 212px"
+        ></div>
+        <div class="seat" style="top: 90px; left: 223px"></div>
+        <div class="seat" style="top: 90px; left: 234px"></div>
+        <div class="seat" style="top: 90px; left: 245px"></div>
+        <!-- B구역 1열 -->
+        <div class="seat" style="top: 90px; left: 445px"></div>
+        <div class="seat" style="top: 90px; left: 456px"></div>
+        <div class="seat" style="top: 90px; left: 467px"></div>
+        <div class="seat" style="top: 90px; left: 478px"></div>
+        <div class="seat" style="top: 90px; left: 489px"></div>
+        <div
+          class="seat"
+          style="top: 90px; left: 500px"
+          title="B구역 1열 6번"
+        ></div>
+        <div
+          class="seat"
+          style="top: 90px; left: 511px; background-color: orange"
+          title="B구역 1열 7번: 1건"
+        ></div>
+        <div class="seat" style="top: 90px; left: 522px"></div>
+        <div class="seat" style="top: 90px; left: 533px"></div>
+        <div class="seat" style="top: 90px; left: 544px"></div>
+        <div class="seat" style="top: 90px; left: 555px"></div>
+        <div class="seat" style="top: 90px; left: 566px"></div>
+        <div class="seat" style="top: 90px; left: 577px"></div>
+        <!-- C구역 1열 -->
+        <div class="seat" style="top: 90px; left: 777px"></div>
+        <div class="seat" style="top: 90px; left: 788px"></div>
+        <div class="seat" style="top: 90px; left: 799px"></div>
+        <div class="seat" style="top: 90px; left: 810px"></div>
+        <div class="seat" style="top: 90px; left: 821px"></div>
+
+        <!-- A구역 2열 -->
+        <div class="seat" style="top: 105px; left: 190px"></div>
+        <div class="seat" style="top: 105px; left: 201px"></div>
+        <div class="seat" style="top: 105px; left: 212px"></div>
+        <div class="seat" style="top: 105px; left: 223px"></div>
+        <div class="seat" style="top: 105px; left: 234px"></div>
+        <div class="seat" style="top: 105px; left: 245px"></div>
+        <!-- B구역 2열 -->
+        <div class="seat" style="top: 105px; left: 434px"></div>
+        <div class="seat" style="top: 105px; left: 445px"></div>
+        <div class="seat" style="top: 105px; left: 456px"></div>
+        <div class="seat" style="top: 105px; left: 467px"></div>
+        <div class="seat" style="top: 105px; left: 478px"></div>
+        <div class="seat" style="top: 105px; left: 489px"></div>
+        <div class="seat" style="top: 105px; left: 500px"></div>
+        <div class="seat" style="top: 105px; left: 511px"></div>
+        <div class="seat" style="top: 105px; left: 522px"></div>
+        <div class="seat" style="top: 105px; left: 533px"></div>
+        <div class="seat" style="top: 105px; left: 544px"></div>
+        <div class="seat" style="top: 105px; left: 555px"></div>
+        <div class="seat" style="top: 105px; left: 566px"></div>
+        <div class="seat" style="top: 105px; left: 577px"></div>
+        <!-- C구역 2열 -->
+        <div class="seat" style="top: 105px; left: 777px"></div>
+        <div class="seat" style="top: 105px; left: 788px"></div>
+        <div class="seat" style="top: 105px; left: 799px"></div>
+        <div class="seat" style="top: 105px; left: 810px"></div>
+        <div class="seat" style="top: 105px; left: 821px"></div>
+        <div class="seat" style="top: 105px; left: 832px"></div>
+      </div>
+      <!-- 좌석 리뷰를 등록할 수 있는 모달창 -->
+      <div class="modal" style="display: none">
+        <h3>리뷰 등록</h3>
+        <textarea id="reviewInput" placeholder="리뷰를 작성해주세요"></textarea>
+        <button onclick="submitReview()">등록</button>
+        <button onclick="closeModal()">취소</button>
+      </div>
+
+      <!-- 리뷰를 보여주는 모달창 -->
+      <div class="reviewModal" style="display: none">
+        <h3>리뷰</h3>
+        <p id="reviewContent"></p>
+        <button onclick="closeReviewModal()">닫기</button>
+      </div>
+    </div>
+    <script>
+      const seatData = [
+        {
+          id: "A1", // 좌석 식별자
+          review: "", // 리뷰 데이터 (초기 값은 빈 문자열)
+          color: "", // 좌석 색깔 (리뷰 등록 시 변경될 예정)
+        },
+        {
+          id: "A2",
+          review: "",
+          color: "",
+        },
+      ];
+
+      // 좌석 요소들을 선택합니다
+      const seats = document.querySelectorAll(".seat");
+
+      // 각 좌석에 클릭 이벤트 리스너를 추가합니다
+      seats.forEach((seat) => {
+        seat.addEventListener("click", () => {
+          const seatId = seat.getAttribute("data-seat-id");
+          const seatIndex = seatData.findIndex(
+            (data) => data.seatId === seatId
+          );
+
+          // 좌석이 이미 선택된 경우, 리뷰 모달창 표시
+          if (seat.classList.contains("reviewed")) {
+            openReviewModal(seatIndex);
+          } else {
+            // 좌석이 선택되지 않은 경우, 선택 모달창 표시
+            openModal(seatIndex);
+          }
+        });
+      });
+
+      // 모달창 열기
+      function openModal(index) {
+        const modal = document.querySelector(".modal");
+        modal.style.display = "block";
+
+        const reviewInput = document.getElementById("reviewInput");
+        reviewInput.value = seatData[index].review;
+
+        // 리뷰 등록 후 선택된 좌석을 초록색으로 변경
+        document
+          .getElementById(seatData[index].seatId)
+          .classList.add("reviewed");
+      }
+
+      // 모달창 닫기
+      function closeModal() {
+        const modal = document.querySelector(".modal");
+        modal.style.display = "none";
+      }
+
+      // 리뷰 등록
+      function submitReview() {
+        const reviewInput = document.getElementById("reviewInput");
+        const review = reviewInput.value;
+
+        const selectedSeats = document.querySelectorAll(".seat.selected");
+        selectedSeats.forEach((seat) => {
+          const seatId = seat.getAttribute("data-seat-id");
+          const seatIndex = seatData.findIndex(
+            (data) => data.seatId === seatId
+          );
+
+          seatData[seatIndex].review = review;
+          seat.classList.remove("selected");
+
+          // 등록된 리뷰가 있으면 좌석을 초록색으로 표시
+          if (review) {
+            seat.classList.add("reviewed");
+          }
+        });
+
+        closeModal();
+      }
+
+      // 리뷰 보기 모달창 열기
+      function openReviewModal(index) {
+        const reviewModal = document.querySelector(".reviewModal");
+        reviewModal.style.display = "block";
+
+        const reviewContent = document.getElementById("reviewContent");
+        reviewContent.textContent = seatData[index].review;
+      }
+
+      // 리뷰 보기 모달창 닫기
+      function closeReviewModal() {
+        const reviewModal = document.querySelector(".reviewModal");
+        reviewModal.style.display = "none";
+      }
+    </script>
+  </body>
+</html>

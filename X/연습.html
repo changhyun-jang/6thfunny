@@ -3,71 +3,101 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/ggart.css" />
     <link rel="stylesheet" href="/css/seat_review.css" />
+    <link rel="stylesheet" href="css/review_popup.css" />
     <script>
-      window.resizeTo(490, 600);
-      function win_close() {
-        window.close();
-      }
+      // 팝업 창을 열기 위한 함수
+      function openPopup() {
+        // 팝업 창의 URL (이전에 보여준 HTML 파일의 경로) 설정
+        var popupURL = "1.html";
 
+        // 팝업 창의 크기 설정
+        var popupWidth = 490;
+        var popupHeight = 600;
+
+        // 팝업 창을 가운데에 위치시키기 위한 좌표 계산
+        var leftPosition = (screen.width - popupWidth) / 2;
+        var topPosition = (screen.height - popupHeight) / 2;
+
+        // 팝업 창 열기
+        window.open(
+          popupURL,
+          "후기 작성하기", // 팝업 창의 이름
+          "width=" +
+            popupWidth +
+            ", height=" +
+            popupHeight +
+            ", left=" +
+            leftPosition +
+            ", top=" +
+            topPosition
+        );
+      }
     </script>
-    <style>
-      .inputText {
-        margin-top: 5px;
-        padding: 0;
-        width: 300px;
-        height: 300px;
-        background-color: gainsboro;
-      }
-      textarea {
-        margin: 0 auto;
-        width: 300px;
-        height: 300px;
-        background: none;
-        border: none;
-      }
-      .demoP {
-        margin: 5px 0 0 0;
-        width: 84px;
-        height: 21px;
-        background-color: antiquewhite;
-      }
-      #demo {
-        z-index: 2;
-        display: inline-block;
-        margin: 0 0 5px 0;
-      }
-      .keyword > p {
-        display: inline-block;
-        font-size: 15px;
-        border-radius: 5px;
-        padding: 0 0.5px;
-        margin-left: 5px;
-        overflow: hidden;
-      }
-      .selected {
-    /* 선택된 좌석에 대한 스타일 */
-    background-color: blue; /* 예제에서는 파란색으로 표시 */
-  }
-
-    </style>
-    <title>Document</title>
+    <title>경기아트센터</title>
   </head>
   <body>
-    <!-- 이용 날짜 -->
-    <h3>이용하신 날짜를 선택해주세요.</h3>
-
-    <input type="date" id="myDate" value="2023-07-22" />
-
-    <!-- <p>Click the button to get the date of the date field.</p> -->
-
-    <button onclick="myFunction()">선택한 날짜 출력</button>
-
-    <div class="demoP">
-      <p id="demo"></p>
-    </div>
-
-    <!-- 공연장 이름 & 좌석 번호 -->
+    <!-- 헤더의 메뉴 -->
+    <header>
+      <div class="menuBar">
+        <span>찾아보기</span>
+        <span>작성하기</span>
+        <button class="sign">로그인</button>
+      </div>
+    </header>
+    <!-- 선택한 공연장 상세 정보 -->
+    <h2>공연장 정보</h2>
+    <section class="infoSection">
+      <div class="infoLeft">
+        <img src="/img/ggartcenter.jpg" alt="경기아트센터" width="410px" />
+      </div>
+      <div class="infoRight">
+        <table class="centerInfo">
+          <tr>
+            <th>공연장명</th>
+            <td>경기아트센터 - 소극장</td>
+          </tr>
+          <tr>
+            <th>주소안내</th>
+            <td>
+              경기도 수원시 팔달구 효원로 307번길 20(인계동) 경기아트센터 (우
+              16488)
+            </td>
+          </tr>
+          <tr>
+            <th>홈페이지</th>
+            <td><a href="http://www.ggac.or.kr/">http://www.ggac.or.kr/</a></td>
+          </tr>
+          <tr>
+            <th>전화번호</th>
+            <td><a href="tel:031-230-3200">031-230-3200</a></td>
+          </tr>
+          <tr>
+            <th>좌석안내</th>
+            <td>502석 (1층 301석, 2층 195석, 장애인석 6석)</td>
+          </tr>
+          <tr>
+            <th>주차안내</th>
+            <td>유료 주차장 보유 / 관람객 할인 적용</td>
+          </tr>
+          <tr>
+            <th>편의시설</th>
+            <td>장애인 이용 시설, 유아 시설, 카페 마련</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <!-- 좌석 후기 안내 -->
+    <h2>좌석 후기 찾아보기</h2>
+    <section class="reviewSection">
+      <p class="reviewP">
+        <strong>TIP!</strong> 주황색 좌석을 누르면 이용객의
+        <strong>생생한 후기</strong>를 확인할 수 있어요👀
+        <button class="reviewBu" onclick="openPopup()">후기 작성하기✍</button>
+      </p>
+    </section>
+    <!-- 좌석 배치도 부분 시작 -->
     <div class="seatLayout">
       <div class="test">
         <div class="stage">무대</div>
@@ -146,61 +176,13 @@
         <div class="seat" style="top: 105px; left: 832px"></div>
       </div>
     </div>
-    <!-- 팝업으로 뜨는 경우 공연장 이름은 고정되게 설정 -->
-    <h3>느낌과 비슷한 키워드를 골라주세요.</h3>
-    <div class="keyword" style="width: 490px;">
-      <p class="sight" data-hover="시야가 탁 트였어요" style="background-color: skyblue;">
-        🔭시야가 탁 트였어요
-      </p>
-      <p class="face" data-hover="배우들의 얼굴이 잘보여요" style="background-color: burlywood;">
-        😊배우들의 얼굴이 잘보여요
-      </p>
-      <p class="money" data-hover="가격이 좀 비싸요" style="background-color: wheat;">💸가격이 좀 비싸요</p>
-      <p class="sound" data-hover="소리가 잘 들려요" style="background-color:cornflowerblue">🔊소리가 잘 들려요</p>
-      <p class="seatfeel" data-hover="좌석 간격이 넓어요" style="background-color: wheat;">🛷좌석 간격이 넓어요</p>
-    </div>
-    <h3 class="r1">상세한 느낌을 기록해주세요!</h2>
-    <div class="inputText">
-      <textarea
-        name="inputReview"
-        cols="30"
-        rows="10"
-        placeholder="좌석을 이용하면서 불편했던 점이나 좋았던 점을 입력해주세요."
-      ></textarea>
-    </div>
-    <button class="save" onclick="">등록</button>
-    <button class="close" onclick="win_close()">취소</button>
-    <script>
-            // 선택된 좌석들을 저장하는 배열
-  const selectedSeats = [];
-
-// 좌석 요소들을 선택합니다
-const seats = document.querySelectorAll('.seat');
-
-// 각 좌석에 클릭 이벤트 리스너를 추가합니다
-seats.forEach((seat, index) => {
-  seat.addEventListener('click', () => {
-    // 좌석이 이미 선택된 경우, 선택 해제
-    if (selectedSeats.includes(index)) {
-      selectedSeats.splice(selectedSeats.indexOf(index), 1);
-      seat.classList.remove('selected');
-    } else {
-      // 좌석이 선택되지 않은 경우, 선택 추가
-      selectedSeats.push(index);
-      seat.classList.add('selected');
-    }
-
-    // 선택된 좌석들을 콘솔에 표시 (실제로는 예약 정보 등으로 활용 가능)
-    console.log('선택된 좌석들:', selectedSeats);
-  });
-});
-      function reviewsave () {
-        
-      }
-      function myFunction() {
-        let x = document.getElementById("myDate").value;
-        document.getElementById("demo").innerHTML = x;
-      }
-    </script>
+    <!-- <img
+        src="/img/ggart_seat.gif"
+        alt="경기아트센터 소극장 배치도"
+        width="100%"
+        height="600px"
+      /> -->
+    <footer class="footer"></footer>
   </body>
+  <script src="./js/cookieCheck.js"></script>
 </html>
