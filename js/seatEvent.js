@@ -53,7 +53,6 @@ function checkLocalStroage() {
     if (localStorage.key(i) === "__mantle_tile_meta_data") continue;
     let key = localStorage.key(i);
     let seatNum = localStorage.getItem(key);
-    console.log(key);
     let index = key.split("_")[1];
 
     seats[index].classList.add("reviewed");

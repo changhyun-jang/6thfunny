@@ -19,7 +19,6 @@ cate.addEventListener("click", function () {
 let cateLists = cateList.children;
 for (let ca of cateLists) {
   ca.addEventListener("click", function () {
-    console.log(ca);
     cate.innerText = this.innerText;
     $(cateList).toggleClass("close open");
   });
@@ -131,7 +130,6 @@ function addGuList(si) {
   let guLists = document.getElementById("gu-list").children;
   for (let gu of guLists) {
     gu.addEventListener("click", function () {
-      console.log(gu);
       document.getElementById("gu-val").innerText = this.innerText;
       showAndHide(guList);
     });

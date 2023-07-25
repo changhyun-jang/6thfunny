@@ -17,6 +17,7 @@
     ></script>
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/signup.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
   </head>
   <body class="text-center">
     <main class="form-signin w-100 m-auto">
@@ -59,6 +60,7 @@
       <button class="w-100 btn btn-lg" id="submit">회원가입</button>
     </main>
   </body>
+  <script src="./js/encrypto.js"></script>
   <script>
     let idRegCheck = document.getElementById("idRegCheck");
     let pwdRegCheck = document.getElementById("pwdRegCheck");
@@ -95,15 +97,22 @@
     // if (idReg.test(inputId.value) && pwdReg.test(inputPwd.value)) {
     document.getElementById("submit").addEventListener("click", function () {
       if (idReg.test(inputId.value) && pwdReg.test(inputPwd.value)) {
-        sessionStorage.setItem("userid", inputId.value);
-        sessionStorage.setItem("userpwd", inputPwd.value);
-        sessionStorage.setItem(
-          "name",
+        let encodeId = aes256Encode(aes256SecretKey, "", inputId.value);
+        let encodePwd = aes256Encode(aes256SecretKey, "", inputPwd.value);
+        let encodeName = aes256Encode(
+          aes256SecretKey,
+          "",
           document.getElementById("floatingName").value
         );
+        sessionStorage.setItem(encodeId, encodeId);
+        sessionStorage.setItem(encodePwd, encodePwd);
+        sessionStorage.setItem(`${encodeId}_name`, encodeName);
 
+        console.log(encodeId);
+        console.log(encodePwd);
+        console.log(encodeName);
         alert("회원가입 되었습니다. ");
-        location.href = "index.html";
+        // location.href = "index.html";
       } else {
         alert("아이디, 비밀번호가 형식에 맞지 않습니다.");
       }

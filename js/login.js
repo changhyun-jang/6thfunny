@@ -6,20 +6,23 @@ submitLogin.addEventListener("click", function () {
 
   let idCheck = false;
   let pwdCheck = false;
-  let cookieArr = document.cookie.split("; ");
+
+  let encodeId = aes256Encode(aes256SecretKey, "", id);
+  let encodePwd = aes256Encode(aes256SecretKey, "", pwd);
 
   if (
-    sessionStorage.getItem("userid") === id &&
-    sessionStorage.getItem("userpwd") === pwd
+    sessionStorage.getItem(encodeId) === encodeId &&
+    sessionStorage.getItem(encodePwd) === encodePwd
   ) {
-    let name = sessionStorage.getItem("name");
+    let name = sessionStorage.getItem(`${encodeId}_name`);
+    let decodeName = aes256Decode(aes256SecretKey, "", name);
+
     let date = new Date();
     date.setDate(date.getDate() + 1);
-    document.cookie = `userid=${id}; expires=${date.toUTCString()}`;
-    document.cookie = `password=${pwd}; expires=${date.toUTCString()}`;
-    document.cookie = `name=${encodeURIComponent(
-      name
-    )}; expires=${date.toUTCString()}`;
+
+    document.cookie = `userid=${encodeId}; expires=${date.toUTCString()}`;
+    document.cookie = `password=${encodePwd}; expires=${date.toUTCString()}`;
+    document.cookie = `name=${decodeName}; expires=${date.toUTCString()}`;
 
     location.reload();
   } else {
@@ -45,7 +48,7 @@ window.onload = function () {
     }
 
     if (idx[0] == "name") {
-      name = decodeURIComponent(idx[1]);
+      name = idx[1];
     }
   }
   if (idCheck && pwdCheck) {

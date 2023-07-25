@@ -27,7 +27,6 @@ var maps = [
 /* 좌표기준 map 생성, marker 생성 */
 function setMap(idx) {
   var map = new naver.maps.Map("map", maps[idx]);
-  //   console.log(map.center.y);
   var marker = new naver.maps.Marker({
     position: new naver.maps.LatLng(map.center.y, map.center.x),
     map: map,
@@ -48,7 +47,6 @@ let infoContents = document.getElementsByClassName("mapopen");
 for (let i = 0; i < infoContents.length; i++) {
   infoContents[i].addEventListener("click", function () {
     let map = this.parentNode.parentNode.nextElementSibling.nextElementSibling;
-    console.log(map);
     map.setAttribute("id", "map");
     setMap(i);
     mapToggle(map);
