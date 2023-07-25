@@ -65,7 +65,7 @@ function openReviewModal(seatId) {
   const reviewModal = document.querySelector(".reviewModal");
   reviewModal.style.display = "block";
 
-  let content = localStorage.getItem(`${seatId}_c`);
+  let content = localStorage.getItem(`${seatId}_s_c`);
 
   const reviewContent = document.getElementById("reviewContent");
   reviewContent.innerText = content;
