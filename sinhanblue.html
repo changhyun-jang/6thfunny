@@ -11,6 +11,12 @@
   </head>
   <body>
     <header>
+      <img
+        src="/img/logo2.png"
+        alt="팀 로고"
+        class="mainlogo"
+        onclick="gotoMain()"
+      />
       <div class="menuBar">
         <span>찾아보기</span>
         <span>로그인</span>
@@ -257,8 +263,20 @@
         <!-- 각 후기들 슬라이더를 통해 하나씩 볼 수 있게 설정하기 위한 클래스 -->
       </div>
     </div>
-    <footer class="footer"></footer>
+    <footer>
+      <img
+        src="/img/logo2.png"
+        alt="팀 로고"
+        class="mainlogo"
+        onclick="gotoMain()"
+      />
+    </footer>
   </body>
+  <script>
+    function gotoMain() {
+      location.href = "index.html";
+    }
+  </script>
   <script src="js/shinhan.js"></script>
   <script src="js/review_modal.js"></script>
   <script src="js/cookieCheck.js"></script>

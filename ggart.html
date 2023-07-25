@@ -22,7 +22,12 @@
     <h2>공연장 정보</h2>
     <section class="infoSection">
       <div class="infoLeft">
-        <img src="/img/ggartcenter.jpg" alt="경기아트센터" class="centerImg" />
+        <img
+          onClick="gotoMain()"
+          src="/img/ggartcenter.jpg"
+          alt="경기아트센터"
+          class="centerImg"
+        />
       </div>
       <div class="infoRight">
         <table class="centerInfo">
@@ -778,7 +783,12 @@
       </div>
     </div>
     <footer>
-      <img src="/img/logo2.png" alt="팀 로고" class="mainlogo" />
+      <img
+        src="/img/logo2.png"
+        alt="팀 로고"
+        class="mainlogo"
+        onclick="gotoMain()"
+      />
     </footer>
 
     <!-- 리뷰 팝업 시작 -->
@@ -861,6 +871,11 @@
       <button onclick="closeReviewModal()">닫기</button>
     </div>
   </body>
+  <script>
+    function gotoMain() {
+      location.href = "index.html";
+    }
+  </script>
   <script src="/js/review_modal.js"></script>
   <script src="./js/cookieCheck.js"></script>
   <script src="./js/seatEvent.js"></script>
