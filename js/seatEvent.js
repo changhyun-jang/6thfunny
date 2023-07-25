@@ -44,18 +44,19 @@ function closeModal() {
 
 function addLS(seatNum, seatContent) {
   localStorage.setItem(`${seatNum}_g`, seatNum);
-  localStorage.setItem(`${seatNum}_c`, seatContent);
+  localStorage.setItem(`${seatNum}_g_c`, seatContent);
 }
 
 function checkLocalStroage() {
   for (let i = 0; i < localStorage.length; i++) {
     let key = localStorage.key(i);
     let check = key.split("_")[2];
-    if (key === "__mantle_tile_meta_data" || check === "s") continue;
-    let seatNum = localStorage.getItem(key);
-    let index = key.split("_")[1];
+    if (key !== "__mantle_tile_meta_data" && check !== "s") {
+      let seatNum = localStorage.getItem(key);
+      let index = key.split("_")[1];
 
-    seats[index].classList.add("reviewed");
+      seats[index].classList.add("reviewed");
+    }
   }
 }
 
