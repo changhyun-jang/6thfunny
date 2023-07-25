@@ -1,0 +1,29 @@
+.modal,
+.reviewModal {
+  width: 18vw;
+  height: 13vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+.reviewModal {
+  display: none;
+}
+
+.changeColor {
+  background-color: #ffb284;
+}
+textarea {
+  width: 15vw;
+  height: 7vw;
+}
+
+.reviewed {
+  background: #ffb284;
+}

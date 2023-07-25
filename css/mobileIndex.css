@@ -26,10 +26,16 @@ body {
 }
 
 .logoarea {
-  background-color: var(--color-main-light);
+  /* background-color: var(--color-main-light); */
   width: 70vw;
   height: 40vw;
   border-radius: 30px;
+  margin: 0 auto;
+}
+
+#ttaLogo {
+  width: 65vw;
+  height: 35vw;
   margin: 0 auto;
 }
 

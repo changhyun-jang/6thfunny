@@ -1,5 +1,4 @@
 let loginBtn = document.querySelector(".menuBar").lastElementChild;
-console.log(loginBtn);
 
 let cookies = document.cookie;
 

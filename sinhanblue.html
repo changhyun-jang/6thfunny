@@ -3,23 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/sinhanblue.css" />
-    <link rel="stylesheet" href="/css/seat_review.css" />
     <link rel="stylesheet" href="/css/review_popup.css" />
+    <link rel="stylesheet" href="/css/center.css" />
+    <link rel="stylesheet" href="/css/seat_review.css" />
+    <link rel="stylesheet" href="css/sinhanblue.css" />
+    <link rel="stylesheet" href="css/writeReveiw.css " />
     <title>블루스퀘어</title>
   </head>
   <body>
     <header>
+      <img
+        src="/img/logo2.png"
+        alt="팀 로고"
+        class="mainlogo"
+        onclick="gotoMain()"
+      />
       <div class="menuBar">
-        <span>찾아보기</span>
+        <span onclick="gotoreview()">찾아보기</span>
         <span>로그인</span>
       </div>
     </header>
     <h2>공연장 정보</h2>
     <section class="infoSection">
       <div class="infoLeft">
-        <img src="/img/bluesqure.jpg" alt="블루스퀘어" width="410px" />
+        <img class="centerImg" src="/img/bluesqure.jpg" alt="블루스퀘어" />
       </div>
       <div class="infoRight">
         <table class="centerInfo">
@@ -60,9 +67,10 @@
     <h2>좌석 후기 찾아보기</h2>
     <section class="reviewSection">
       <p class="reviewP">
-        <strong>TIP!</strong>색깔 좌석을 누르면 이용객의
-        <strong>생생한 후기</strong>를 확인할 수 있어요👀
-        <button>후기 작성하기✍</button>
+        <span style="color: #ffb284"><strong>TIP!</strong> </span> 주황색 좌석을
+        누르면 이용객의
+        <span style="color: #ffb284"><strong>생생한 후기</strong></span
+        >를 확인할 수 있어요👀
       </p>
     </section>
     <div class="seatLayout">
@@ -200,7 +208,7 @@
     <!-- 팝업창 구현 처음에는 hidden클래스를 통해 안보이는 상태-->
     <div class="modalpop2 hidden">
       <!-- bg클래스는 팝업창밖의 배경색 설정  -->
-      <div class="bg"></div>
+      <div class="bg2"></div>
       <!-- 팝업창 -->
       <div class="modalBox">
         <!-- 닫기 버튼 -->
@@ -257,9 +265,30 @@
         <!-- 각 후기들 슬라이더를 통해 하나씩 볼 수 있게 설정하기 위한 클래스 -->
       </div>
     </div>
-    <footer class="footer"></footer>
+    <footer>
+      <img
+        src="/img/logo2.png"
+        alt="팀 로고"
+        class="mainlogo"
+        onclick="gotoMain()"
+      />
+      <div>
+        육회함조 - 이동준, 전주현, 장창현
+        <br />
+        첫번째 프로젝트
+      </div>
+    </footer>
   </body>
+  <script>
+    function gotoMain() {
+      location.href = "index.html";
+    }
+    function gotoreview() {
+      location.href = "all_review.html";
+    }
+  </script>
   <script src="js/shinhan.js"></script>
   <script src="js/review_modal.js"></script>
   <script src="js/cookieCheck.js"></script>
+  <script src="js/seatEvent.js"></script>
 </html>

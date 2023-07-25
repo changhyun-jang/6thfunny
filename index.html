@@ -33,6 +33,7 @@
   <script src="./js/adm_district.js"></script>
   <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
   <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
   <body id="body">
     <div class="main">
       <ul class="nav" id="nav">
@@ -57,7 +58,9 @@
           <div id="submitLogin">Log In</div>
         </div>
       </div>
-      <div class="logoarea"></div>
+      <div class="logoarea">
+        <img src="./img/logo2.png" alt="" id="ttaLogo">
+      </div>
       <div class="carouselArea">
         
         <p class="top" style="text-align: center; padding-top: 5vw;">🆕새로훈 후기가 올라온 공연장</p>
@@ -504,6 +507,7 @@
       var embla = EmblaCarousel(emblaNode, options, plugins);
     </script>
   </body>
+  <script src="./js/encrypto.js"></script>
   <!-- 시, 구, 군, 카테고리 js-->
   <script src="./js/sido.js"></script>
   <!-- nav location, showAndHide js-->
@@ -516,4 +520,10 @@
   <script src="./js/navermap.js"></script>
   
   <script src="./js/search.js"></script>
+
+  <script>
+    document.getElementById("ttaLogo").addEventListener("click", function() {
+      location.reload();
+    });
+  </script>
 </html>

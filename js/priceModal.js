@@ -29,11 +29,11 @@ for (let i = 0; i < modalCosts.length; i++) {
   modalCosts[i].addEventListener("click", function () {
     let mcs = document.querySelectorAll(".mc");
     for (let mc of mcs) {
-      console.log("count");
       mc.remove();
     }
+
     let modalbody = document.getElementById("modalBody");
-    console.log(modalbody);
+
     for (let j = 0; j < prices[i].type.length; j++) {
       let content = document.createElement("div");
       content.setAttribute("class", "mc");

@@ -240,15 +240,3 @@ footer {
   align-items: center;
   justify-content: center;
 }
-
-.reviewSection {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-hr {
-  position: absolute;
-  width: 839px;
-  top: 500px;
-  left: 75px;
-}

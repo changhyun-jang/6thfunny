@@ -24,7 +24,6 @@ seats.forEach((seat) => {
 function submitReview() {
   const reviewInput = document.getElementById("reviewInput");
   const review = reviewInput.value;
-  console.log(review);
 
   addLS(seatId, review);
 
@@ -53,7 +52,6 @@ function checkLocalStroage() {
     if (localStorage.key(i) === "__mantle_tile_meta_data") continue;
     let key = localStorage.key(i);
     let seatNum = localStorage.getItem(key);
-    console.log(key);
     let index = key.split("_")[1];
 
     seats[index].classList.add("reviewed");
@@ -63,9 +61,7 @@ function checkLocalStroage() {
 //리뷰 보기 모달창 열기
 function openReviewModal(seatId) {
   const reviewModal = document.querySelector(".reviewModal");
-  console.log(reviewModal);
   reviewModal.style.display = "block";
-  console.log(reviewModal);
 
   let content = localStorage.getItem(`${seatId}_c`);
 

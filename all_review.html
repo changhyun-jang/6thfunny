@@ -26,6 +26,12 @@
   </head>
   <body>
     <header>
+      <img
+        onclick="gotoMain()"
+        src="/img/logo2.png"
+        alt="팀 로고"
+        class="mainlogo"
+      />
       <div class="menuBar">
         <span>찾아보기</span>
         <span>로그인</span>
@@ -364,7 +370,19 @@
         </div>
       </div>
     </div>
-    <footer class="footer"></footer>
+    <footer>
+      <img
+        src="/img/logo2.png"
+        alt="팀 로고"
+        class="mainlogo"
+        onclick="gotoMain()"
+      />
+      <div>
+        육회함조 - 이동준, 전주현, 장창현
+        <br />
+        첫번째 프로젝트
+      </div>
+    </footer>
   </body>
   <script src="/js/review_navermap.js"></script>
   <script>
@@ -426,6 +444,9 @@
 
       $("#selectbox option:selected").text();
       console.log(selectText);
+    }
+    function gotoMain() {
+      location.href = "index.html";
     }
   </script>
   <script src="./js/cookieCheck.js"></script>
