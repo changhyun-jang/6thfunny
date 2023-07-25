@@ -96,14 +96,15 @@
     };
 
     document.getElementById("submit").addEventListener("click", function () {
-      if (idReg.test(inputId.value) && pwdReg.test(inputPwd.value)) {
+      let name = document.getElementById("floatingName").value;
+      if (
+        idReg.test(inputId.value) &&
+        pwdReg.test(inputPwd.value) &&
+        name !== ""
+      ) {
         let encodeId = aes256Encode(aes256SecretKey, "", inputId.value);
         let encodePwd = aes256Encode(aes256SecretKey, "", inputPwd.value);
-        let encodeName = aes256Encode(
-          aes256SecretKey,
-          "",
-          document.getElementById("floatingName").value
-        );
+        let encodeName = aes256Encode(aes256SecretKey, "", name);
         sessionStorage.setItem(encodeId, encodeId);
         sessionStorage.setItem(encodePwd, encodePwd);
         sessionStorage.setItem(`${encodeId}_name`, encodeName);
@@ -111,7 +112,11 @@
         alert("회원가입 되었습니다. ");
         location.href = "index.html";
       } else {
-        alert("아이디, 비밀번호가 형식에 맞지 않습니다.");
+        if (name === "") {
+          alert("이름을 입력해주세요. ");
+        } else {
+          alert("아이디, 비밀번호가 형식에 맞지 않습니다.");
+        }
       }
     });
   </script>
