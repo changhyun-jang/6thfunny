@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/center.css" />
     <link rel="stylesheet" href="/css/seat_review.css" />
     <link rel="stylesheet" href="css/sinhanblue.css" />
+    <link rel="stylesheet" href="css/writeReveiw.css " />
     <title>블루스퀘어</title>
   </head>
   <body>
@@ -18,7 +19,7 @@
         onclick="gotoMain()"
       />
       <div class="menuBar">
-        <span>찾아보기</span>
+        <span onclick="gotoreview()">찾아보기</span>
         <span>로그인</span>
       </div>
     </header>
@@ -66,9 +67,10 @@
     <h2>좌석 후기 찾아보기</h2>
     <section class="reviewSection">
       <p class="reviewP">
-        <strong>TIP!</strong>색깔 좌석을 누르면 이용객의
-        <strong>생생한 후기</strong>를 확인할 수 있어요👀
-        <button>후기 작성하기✍</button>
+        <span style="color: #ffb284"><strong>TIP!</strong> </span> 주황색 좌석을
+        누르면 이용객의
+        <span style="color: #ffb284"><strong>생생한 후기</strong></span
+        >를 확인할 수 있어요👀
       </p>
     </section>
     <div class="seatLayout">
@@ -270,11 +272,19 @@
         class="mainlogo"
         onclick="gotoMain()"
       />
+      <div>
+        육회함조 - 이동준, 전주현, 장창현
+        <br />
+        첫번째 프로젝트
+      </div>
     </footer>
   </body>
   <script>
     function gotoMain() {
       location.href = "index.html";
+    }
+    function gotoreview() {
+      location.href = "all_review.html";
     }
   </script>
   <script src="js/shinhan.js"></script>

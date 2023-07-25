@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/center.css" />
     <link rel="stylesheet" href="/css/review_popup.css" />
+    <link rel="stylesheet" href="css/writeReveiw.css" />
     <title>경기아트센터</title>
   </head>
   <body>
@@ -14,7 +15,7 @@
         <img src="/img/logo2.png" alt="팀 로고" class="mainlogo" />
       </div>
       <div class="menuBar">
-        <span>찾아보기</span>
+        <span onclick="gotoreview()">찾아보기</span>
         <span>로그인</span>
       </div>
     </header>
@@ -410,7 +411,7 @@
         <div class="seat" style="top: 195px; left: 489px"></div>
         <div class="seat" style="top: 195px; left: 500px"></div>
         <div
-          class="seat openBtn"
+          class="seat alreadyReview"
           style="top: 195px; left: 511px; background-color: #ffb284"
           title="B구역 8열 11번: 2건"
         ></div>
@@ -789,6 +790,11 @@
         class="mainlogo"
         onclick="gotoMain()"
       />
+      <div>
+        육회함조 - 이동준, 전주현, 장창현
+        <br />
+        첫번째 프로젝트
+      </div>
     </footer>
 
     <!-- 리뷰 팝업 시작 -->
@@ -875,8 +881,11 @@
     function gotoMain() {
       location.href = "index.html";
     }
+    function gotoreview() {
+      location.href = "all_review.html";
+    }
   </script>
-  <script src="/js/review_modal.js"></script>
+  <script src="/js/review_modal_gg.js"></script>
   <script src="./js/cookieCheck.js"></script>
   <script src="./js/seatEvent.js"></script>
 </html>

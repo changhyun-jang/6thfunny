@@ -231,7 +231,7 @@ for (let i = 0; i < seats2.length; i++) {
 
 let seats_already1 = document.querySelector("#seat_117");
 seats_already1.classList.add("alreadyReview");
-seats_already1.style.backgroundColor = "orange";
+seats_already1.style.backgroundColor = "#ffb284";
 let seats_already2 = document.querySelector("#seat_964");
-seats_already2.style.backgroundColor = "orange";
+seats_already2.style.backgroundColor = "#ffb284";
 seats_already2.classList.add("alreadyReview");
