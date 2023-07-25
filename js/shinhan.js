@@ -1,4 +1,5 @@
 // 1층 행별 좌석 갯수
+//object를 이용한 좌석 생성
 let count1 = {
   1: [8, 16, 8],
   2: [9, 17, 9],
@@ -47,25 +48,33 @@ let seat_count = 1;
 let first;
 
 // 좌석 생성 및 좌석 배치
+//행별 반복문
 for (let i = 1; i < Object.keys(count1).length + 1; i++) {
   let parentNode = document.querySelector(".row_" + i);
 
+  //각 좌석을 표시할 div생성
   for (let j = 0; j < count1[i][0] + count1[i][1] + count1[i][2]; j++) {
     let make_div = document.createElement("div");
     parentNode.append(make_div);
   }
 
+  //위에서 생성한 div를 querySelectAll을 통해 리스트형식으로 가져옴
   let list_row_1 = document.querySelectorAll(".row_" + i + " div");
+  //열별 반복문
   for (let j = 0; j < list_row_1.length; j++) {
+    //좌석모양을 만들어줄 seat클래스 추가
     list_row_1[j].classList.add("seat");
+
+    //각 좌석마다 top을 계산하여 위치 설정(세로)
     let row_place;
     if (i < 8) {
       row_place = standard_col + 15 * (i - 1);
     } else {
       row_place = standard_col + 15 * (i - 1) + 40;
     }
-
     list_row_1[j].style.top = row_place + "px";
+
+    // 각좌석마다의 left를 계산하여 위치설정(가로)
     let col_place;
     if (j < count1[i][0]) {
       col_place = standard_row + 11 * j + 11 * (15 - count1[i][0]);
@@ -78,15 +87,18 @@ for (let i = 1; i < Object.keys(count1).length + 1; i++) {
         col_place = 415 + 11 * (j - count1[i][0]) + 5;
       }
     }
+
     if (j >= count1[i][0] + count1[i][1]) {
       col_place = 700 + 11 * (j - (count1[i][0] + count1[i][1]));
     }
     list_row_1[j].style.left = col_place + "px";
 
+    //각 좌석 번호 설정 및 번째 행인지 표시 text출력
     if (k === 0) {
       first = 15 - count1[i][k] + 1;
       list_row_1[j].classList.add(15 - count1[i][k] + seat_count);
       seat_count += 1;
+
       if (seat_count === count1[i][k] + 1) {
         k += 1;
         seat_count = 1;

@@ -52,7 +52,7 @@
           placeholder="예시) VIP석 1층 4열"
           onchange="f_search_review()"
         />
-        <button class="logo">로고</button>
+        <img src="/img/logo2.png" alt="팀 로고" class="mainlogo" />
       </div>
       <div class="ticketContents">
         <div class="forhr">
@@ -387,10 +387,17 @@
   </body>
   <script src="/js/review_navermap.js"></script>
   <script>
+    //리뷰들을 보여줄 요소
     let ticket = document.querySelector(".ticketContents");
+    // 리뷰별 번호
     let num = document.querySelectorAll(".num");
+    // 각리뷰 정보를 담고있는 클래스
     let list = document.querySelectorAll(".forhr");
+
+    //테마 분류저장 변수
     var selectText;
+
+    //검색어에 대한 정보가 없을떄 출력할 '검색된 후기가 없습니다.' 설정
     let message = document.createElement("div");
     message.innerHTML = "<h2>검색된 후기가 없습니다.</h2>";
     message.style.textAlign = "center";
@@ -398,6 +405,19 @@
     message.style.top = "30vw";
     ticket.append(message);
     message.classList.add("hidden");
+
+    //테마 선택을 하면 option에 선택한 테마가 출력
+    function changeThemeSelect() {
+      var themeSelect = document.getElementById("selectbox");
+      var selectValue = themeSelect.options[themeSelect.selectedIndex].value;
+      selectText = themeSelect.options[themeSelect.selectedIndex].text;
+
+      $("#selectbox option:selected").text();
+    }
+
+    //테마에 따른 리뷰 분류
+    //테마가 좌석일떄는 좌석 번호와 입력값 비교
+    //테마가 장소일떄는 장소 이름과 입력값 비교하여 해당하지 않는 각리뷰 정보를 담고있는 클래스들을 hidden을 통해 사라지게 함
     function f_search_review() {
       var search = document.getElementById("search_review").value;
       var title = document.querySelectorAll(".title");
@@ -420,6 +440,8 @@
           break;
         }
       }
+
+      //검색할때마다 리뷰들 번호를 새로 매겨줌
       let count = 0;
       let check = 0;
       for (let i = 0; i < list.length; i++) {
@@ -438,14 +460,7 @@
     for (let i = 0; i < num.length; i++) {
       num[i].innerText = "[" + (i + 1) + "]";
     }
-    function changeThemeSelect() {
-      var themeSelect = document.getElementById("selectbox");
-      var selectValue = themeSelect.options[themeSelect.selectedIndex].value;
-      selectText = themeSelect.options[themeSelect.selectedIndex].text;
 
-      $("#selectbox option:selected").text();
-      console.log(selectText);
-    }
     function gotoMain() {
       location.href = "index.html";
     }
