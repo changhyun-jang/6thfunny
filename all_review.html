@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/review_all.css" />
     <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/header.css" />
     <script
       type="text/javascript"
       src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=xpmj5g73ov"
@@ -24,15 +25,13 @@
     </script>
   </head>
   <body>
+    <header>
+      <div class="menuBar">
+        <span>찾아보기</span>
+        <span>로그인</span>
+      </div>
+    </header>
     <div class="main">
-      <header>
-        <div class="menuBar">
-          <span>찾아보기</span>
-          <span>작성하기</span>
-          <span>문의하기</span>
-          <button class="sign">로그인</button>
-        </div>
-      </header>
       <div class="search">
         <select name="selectBox" id="selectbox" onchange="changeThemeSelect()">
           <option value="" selected disabled>검색테마</option>
@@ -90,7 +89,7 @@
               </ul>
               <button
                 class="btn"
-                onclick="win_open('all_review_popup.html','a','width=1000px height=500px')"
+                onclick="win_open('all_review_popup1.html','a','width=1000px height=500px')"
               >
                 더보기
               </button>
@@ -140,7 +139,12 @@
                   </div>
                 </li>
               </ul>
-              <button class="btn">더보기</button>
+              <button
+                class="btn"
+                onclick="win_open('all_review_popup2.html','b','width=1000px height=500px')"
+              >
+                더보기
+              </button>
               <div class="map"></div>
             </div>
           </div>
@@ -192,7 +196,12 @@
                   </div>
                 </li>
               </ul>
-              <button class="btn">더보기</button>
+              <button
+                class="btn"
+                onclick="win_open('all_review_popup3.html','c','width=1000px height=500px')"
+              >
+                더보기
+              </button>
               <div class="map"></div>
             </div>
           </div>
@@ -238,7 +247,12 @@
                   </div>
                 </li>
               </ul>
-              <button class="btn">더보기</button>
+              <button
+                class="btn"
+                onclick="win_open('all_review_popup4.html','c','width=1000px height=500px')"
+              >
+                더보기
+              </button>
               <div class="map"></div>
             </div>
           </div>
@@ -337,7 +351,12 @@
                   </div>
                 </li>
               </ul>
-              <button class="btn">더보기</button>
+              <button
+                class="btn"
+                onclick="win_open('all_review_popup.html','a','width=1000px height=500px')"
+              >
+                더보기
+              </button>
               <div class="map"></div>
             </div>
           </div>
@@ -349,9 +368,17 @@
   </body>
   <script src="/js/review_navermap.js"></script>
   <script>
+    let ticket = document.querySelector(".ticketContents");
     let num = document.querySelectorAll(".num");
     let list = document.querySelectorAll(".forhr");
     var selectText;
+    let message = document.createElement("div");
+    message.innerHTML = "<h2>검색된 후기가 없습니다.</h2>";
+    message.style.textAlign = "center";
+    message.style.position = "relative";
+    message.style.top = "30vw";
+    ticket.append(message);
+    message.classList.add("hidden");
     function f_search_review() {
       var search = document.getElementById("search_review").value;
       var title = document.querySelectorAll(".title");
@@ -369,6 +396,23 @@
           } else {
             list[i].classList.remove("hidden");
           }
+        } else {
+          alert("검색테마를 선택해주세요.");
+          break;
+        }
+      }
+      let count = 0;
+      let check = 0;
+      for (let i = 0; i < list.length; i++) {
+        if (!list[i].classList.contains("hidden")) {
+          count += 1;
+          num[i].innerText = "[" + count + "]";
+          message.classList.add("hidden");
+        } else {
+          check += 1;
+          if (check === list.length) {
+            message.classList.remove("hidden");
+          }
         }
       }
     }
@@ -384,4 +428,5 @@
       console.log(selectText);
     }
   </script>
+  <script src="./js/cookieCheck.js"></script>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>팝업 1</title>
+    <link rel="stylesheet" href="css/review_all_popup.css" />
+    <script type="text/javascript">
+      window.resizeTo(600, 550);
+      function win_close() {
+        window.close();
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="review">
+      <img src="/img/review_img_example02.jpg" alt="" />
+      <h4>VIP석 1층 4열 20번</h4>
+      <p>
+        처음에 고개를 젖히고 봐야할까봐 걱정했는데 생각보다 목이 아플 정도는
+        아니었어요. 전체적인 장면을 눈에 모두 담기에는 조금 힘들었습니다.
+        앞사람머리에 시야가 방해되지는 않아요. 배우님들의 연기는 한번에 볼 수
+        있습니다.
+      </p>
+      <div>
+        <p class="sad" data-hover="전체적인 시야를 볼 수 없어요">
+          😥전체적인 시야를 볼 수 없어요
+        </p>
+        <p class="sight" data-hover="시야가 탁 트였어요">
+          🔭시야가 탁 트였어요
+        </p>
+        <p class="face" data-hover="배우들의 얼굴이 잘보여요">
+          😊배우들의 얼굴이 잘보여요
+        </p>
+      </div>
+    </div>
+    <a href="#" onclick="win_close()">[닫기]</a>
+  </body>
+</html>

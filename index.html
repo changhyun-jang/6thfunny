@@ -31,22 +31,68 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
   <script src="./js/adm_district.js"></script>
+  <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+  <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
   <body id="body">
     <div class="main">
-      <ul class="nav">
+      <ul class="nav" id="nav">
         <!--984px 부터 줄바꿈 -->
-        <li class="navcontent animate__animated animate__bounce" id="test1">
+        <li class="navcontent animate__animated animate__bounce" id="gotoSignup">
           회원가입
+          <li class="navcontent animate__animated animate__bounce" id="loginBtn">
+            로그인
         </li>
-        <li class="navcontent animate__animated animate__bounce" id="test2">
+        </li>
+        <li class="navcontent animate__animated animate__bounce" id="goToAllReview">
           전체 후기
         </li>
-        <li class="navcontent animate__animated animate__bounce">
-          진행중인 공연
-        </li>
       </ul>
-
+      <div id="loginArea">
+        <div class="loginForm">
+          아이디<br />
+          <input type="text" name="" id="inputId" class="inputId" /> <br />
+          비밀번호<br />
+          <input type="password" name="" id="inputPwd" class="inputPwd" />
+          <br />
+          <div id="submitLogin">Log In</div>
+        </div>
+      </div>
       <div class="logoarea"></div>
+      <div class="carouselArea">
+        
+        <p class="top" style="text-align: center; padding-top: 5vw;">🆕새로훈 후기가 올라온 공연장</p>
+        
+        <div class="embla">
+          <div class="embla__container">
+            <div class="embla__slide" id="goToGGart">
+              <img src="./img/ggartcenter.jpg" alt="">
+              <div >
+                <ul>
+                  <li><strong>이름</strong></li>
+                  <li>경기아트센터</li>
+                  <li><strong>주소</strong></li>
+                  <li>경기도 수원시</li>
+                  <li><strong>좌석수</strong></li>
+                  <li>1544석</li>
+                </ul>
+              </div>
+            </div>
+            <div class="embla__slide" id="goToShinhan">
+              <img src="./img/bluesqure.jpg" alt="">
+              <div >
+                <ul>
+                  <li><strong>이름</strong></li>
+                  <li>블루스퀘어 신한카드홀</li>
+                  <li><strong>주소</strong></li>
+                  <li>서울시 용산구</li>
+                  <li><strong>좌석수</strong></li>
+                  <li>1196석</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="select">
         <div
           class="selectContent"
@@ -71,7 +117,6 @@
           </div>
         </div>
         <div class="selectContent" id="gu">
-          <!-- 642px부터 깨짐 -->
           <div id="gu-val">시 · 구 · 군</div>
           <div>
             <svg
@@ -155,6 +200,7 @@
       <div class="ticketContents">
         <p class="top">🔥 인기있는 공연/콘서트</p>
         <div class="card">
+          <input type="text" class="locatVal" value="서울 마포구 콘서트" style="display: none;">
           <img src="./indexImage/indexImg1.gif" alt="" class="cardImg" />
           <div class="cardContent">
             <p class="title">2F(신용재, 김원주) 1st Fan Concert ［2F Only］</p>
@@ -205,16 +251,13 @@
                   </svg>
                 </div>
               </li>
-              <li>
-                <strong class="infolabel">좌석</strong>
-                <div class="infocontent" id="">0 / 0</div>
-              </li>
             </ul>
-            <button class="btn">후기 보러가기</button>
+            <button class="btn" onclick="window.open('https://tickets.interpark.com/goods/23009667')">예매 하러가기</button>
             <div class="map"></div>
           </div>
         </div>
         <div class="card">
+          <input type="text" class="locatVal" value="서울 송파구 콘서트" style="display: none;">
           <img src="./indexImage/indexImg2.gif" alt="" class="cardImg" />
           <div class="cardContent">
             <p class="title">2023 샘 스미스 내한공연 GLORIA the tour</p>
@@ -265,15 +308,183 @@
                   </svg>
                 </div>
               </li>
-              <li>
-                <strong class="infolabel">좌석</strong>
-                <div class="infocontent" id="">0 / 0</div>
-              </li>
             </ul>
-            <button class="btn" id="test3">후기 보러가기</button>
+            <button class="btn" onclick="window.open('https://tickets.interpark.com/goods/23007654')">예매 하러가기</button>
             <div class="map"></div>
           </div>
         </div>
+        <div class="card">
+          <input type="text" class="locatVal" value="서울 용산구 뮤지컬" style="display: none;">
+          <img src="./indexImage/indexImg3.gif" alt="" class="cardImg" />
+          <div class="cardContent">
+            <p class="title">뮤지컬 〈시카고〉 25주년 기념 오리지널 내한</p>
+            <p class="date">2023.05.27 ~ 2023.08.06</p>
+            <!-- <br /> -->
+            <ul class="info">
+              <li>
+                <strong class="infolabel">장소</strong>
+                <div class="infocontent mapopen">
+                  블루스퀘어 신한카드홀
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li>
+                <strong class="infolabel">공연시간</strong>
+                <div class="infocontent">145분(인터미션 20분 포함)</div>
+              </li>
+              <li>
+                <strong class="infolabel">관람연령</strong>
+                <div class="infocontent">14세 이상</div>
+              </li>
+              <li>
+                <strong class="infolabel">가격</strong>
+                <div class="infocontent costs">
+                  전체가격보기
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                    />
+                  </svg>
+                </div>
+              </li>
+            </ul>
+            <button class="btn" onclick="window.open('https://tickets.interpark.com/goods/23004325')">예매 하러가기</button>
+            <div class="map"></div>
+          </div>
+        </div>
+        <div class="card">
+          <input type="text" class="locatVal" value="충북 청주시 클래식/무용" style="display: none;">
+          <img src="./indexImage/indexImg4.gif" alt="" class="cardImg" />
+          <div class="cardContent">
+            <p class="title">히사이시 조 영화음악 콘서트 2023_청주 앙코르</p>
+            <p class="date">2023.08.06</p>
+            <!-- <br /> -->
+            <ul class="info">
+              <li>
+                <strong class="infolabel">장소</strong>
+                <div class="infocontent mapopen">
+                  청주 예술의전당 대공연장
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li>
+                <strong class="infolabel">공연시간</strong>
+                <div class="infocontent">120분(인터미션 15분 포함)</div>
+              </li>
+              <li>
+                <strong class="infolabel">관람연령</strong>
+                <div class="infocontent">8세 이상</div>
+              </li>
+              <li>
+                <strong class="infolabel">가격</strong>
+                <div class="infocontent costs">
+                  전체가격보기
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                    />
+                  </svg>
+                </div>
+              </li>
+            </ul>
+            <button class="btn" onclick="window.open('https://tickets.interpark.com/goods/23006545#')">예매 하러가기</button>
+            <div class="map"></div>
+          </div>
+        </div>
+        <div class="card">
+          <input type="text" class="locatVal" value="서울 종로구 연극" style="display: none;">
+          <img src="./indexImage/indexImg5.gif" alt="" class="cardImg" />
+          <div class="cardContent">
+            <p class="title">연극 &lt;수상한흥신소&gt;</p>
+            <p class="date">2023.06.28 ~ 오픈런</p>
+            <!-- <br /> -->
+            <ul class="info">
+              <li>
+                <strong class="infolabel">장소</strong>
+                <div class="infocontent mapopen">
+                  소극장 선물
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li>
+                <strong class="infolabel">공연시간</strong>
+                <div class="infocontent">100분</div>
+              </li>
+              <li>
+                <strong class="infolabel">관람연령</strong>
+                <div class="infocontent">13세 이상</div>
+              </li>
+              <li>
+                <strong class="infolabel">가격</strong>
+                <div class="infocontent costs">
+                  전체가격보기
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-caret-right-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                    />
+                  </svg>
+                </div>
+              </li>
+            </ul>
+            <button class="btn" onclick="window.open('https://tickets.interpark.com/goods/23008639')">예매 하러가기</button>
+            <div class="map"></div>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
     <div id="modalWrap">
@@ -285,180 +496,24 @@
         </div>
       </div>
     </div>
+    <script type="text/javascript">
+      var emblaNode = document.querySelector(".embla");
+      var options = { loop: false };
+      var plugins = [EmblaCarouselAutoplay()]; // Plugins
+
+      var embla = EmblaCarousel(emblaNode, options, plugins);
+    </script>
   </body>
-  <img src="./indexImage/음표1.png" alt="" class="backImg1" />
-
-  <script>
-    window.onload = function () {
-      /* 시, 도 onclick */
-      let siList = document.getElementById("si-list");
-      let siLists = siList.children;
-      for (let si of siLists) {
-        si.addEventListener("click", function () {
-          document.getElementById("si-val").innerText = this.innerText;
-          $(siList).toggleClass("close open");
-          document.getElementById("gu-val").innerText = "시 · 구 · 군";
-        });
-      }
-
-      /* 카테고리 onclick */
-      let cate = document.getElementById("cate-val");
-      let cateList = document.getElementById("cate-list");
-      cate.addEventListener("click", function () {
-        $(cateList).toggleClass("close open");
-      });
-
-      let cateLists = cateList.children;
-      for (let ca of cateLists) {
-        ca.addEventListener("click", function () {
-          console.log(ca);
-          cate.innerText = this.innerText;
-          $(cateList).toggleClass("close open");
-        });
-      }
-    };
-
-    /* 시, 구, 군 연결*/
-    let selectContents = document.getElementsByClassName("selectContent");
-    for (let content of selectContents) {
-      content.addEventListener("click", function () {
-        let id = $(this).attr("id");
-
-        if (id === "si") {
-          let siList = document.getElementById("si-list");
-          $(siList).toggleClass("close open");
-        } else if (id === "gu") {
-          let si_val = document.getElementById("si-val").innerText;
-
-          if (si_val === "시 · 도") {
-            alert("시 · 도를 선택해주세요. ");
-          } else {
-            addGuList(si_val);
-            showAndHide();
-          }
-        }
-      });
-    }
-
-    /* 시, 구, 군 list 설정 */
-    function addGuList(si) {
-      let arr;
-      switch (si) {
-        case "서울":
-          console.log("서울");
-          arr = seoulArr;
-          break;
-        case "경기":
-          console.log("경기");
-          arr = gyeongiArr;
-          break;
-        case "부산":
-          console.log("부산");
-          arr = busanArr;
-          break;
-        case "대구":
-          console.log("대구");
-          arr = daeguArr;
-          break;
-        case "인천":
-          console.log("인천");
-          arr = incheonArr;
-          break;
-        case "대전":
-          console.log("대전");
-          arr = daejeonArr;
-          break;
-        case "광주":
-          console.log("광주");
-          arr = gwangjuArr;
-          break;
-        case "울산":
-          console.log("울산");
-          arr = ulsanArr;
-          break;
-        case "강원":
-          console.log("강원");
-          arr = gangwonArr;
-          break;
-        case "충북":
-          console.log("충북");
-          arr = chungbukArr;
-          break;
-        case "충남":
-          console.log("충남");
-          arr = chnngnamArr;
-          break;
-        case "전북":
-          console.log("전북");
-          arr = jeonbukArr;
-          break;
-        case "전남":
-          console.log("전남");
-          arr = jeonnamArr;
-          break;
-        case "경북":
-          console.log("경북");
-          arr = gyeongbukArr;
-          break;
-        case "경남":
-          console.log("경남");
-          arr = gyeongnamArr;
-          break;
-        case "제주":
-          console.log("제주");
-          arr = jejuArr;
-          break;
-          deafult: break;
-      }
-
-      let guList = document.getElementById("gu-list");
-      guList.innerHTML = "";
-
-      for (let val of arr) {
-        let p = document.createElement("p");
-        p.innerText = val;
-        $(guList).append(p);
-      }
-
-      /* 시, 구, 군 선택 시 */
-      let guLists = document.getElementById("gu-list").children;
-      for (let gu of guLists) {
-        gu.addEventListener("click", function () {
-          console.log(gu);
-          document.getElementById("gu-val").innerText = this.innerText;
-          showAndHide();
-        });
-      }
-    }
-
-    /* 시, 구, 군 list 숨김,보임 */
-    function showAndHide() {
-      let guList = document.getElementById("gu-list");
-      if (guList.style.display == "block") {
-        guList.style.display = "none";
-      } else {
-        guList.style.display = "block";
-      }
-    }
-
-    /* sign up */
-    let test1 = document.getElementById("test1");
-    test1.addEventListener("click", function () {
-      location.href = "signup.html";
-    });
-
-    /* test */
-    let test2 = document.getElementById("test2");
-    test2.addEventListener("click", function () {
-      location.href = "all_review.html";
-    });
-    let test3 = document.getElementById("test3");
-    test3.addEventListener("click", function () {
-      location.href = "ggart.html";
-    });
-  </script>
+  <!-- 시, 구, 군, 카테고리 js-->
+  <script src="./js/sido.js"></script>
+  <!-- nav location, showAndHide js-->
+  <script src="./js/locatSAH.js"></script>
+  <!-- login js-->
+  <script src="./js/login.js"></script>
   <!--모달 js-->
   <script src="./js/priceModal.js"></script>
   <!--mavermap api js-->
   <script src="./js/navermap.js"></script>
+  
+  <script src="./js/search.js"></script>
 </html>

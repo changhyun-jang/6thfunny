@@ -2,7 +2,7 @@
   background-color: var(--color-main);
   border-radius: 70px;
   width: 95vw;
-  height: 200vw;
+  height: 250vw;
   margin: 20px;
 }
 
@@ -61,6 +61,7 @@
 .top {
   font-family: "Humanbumsuk";
   font-weight: bold;
+  font-size: 3vw;
 }
 
 .si,
@@ -83,9 +84,10 @@
 .ticketContents {
   background-color: var(--color-main-lighter);
   width: 70vw;
-  height: 80vw;
+  height: 130vw;
   margin: 0 auto;
   padding: 3vw;
+  overflow: scroll;
 }
 
 .option {
@@ -141,7 +143,7 @@
 
 .card {
   width: 100%;
-  height: 30%;
+  height: 20%;
   display: flex;
   padding: 10px 0px;
 }
@@ -156,6 +158,7 @@
   padding: 2vw;
   display: inline-block;
   width: 100%;
+  height: 70vw;
 }
 
 .title {
@@ -215,7 +218,6 @@
 .map {
   width: 30vw;
   height: 30vw;
-  background-color: red;
   display: inline-block;
   position: relative;
   top: -20vw;
@@ -270,4 +272,103 @@
   top: 20vw;
   left: 40vw;
   z-index: 9999;
+}
+
+#loginArea {
+  background-color: var(--color-main-lighter);
+  width: 16vw;
+  height: 9vw;
+  position: absolute;
+  border-radius: 3vw;
+  left: 60vw;
+  top: 12vw;
+  display: none;
+  padding: 2vw;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 980px) {
+  #loginArea {
+    left: 55vw;
+  }
+}
+
+.loginForm {
+  margin: 0 auto;
+  font-family: "OTWelcomeRA";
+  font-size: 1.5vw;
+}
+
+.inputId,
+.inputPwd {
+  border: 0;
+  width: 15vw;
+}
+
+input:focus {
+  outline: none;
+}
+
+#submitLogin {
+  float: right;
+  background-color: var(--color-main-light);
+  padding: 2px;
+  border-radius: 5px;
+  font-size: 15px;
+  line-height: 100%;
+}
+
+.embla {
+  overflow: hidden;
+  width: 50vw;
+  height: 30vw;
+  margin: 0 auto;
+  font-family: "OTWelcomeRA";
+  font-size: 1.5vw;
+}
+.embla__container {
+  display: flex;
+  background-color: var(--color-main-lighter);
+  border-radius: 6vw;
+  width: 50vw;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  height: 25vw;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  top: 50%;
+  background-color: var(--color-main-lighter);
+  border-radius: 6vw;
+  justify-self: center;
+}
+
+.embla__slide > img {
+  width: 35vw;
+  height: 25vw;
+  border-radius: 6vw 0px 0px 6vw;
+}
+.embla__slide > div {
+  width: 10vw;
+  height: 10vw;
+  margin: 0 auto;
+}
+.embla__slide > div > ul {
+  list-style: none;
+  padding: 0;
+  width: 10vw;
+  margin: 2px;
+  position: relative;
+  top: -4vw;
+}
+.embla__slide > div > ul > li {
+  margin: 1vw 0px;
+}
+
+.carouselArea {
+  margin: 0 auto;
+  background-color: var(--color-main-light);
+  width: 85vw;
+  border-radius: 5vw;
 }

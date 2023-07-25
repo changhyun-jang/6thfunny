@@ -10,6 +10,18 @@ var maps = [
     center: new naver.maps.LatLng(37.520934, 127.122959),
     zoom: 15,
   },
+  {
+    center: new naver.maps.LatLng(37.54085484198446, 127.00250347248482),
+    zoom: 15,
+  },
+  {
+    center: new naver.maps.LatLng(36.64242527620638, 127.46945255175352),
+    zoom: 15,
+  },
+  {
+    center: new naver.maps.LatLng(37.58330974810386, 127.00438993195093),
+    zoom: 15,
+  },
 ];
 
 /* 좌표기준 map 생성, marker 생성 */

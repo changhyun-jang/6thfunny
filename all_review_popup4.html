@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>팝업 1</title>
+    <link rel="stylesheet" href="css/review_all_popup.css" />
+    <script type="text/javascript">
+      window.resizeTo(600, 550);
+      function win_close() {
+        window.close();
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="review">
+      <img src="/img/review_img_example04.jpg" alt="" />
+      <h4>1층 B구역 8열</h4>
+      <p>
+        사진처럼 전체적인 시야는 정말 눈에 잘들어옵니다. 하지만 자리가 너무
+        좁아서 관람하는 동안 너무 불편했어요. 자리를 넓히는 보수가 필요한 것
+        같아요!!
+      </p>
+      <div>
+        <p class="sight" data-hover="시야가 탁 트였어요">
+          🔭시야가 탁 트였어요
+        </p>
+        <p class="space" data-hover="자리가 불편해요">💺자리가 불편해요</p>
+        <p class="face" data-hover="배우들의 얼굴이 잘보여요">
+          😊배우들의 얼굴이 잘보여요
+        </p>
+      </div>
+    </div>
+    <a href="#" onclick="win_close()">[닫기]</a>
+  </body>
+</html>

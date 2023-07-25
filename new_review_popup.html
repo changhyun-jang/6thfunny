@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      window.resizeT(490, 600);
+      function win_close() {
+        window.close();
+      }
+    </script>
+    <style>
+      .inputText {
+        margin-top: 5px;
+        padding: 0;
+        width: 300px;
+        height: 300px;
+        background-color: gainsboro;
+      }
+      textarea {
+        margin: 0 auto;
+        width: 300px;
+        height: 300px;
+        background: none;
+        border: none;
+      }
+      .demoP {
+        margin: 5px 0 0 0;
+        width: 84px;
+        height: 21px;
+        background-color: antiquewhite;
+      }
+      #demo {
+        z-index: 2;
+        display: inline-block;
+        margin: 0 0 5px 0;
+      }
+      .keyword > p {
+        display: inline-block;
+        font-size: 15px;
+        border-radius: 5px;
+        padding: 0 0.5px;
+        margin-left: 5px;
+        overflow: hidden;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 이용 날짜 -->
+    <h3>이용하신 날짜를 선택해주세요.</h3>
+
+    <input type="date" id="myDate" value="2023-07-22" />
+
+    <!-- <p>Click the button to get the date of the date field.</p> -->
+
+    <button onclick="myFunction()">선택한 날짜 출력</button>
+
+    <div class="demoP">
+      <p id="demo"></p>
+    </div>
+
+    <!-- 공연장 이름 & 좌석 번호 -->
+    <!-- 팝업으로 뜨는 경우 공연장 이름은 고정되게 설정 -->
+    <h3>느낌과 비슷한 키워드를 골라주세요.</h3>
+    <div class="keyword" style="width: 490px;">
+      <p class="sight" data-hover="시야가 탁 트였어요" style="background-color: skyblue;">
+        🔭시야가 탁 트였어요
+      </p>
+      <p class="face" data-hover="배우들의 얼굴이 잘보여요" style="background-color: burlywood;">
+        😊배우들의 얼굴이 잘보여요
+      </p>
+      <p class="money" data-hover="가격이 좀 비싸요" style="background-color: wheat;">💸가격이 좀 비싸요</p>
+      <p class="sound" data-hover="소리가 잘 들려요" style="background-color:cornflowerblue">🔊소리가 잘 들려요</p>
+      <p class="seatfeel" data-hover="좌석 간격이 넓어요" style="background-color: wheat;">🛷좌석 간격이 넓어요</p>
+    </div>
+    <h3 class="r1">상세한 느낌을 기록해주세요!</h2>
+    <div class="inputText">
+      <textarea
+        name="inputReview"
+        cols="30"
+        rows="10"
+        placeholder="좌석을 이용하면서 불편했던 점이나 좋았던 점을 입력해주세요."
+      ></textarea>
+    </div>
+    <button class="save" onclick="">등록</button>
+    <button class="close" onclick="win_close()">취소</button>
+    <script>
+      function reviewsave () {
+        
+      }
+      function myFunction() {
+        let x = document.getElementById("myDate").value;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </body>
+</html>

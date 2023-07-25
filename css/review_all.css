@@ -1,33 +1,13 @@
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-
 * {
   margin: 0;
   padding: 0;
 }
+html,
 body {
-  min-width: 390px;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
   font-family: "OTWelcomeRA";
-}
-header {
-  height: 50px;
-  background-color: #f2cb7e;
-  color: white;
-  border-bottom: 1px solid gray;
-}
-.menuBar {
-  display: flex;
-  flex-direction: row;
-  float: right;
-  align-items: center;
-}
-.menuBar span {
-  padding: 12px;
-  font-size: 18px;
-}
-.menuBar span:hover {
-  font-size: 20px;
-  font-weight: 800;
-  cursor: pointer;
 }
 main {
   margin: auto;
@@ -40,16 +20,6 @@ main {
   top: -10vw;
   left: 22vw;
   display: none;
-}
-.sign {
-  height: 100%;
-  padding: 12px;
-  font-size: 18px;
-  background-color: sandybrown;
-  color: white;
-  border-radius: 10%;
-  border-style: none;
-  cursor: pointer;
 }
 
 .fa-magnifying-glass {
@@ -84,8 +54,9 @@ main {
 }
 .ticketContents {
   background-color: var(--color-main-lighter);
+  min-height: 60vw;
   width: 75vw;
-  height: 80%;
+  height: 60vw;
   margin: 0 auto;
   overflow: auto;
   border-radius: 10px;
