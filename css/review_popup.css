@@ -11,7 +11,7 @@ button {
   cursor: pointer;
 }
 /* 전체적인 틀 */
-.modal {
+.modalpop {
   position: fixed;
   top: 0;
   left: 0;
@@ -22,7 +22,7 @@ button {
   align-items: center;
 }
 /* 팝업쪽을 제외한 나머지 부분 색설정 */
-.modal .bg {
+.modalpop .bg {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
@@ -30,6 +30,28 @@ button {
   background-size: 100%;
   filter: blur(5px); */
 }
+
+.modalpop2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 팝업쪽을 제외한 나머지 부분 색설정 */
+.modalpop2 .bg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* background-image: url(/img/vip_review_bg.gif);
+  background-size: 100%;
+  filter: blur(5px); */
+}
+
 /* 팝업창 설정 */
 /* 16px=1vw; */
 .modalBox {
@@ -85,12 +107,28 @@ button {
   flex-direction: column;
   align-items: center;
 }
+.review2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .review > img {
   width: 80%;
   height: 55%;
   margin: auto;
   border-radius: 10px;
 }
+
+.review2 > img {
+  width: 80%;
+  height: 55%;
+  margin: auto;
+  border-radius: 10px;
+}
+
 .review > p {
   height: 20%;
   margin: auto;
@@ -98,7 +136,18 @@ button {
   font-size: 1.3vw;
   overflow: auto;
 }
+.review2 > p {
+  height: 20%;
+  margin: auto;
+  padding: 5px;
+  font-size: 1.3vw;
+  overflow: auto;
+}
 .review > div {
+  margin: auto;
+  display: flex;
+}
+.review2 > div {
   margin: auto;
   display: flex;
 }
@@ -111,7 +160,19 @@ button {
   margin-left: 5px;
   overflow: hidden;
 }
+.review2 > div > p {
+  position: relative;
+  display: inline-block;
+  font-size: 0.8vw;
+  border-radius: 5px;
+  padding: 0 0.5vw;
+  margin-left: 5px;
+  overflow: hidden;
+}
 .review > h4 {
+  margin: auto;
+}
+.review2 > h4 {
   margin: auto;
 }
 .forBtn > button,
@@ -160,6 +221,9 @@ button {
   .review > div > p > .imo_text {
     display: none;
   }
+  .review2 > div > p > .imo_text {
+    display: none;
+  }
 }
 @media screen and (max-width: 860px) {
   .hovertext:hover:before {
@@ -180,6 +244,9 @@ button {
   .review > div > p {
     font-size: 1.3vw;
   }
+  .review2 > div > p {
+    font-size: 1.3vw;
+  }
 }
 
 @media screen and (max-width: 555px) {
@@ -192,6 +259,9 @@ button {
     height: 60vw;
   }
   .review > p {
+    font-size: 3vw;
+  }
+  .review2 > p {
     font-size: 3vw;
   }
 }
