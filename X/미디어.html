@@ -4,11 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/center.css" />
-    <link rel="stylesheet" href="/css/review_popup.css" />
-    <title>경기아트센터</title>
+    <title>Document</title>
   </head>
   <body>
-    <!-- 헤더의 메뉴 -->
     <header>
       <img src="/img/logo2.png" alt="팀 로고" class="mainlogo" />
       <div class="menuBar">
@@ -307,7 +305,7 @@
         <div class="seat" style="top: 165px; left: 423px"></div>
         <div class="seat" style="top: 165px; left: 434px"></div>
         <div class="seat" style="top: 165px; left: 445px"></div>
-        <div class="seat 1_b_6_num" style="top: 165px; left: 456px"></div>
+        <div class="seat" style="top: 165px; left: 456px"></div>
         <div class="seat" style="top: 165px; left: 467px"></div>
         <div class="seat" style="top: 165px; left: 478px"></div>
         <div class="seat" style="top: 165px; left: 489px"></div>
@@ -778,87 +776,5 @@
     <footer>
       <img src="/img/logo2.png" alt="팀 로고" class="mainlogo" />
     </footer>
-
-    <!-- 리뷰 팝업 시작 -->
-    <!-- 팝업창 구현 처음에는 hidden클래스를 통해 안보이는 상태-->
-    <div class="modalpop hidden">
-      <!-- bg클래스는 팝업창밖의 배경색 설정  -->
-      <div class="bg"></div>
-      <!-- 팝업창 -->
-      <div class="modalBox">
-        <!-- 닫기 버튼 -->
-        <button class="closeBtn">✖</button>
-        <div class="forBtn">
-          <button class="prev" disabled>&#10094;</button>
-          <div class="container">
-            <div class="list_reviews">
-              <div class="reviews">
-                <div class="review">
-                  <img src="/img/review_img_example04.jpg" alt="" />
-                  <h4>1층 B구역 8열 11번</h4>
-                  <p>
-                    최악의 자리입니다. 디스크가 있는 분들에게는 정말 고통스러운
-                    시간을 선사하는 자리입니다. 좋은 작품이 좌석때문에 망쳐졌다.
-                    시야만 좋은 자리다....
-                  </p>
-                  <div>
-                    <p class="space" data-hover="자리가 불편해요">
-                      <span title="자리가 불편해요">💺</span>
-                      <span class="imo_text">자리가 불편해요</span>
-                    </p>
-                    <p class="face" data-hover="배우들의 얼굴이 잘보여요">
-                      <span title="배우들의 얼굴이 잘보여요">😊</span
-                      ><span class="imo_text">배우들의 얼굴이 잘보여요</span>
-                    </p>
-                    <p class="money" data-hover="시야가 잘보여요">
-                      <span title="시야가 잘보여요">😮</span
-                      ><span class="imo_text">시야가 잘보여요</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="review hidden">
-                  <img src="/img/review_img_example03.jpg" alt="" />
-                  <h4>1층 B구역 8열 11번</h4>
-                  <p>
-                    사진처럼 전체적인 시야는 정말 눈에 잘들어옵니다. 하지만
-                    자리가 너무 좁아서 관람하는 동안 너무 불편했어요. 자리를
-                    넓히는 보수가 필요한 것 같아요!!
-                  </p>
-                  <div>
-                    <p class="space" data-hover="자리가 불편해요">
-                      <span title="자리가 불편해요">💺</span
-                      ><span class="imo_text">자리가 불편해요</span>
-                    </p>
-                    <p class="sight" data-hover="시야가 탁 트였어요">
-                      <span title="시야가 탁 트였어요">🔭</span
-                      ><span class="imo_text">시야가 탁 트였어요</span>
-                    </p>
-                    <p class="face" data-hover="배우들의 얼굴이 잘보여요">
-                      <span title="배우들의 얼굴이 잘보여요">😊</span
-                      ><span class="imo_text">배우들의 얼굴이 잘보여요</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="next">&#10095;</button>
-        </div>
-        <!-- 각 후기들 슬라이더를 통해 하나씩 볼 수 있게 설정하기 위한 클래스 -->
-      </div>
-    </div>
-    <div class="modal" style="display: none">
-      <h3>리뷰 등록</h3>
-      <textarea id="reviewInput" placeholder="리뷰를 작성해주세요"></textarea>
-      <button onclick="submitReview()">등록</button>
-      <button onclick="closeModal()">취소</button>
-    </div>
-    <div class="reviewModal" style="display: none">
-      <h3>리뷰</h3>
-      <p id="reviewContent"></p>
-      <button onclick="closeReviewModal()">닫기</button>
-    </div>
   </body>
-  <script src="./js/cookieCheck.js"></script>
-  <script src="./js/seatEvent.js"></script>
 </html>

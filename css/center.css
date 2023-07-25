@@ -1,0 +1,236 @@
+/* 휴먼범석체 */
+@font-face {
+  font-family: "Humanbumsuk";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Humanbumsuk.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 웰컴체 */
+@font-face {
+  font-family: "OTWelcomeRA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+/* KCC체 */
+@font-face {
+  font-family: "KCC-Ganpan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+/* 스위트 */
+@font-face {
+  font-family: "SUITE-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 미디어 쿼리 !!!*/
+/* 태블릿 버전 */
+@media screen and (min-width: 768px) {
+  th {
+    width: 14%;
+  }
+}
+/* 데스크탑 버전 */
+@media screen and (min-width: 1024px) {
+  .centerInfo {
+    margin-left: 10px;
+    padding-bottom: 10%;
+    height: 27vw;
+    max-height: 350px;
+  }
+  th {
+    width: 20%;
+  }
+  .ggartImg {
+    width: 410px;
+  }
+  .infoSection {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/* 일반 스타일 적용 width: 480px 기준으로 조정함*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-width: 480px;
+}
+header {
+  width: 100%;
+  height: 50px;
+  background-color: #ffc98b;
+  color: white;
+  font-family: "KCC-Ganpan";
+}
+.menuBar {
+  display: flex;
+  flex-direction: row;
+  float: right;
+}
+.mainlogo {
+  width: 70px;
+  height: 40px;
+  margin: 5px;
+}
+.menuBar span {
+  padding: 12px;
+  font-size: 1em;
+}
+.menuBar span:hover {
+  font-size: 1em;
+  font-weight: 800;
+  cursor: pointer;
+}
+/*공연장 정보 부분*/
+h2 {
+  font-family: "KCC-Ganpan";
+  font-size: 1.5em;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid gray;
+}
+section {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 20px;
+  /* display: flex; */
+}
+.centerImg {
+  width: 100%;
+  border-radius: 1.5%;
+}
+/*공연장 상세정보 테이블*/
+.centerInfo {
+  width: 100%;
+  font-family: "SUITE-Regular";
+  font-size: 1em;
+}
+th {
+  padding-right: 10px;
+}
+/*좌석 후기 찾아보기 문구*/
+.reviewSection {
+  display: flex;
+  flex-wrap: wrap;
+}
+.reviewP {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  font-size: 1em;
+  font-family: "SUITE-Regular";
+}
+
+/*좌석 레이아웃 시작!!!*/
+/* 좌석 배치도 구역 */
+.seatLayout {
+  width: 70%;
+  height: 600px;
+  background-color: rgb(247, 247, 241);
+  margin: 0 auto;
+  position: relative;
+  top: 5px;
+  overflow: scroll;
+  border-radius: 1.5%;
+  border: dashed 0.5px rgb(184, 182, 182);
+}
+/* 무대 div */
+.stage {
+  width: 600px;
+  height: 30px;
+  background-color: gray;
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 215px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+/* A~C 구역 안내 */
+.column {
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+  color: navy;
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 숫자열 안내 */
+.row {
+  width: 10px;
+  height: 10px;
+  font-size: 10px;
+  color: navy;
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 층수 안내 */
+.floor {
+  width: 30px;
+  height: 25px;
+  font-size: 20px;
+  color: white;
+  background-color: black;
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 좌석칸 */
+.seat {
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+  border: 1px solid black;
+  position: absolute;
+  overflow: hidden;
+  cursor: pointer;
+}
+/* 2층 구별선 */
+.stage2 {
+  width: 790px;
+  height: 5px;
+  background-color: gray;
+  position: absolute;
+  top: 300px;
+  left: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+footer {
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  background-color: #ffc98b;
+  color: white;
+  font-family: "KCC-Ganpan";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

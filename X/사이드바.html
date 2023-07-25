@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="사이드바.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="menu_btn">
+        <a href="#">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgNmgtMjR2LTRoMjR2NHptMCA0aC0yNHY0aDI0di00em0wIDhoLTI0djRoMjR2LTR6Ii8+PC9zdmc+"
+          />
+        </a>
+      </div>
+      <img src="/img/logo2.png" alt="팀 로고" class="mainlogo" />
+      <div class="menuBar">
+        <span>찾아보기</span>
+        <span>로그인</span>
+      </div>
+    </header>
+    <!-- <div class="header">
+       햄버거 모양 메뉴 부분
+      <div class="menu_btn">
+        <a href="#">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgNmgtMjR2LTRoMjR2NHptMCA0aC0yNHY0aDI0di00em0wIDhoLTI0djRoMjR2LTR6Ii8+PC9zdmc+"
+          />
+        </a>
+      </div>
+    </div> -->
+
+    <!--헤더 끝-->
+
+    <!-- 메뉴 백그라운드 -->
+    <div class="menu_bg"></div>
+
+    <!--햄버거 누른 후 요소들 -->
+    <div class="sidebar_menu">
+      <!--닫는 버튼-->
+      <div class="close_btn">
+        <a href="#">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjMuOTU0IDIxLjAzbC05LjE4NC05LjA5NSA5LjA5Mi05LjE3NC0yLjgzMi0yLjgwNy05LjA5IDkuMTc5LTkuMTc2LTkuMDg4LTIuODEgMi44MSA5LjE4NiA5LjEwNS05LjA5NSA5LjE4NCAyLjgxIDIuODEgOS4xMTItOS4xOTIgOS4xOCA5LjF6Ii8+PC9zdmc+"
+          />
+        </a>
+      </div>
+      <ul class="menu_wrap">
+        <li><a href="#">찾아보기</a></li>
+        <li><a href="#">로그인</a></li>
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $(".menu_btn>a").on("click", function () {
+          $(".menu_bg").show();
+          $(".sidebar_menu").show().animate({
+            right: 0,
+          });
+        });
+        $(".close_btn>a").on("click", function () {
+          $(".menu_bg").hide();
+          $(".sidebar_menu").animate(
+            {
+              right: "-" + 50 + "%",
+            },
+            function () {
+              $(".sidebar_menu").hide();
+            }
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
