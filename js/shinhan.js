@@ -100,9 +100,9 @@ for (let i = 1; i < Object.keys(count1).length + 1; i++) {
           create_text.style.left = 367 + "px";
         }
         if (i < 8) {
-          create_text.style.top = 83 - 5 * i + "px";
+          create_text.style.top = 90 - 3 * i + "px";
         } else {
-          create_text.style.top = 73 - 6.2 * (i - 8) + "px";
+          create_text.style.top = 98 - 2.5 * (i - 8) + "px";
         }
 
         list_row_1[j].after(create_text);
@@ -123,9 +123,9 @@ for (let i = 1; i < Object.keys(count1).length + 1; i++) {
           create_text2.style.left = 642 + "px";
         }
         if (i < 8) {
-          create_text2.style.top = 83 - 5 * i + "px";
+          create_text2.style.top = 90 - 3 * i + "px";
         } else {
-          create_text2.style.top = 73 - 6.2 * (i - 8) + "px";
+          create_text2.style.top = 98 - 2.5 * (i - 8) + "px";
         }
         list_row_1[j].after(create_text2);
       }
@@ -186,7 +186,7 @@ for (let i = 1; i < Object.keys(count2).length + 1; i++) {
         create_text3.style.fontSize = "3px";
         create_text3.style.position = "relative";
         create_text3.style.left = 370 + "px";
-        create_text3.style.top = 68 - 6 * i + "px";
+        create_text3.style.top = 145 - 3.5 * i + "px";
         if (i >= 10) {
           create_text3.style.left = 368 + "px";
         }
@@ -205,7 +205,7 @@ for (let i = 1; i < Object.keys(count2).length + 1; i++) {
         create_text3.style.fontSize = "3px";
         create_text3.style.position = "relative";
         create_text3.style.left = 650 + "px";
-        create_text3.style.top = 68 - 6 * i + "px";
+        create_text3.style.top = 145 - 3.5 * i + "px";
         if (i >= 10) {
           create_text3.style.left = 642 + "px";
         }
@@ -224,12 +224,14 @@ for (let i = 1; i < Object.keys(count2).length + 1; i++) {
   }
 }
 
-let seats = document.querySelectorAll(".seat");
-for (let i = 0; i < seats.length; i++) {
-  seats[i].setAttribute("id", `seat_${i}`);
+let seats2 = document.querySelectorAll(".seat");
+for (let i = 0; i < seats2.length; i++) {
+  seats2[i].setAttribute("id", `seat_${i}`);
 }
 
 let seats_already1 = document.querySelector("#seat_117");
 seats_already1.classList.add("alreadyReview");
+seats_already1.style.backgroundColor = "orange";
 let seats_already2 = document.querySelector("#seat_964");
+seats_already2.style.backgroundColor = "orange";
 seats_already2.classList.add("alreadyReview");

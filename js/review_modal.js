@@ -3,6 +3,7 @@ let postion = 0;
 let now = 0;
 //배경
 let bg = document.querySelector(".bg");
+let bg2 = document.querySelector(".bg2");
 //review 클래스를 가진 div 태그들 모두 배열에 담기
 let list = document.querySelectorAll(".review");
 //팝업 열음 함수
@@ -92,7 +93,7 @@ document.querySelector(".closeBtn2").addEventListener("click", close2);
 
 // 팝업이 아닌 배경 선택시 닫힘(close함수 실행)
 document.querySelector(".bg").addEventListener("click", close);
-document.querySelector(".bg").addEventListener("click", close2);
+document.querySelector(".bg2").addEventListener("click", close2);
 
 // 팝업에서 이전 버튼 클릭했을때
 document.querySelector(".prev").addEventListener("click", prev);

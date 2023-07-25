@@ -30,6 +30,14 @@ button {
   background-size: 100%;
   filter: blur(5px); */
 }
+.bg2 {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* background-image: url(/img/vip_review_bg.gif);
+  background-size: 100%;
+  filter: blur(5px); */
+}
 
 .modalpop2 {
   position: fixed;
@@ -40,16 +48,6 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* 팝업쪽을 제외한 나머지 부분 색설정 */
-.modalpop2 .bg {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  /* background-image: url(/img/vip_review_bg.gif);
-  background-size: 100%;
-  filter: blur(5px); */
 }
 
 /* 팝업창 설정 */
