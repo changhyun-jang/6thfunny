@@ -49,8 +49,9 @@ function addLS(seatNum, seatContent) {
 
 function checkLocalStroage() {
   for (let i = 0; i < localStorage.length; i++) {
-    if (localStorage.key(i) === "__mantle_tile_meta_data") continue;
     let key = localStorage.key(i);
+    let check = key.split("_")[2];
+    if (key === "__mantle_tile_meta_data" || check === "g") continue;
     let seatNum = localStorage.getItem(key);
     let index = key.split("_")[1];
 
