@@ -43,7 +43,7 @@ function closeModal() {
 }
 
 function addLS(seatNum, seatContent) {
-  localStorage.setItem(`${seatNum}_g`, seatNum);
+  localStorage.setItem(`${seatNum}_s`, seatNum);
   localStorage.setItem(`${seatNum}_c`, seatContent);
 }
 
