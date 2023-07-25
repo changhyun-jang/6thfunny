@@ -12,7 +12,7 @@ seats.forEach((seat) => {
       seatId = this.getAttribute("id");
 
       if (this.classList.contains("reviewed")) {
-        openReviewModal(seatId);
+        openReviewModal(`${seatId}_g`);
       } else {
         openModal();
       }
@@ -43,19 +43,21 @@ function closeModal() {
 }
 
 function addLS(seatNum, seatContent) {
-  localStorage.setItem(`${seatNum}_g`, seatNum);
-  localStorage.setItem(`${seatNum}_g_c`, seatContent);
+  localStorage.setItem(
+    `${seatNum}_g`,
+    JSON.stringify(new SeatObj(seatNum, seatContent))
+  );
 }
 
 function checkLocalStroage() {
   for (let i = 0; i < localStorage.length; i++) {
     let key = localStorage.key(i);
+    let seatObj = JSON.parse(localStorage.getItem(key));
     let check = key.split("_")[2];
-    if (key !== "__mantle_tile_meta_data" && check !== "s") {
-      let seatNum = localStorage.getItem(key);
-      let index = key.split("_")[1];
 
-      seats[index].classList.add("reviewed");
+    if (key !== "__mantle_tile_meta_data" && check !== "s") {
+      let seatNum = seatObj.objNumber.split("_")[1];
+      seats[seatNum].classList.add("reviewed");
     }
   }
 }
@@ -65,7 +67,7 @@ function openReviewModal(seatId) {
   const reviewModal = document.querySelector(".reviewModal");
   reviewModal.style.display = "block";
 
-  let content = localStorage.getItem(`${seatId}_g_c`);
+  let content = JSON.parse(localStorage.getItem(seatId)).objContent;
 
   const reviewContent = document.getElementById("reviewContent");
   reviewContent.innerText = content;
@@ -75,4 +77,9 @@ function openReviewModal(seatId) {
 function closeReviewModal() {
   const reviewModal = document.querySelector(".reviewModal");
   reviewModal.style.display = "none";
+}
+
+function SeatObj(objNumber, objContent) {
+  this.objNumber = objNumber;
+  this.objContent = objContent;
 }
