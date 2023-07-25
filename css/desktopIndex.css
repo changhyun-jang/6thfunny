@@ -22,13 +22,18 @@
 }
 
 .logoarea {
-  background-color: var(--color-main-light);
+  /* background-color: var(--color-main-light); */
   width: 50vw;
   height: 30vw;
   border-radius: 30px;
   margin: 0 auto;
 }
 
+#ttaLogo {
+  width: 45vw;
+  height: 25vw;
+  margin: 0 auto;
+}
 .select {
   display: flex;
   margin: 20px 0px;

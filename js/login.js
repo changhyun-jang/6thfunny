@@ -4,9 +4,6 @@ submitLogin.addEventListener("click", function () {
   let id = document.getElementById("inputId").value;
   let pwd = document.getElementById("inputPwd").value;
 
-  let idCheck = false;
-  let pwdCheck = false;
-
   let encodeId = aes256Encode(aes256SecretKey, "", id);
   let encodePwd = aes256Encode(aes256SecretKey, "", pwd);
 
