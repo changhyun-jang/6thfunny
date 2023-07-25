@@ -24,11 +24,14 @@ seats.forEach((seat) => {
 function submitReview() {
   const reviewInput = document.getElementById("reviewInput");
   const review = reviewInput.value;
+  if (review !== "") {
+    addLS(seatId, review);
 
-  addLS(seatId, review);
-
-  closeModal();
-  location.reload();
+    closeModal();
+    location.reload();
+  } else {
+    alert("내용을 입력해주세요.");
+  }
 }
 
 function openModal() {
