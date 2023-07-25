@@ -2,6 +2,35 @@
   margin: 0;
   padding: 0;
 }
+header {
+  height: 50px;
+  background-color: #f2cb7e;
+  color: white;
+  border-bottom: 1px solid gray;
+}
+.menuBar {
+  display: flex;
+  flex-direction: row;
+  float: right;
+}
+.menuBar span {
+  padding: 12px;
+  font-size: 18px;
+}
+.menuBar span:hover {
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.sign {
+  padding: 12px;
+  font-size: 18px;
+  background-color: sandybrown;
+  color: white;
+  border-radius: 10%;
+  border-style: none;
+  cursor: pointer;
+}
 h2 {
   width: 70%;
   margin: auto;
@@ -13,14 +42,18 @@ Section {
   width: 70%;
   margin: auto;
   margin-top: 20px;
-  display: flex;
+  /* display: flex; */
+}
+.ggartImg {
+  width: 100%;
 }
 .centerInfo {
-  margin-left: 10px;
+  width: 100%;
+  font-size: 2vw;
 }
-th {
+/* th {
   padding: 5px;
-}
+} */
 td {
   padding: 5px;
 }

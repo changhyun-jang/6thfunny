@@ -7,21 +7,21 @@ submitLogin.addEventListener("click", function () {
   let idCheck = false;
   let pwdCheck = false;
   let cookieArr = document.cookie.split("; ");
-  for (let ck of cookieArr) {
-    let ckArr = ck.split("=");
 
-    if (ckArr[0] == "userid" && ckArr[1] == id) {
-      idCheck = true;
-    }
+  if (
+    sessionStorage.getItem("userid") === id &&
+    sessionStorage.getItem("userpwd") === pwd
+  ) {
+    let name = sessionStorage.getItem("name");
+    let date = new Date();
+    date.setDate(date.getDate() + 1);
+    document.cookie = `userid=${id}; expires=${date.toUTCString()}`;
+    document.cookie = `password=${pwd}; expires=${date.toUTCString()}`;
+    document.cookie = `name=${encodeURIComponent(
+      name
+    )}; expires=${date.toUTCString()}`;
 
-    if (ckArr[0] == "password" && ckArr[1] == pwd) {
-      pwdCheck = true;
-    }
-  }
-
-  if (idCheck && pwdCheck) {
     location.reload();
-    console.log("로그인 성공");
   } else {
     alert("잘못된 아이디/비밀번호 입니다.");
   }
@@ -45,15 +45,25 @@ window.onload = function () {
     }
 
     if (idx[0] == "name") {
-      name = idx[1];
+      name = decodeURIComponent(idx[1]);
     }
   }
-  console.log(name);
   if (idCheck && pwdCheck) {
-    console.log("asdasd");
     loginBtn.removeEventListener("click", login);
+    loginBtn.addEventListener("click", logout);
     gotoSignup.removeEventListener("click", signUp);
     loginBtn.innerText = "로그아웃";
     gotoSignup.innerText = `${name}님`;
+  } else {
+    loginBtn.addEventListener("click", login);
   }
+};
+
+/* 로그아웃 */
+let logout = function () {
+  document.cookie = "userid=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+  document.cookie = "password=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+  document.cookie = "name=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+  location.reload();
 };

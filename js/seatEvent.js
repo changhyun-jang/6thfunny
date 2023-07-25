@@ -49,25 +49,16 @@ function addLS(seatNum, seatContent) {
 }
 
 function checkLocalStroage() {
-  if (localStorage.length >= 2) {
-    for (let i = 0; i < localStorage.length; i++) {
-      if (localStorage.key(i) === "__mantle_tile_meta_data") continue;
-      let key = localStorage.key(i);
-      let seatNum = localStorage.getItem(key);
-      console.log(key);
-      let index = key.split("_")[1];
+  for (let i = 0; i < localStorage.length; i++) {
+    if (localStorage.key(i) === "__mantle_tile_meta_data") continue;
+    let key = localStorage.key(i);
+    let seatNum = localStorage.getItem(key);
+    console.log(key);
+    let index = key.split("_")[1];
 
-      seats[index].classList.add("reviewed");
-    }
+    seats[index].classList.add("reviewed");
   }
 }
-
-// let fileInput = document.getElementById("fileUpload");
-// fileInput.onchange = function (e) {
-//   let files = e.target.files;
-//   console.log(files);
-//   console.log(files[0]);
-// };
 
 //리뷰 보기 모달창 열기
 function openReviewModal(seatId) {

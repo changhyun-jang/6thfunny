@@ -3,10 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/ggart.css" />
-    <link rel="stylesheet" href="/css/seat_review.css" />
-    <link rel="stylesheet" href="css/review_popup.css" />
-    <title>경기아트센터</title>
+    <link rel="stylesheet" href="/X/ggartX.css" />
+    <link rel="stylesheet" href="/X/seatX.css" />
+    <link rel="stylesheet" href="/css/review_popup.css" />
+    <style>
+      @media screen and (min-width: 768px) {
+        section {
+          display: flex;
+        }
+        .centerInfo {
+          margin-left: 10px;
+        }
+        th {
+          padding: 5px;
+        }
+        .ggartImg {
+          width: 410px;
+        }
+        .centerInfo {
+          font-size: 1vw;
+        }
+      }
+    </style>
+    <title>경기아트센터 미디어쿼리용</title>
   </head>
   <body>
     <!-- 헤더의 메뉴 -->
@@ -20,7 +39,41 @@
     <h2>공연장 정보</h2>
     <section class="infoSection">
       <div class="infoLeft">
- <h2>공연장 정보</h2>
+        <img src="/img/ggartcenter.jpg" alt="경기아트센터" class="ggartImg" />
+      </div>
+      <div class="infoRight">
+        <table class="centerInfo">
+          <tr>
+            <th>공연장명</th>
+            <td>경기아트센터 - 소극장</td>
+          </tr>
+          <tr>
+            <th>주소안내</th>
+            <td>
+              경기도 수원시 팔달구 효원로 307번길 20(인계동) 경기아트센터 (우
+              16488)
+            </td>
+          </tr>
+          <tr>
+            <th>홈페이지</th>
+            <td><a href="http://www.ggac.or.kr/">http://www.ggac.or.kr/</a></td>
+          </tr>
+          <tr>
+            <th>전화번호</th>
+            <td><a href="tel:031-230-3200">031-230-3200</a></td>
+          </tr>
+          <tr>
+            <th>좌석안내</th>
+            <td>502석 (1층 301석, 2층 195석, 장애인석 6석)</td>
+          </tr>
+          <tr>
+            <th>주차안내</th>
+            <td>유료 주차장 보유 / 관람객 할인 적용</td>
+          </tr>
+          <tr>
+            <th>편의시설</th>
+            <td>장애인 이용 시설, 유아 시설, 카페 마련</td>
+          </tr>
         </table>
       </div>
     </section>
@@ -28,18 +81,21 @@
     <h2>좌석 후기 찾아보기</h2>
     <section class="reviewSection">
       <p class="reviewP">
- <h2>좌석 후기 찾아보기</h2>
+        <strong>TIP!</strong> 주황색 좌석을 누르면 이용객의
+        <strong>생생한 후기</strong>를 확인할 수 있어요👀
         <button class="reviewBu">후기 작성하기✍</button>
       </p>
     </section>
     <!-- 좌석 배치도 부분 시작 -->
     <div class="seatLayout">
       <div class="seatView">
-        <div class="stage">무대</div>
         <div class="stage"><strong>무대</strong></div>
         <!-- A~C 구역 div -->
         <div class="column" style="top: 65px; left: 220px">
           <strong>A</strong>
+        </div>
+        <div class="column" style="top: 65px; left: 505px">
+          <strong>B</strong>
         </div>
         <div class="column" style="top: 65px; left: 799px">
           <strong>C</strong>
@@ -61,22 +117,33 @@
         <!-- 1층 A구역 1열 -->
         <div class="seat" style="top: 90px; left: 201px"></div>
         <div class="seat" style="top: 90px; left: 212px"></div>
-          <div clss="seat" style="top: 90px; left: 500px"
-          title="B구역 1열 6번"
-        ></div>
+        <div class="seat" style="top: 90px; left: 223px"></div>
+        <div class="seat" style="top: 90px; left: 234px"></div>
+        <div class="seat" style="top: 90px; left: 245px"></div>
+        <!-- 1층 B구역 1열 -->
+        <div class="seat" style="top: 90px; left: 445px"></div>
+        <div class="seat" style="top: 90px; left: 456px"></div>
+        <div class="seat" style="top: 90px; left: 467px"></div>
+        <div class="seat" style="top: 90px; left: 478px"></div>
+        <div class="seat" style="top: 90px; left: 489px"></div>
         <div
           class="seat"
-          style="top: 90px; left: 511px; background-color: orange"
-          title="B구역 1열 7번: 1건"
+          style="top: 90px; left: 500px"
+          title="B구역 1열 6번"
         ></div>
         <div class="seat" style="top: 90px; left: 511px"></div>
         <div class="seat" style="top: 90px; left: 522px"></div>
         <div class="seat" style="top: 90px; left: 533px"></div>
         <div class="seat" style="top: 90px; left: 544px"></div>
+        <div class="seat" style="top: 90px; left: 555px"></div>
+        <div class="seat" style="top: 90px; left: 566px"></div>
+        <div class="seat" style="top: 90px; left: 577px"></div>
+        <!-- 1층 C구역 1열 -->
+        <div class="seat" style="top: 90px; left: 777px"></div>
+        <div class="seat" style="top: 90px; left: 788px"></div>
         <div class="seat" style="top: 90px; left: 799px"></div>
         <div class="seat" style="top: 90px; left: 810px"></div>
         <div class="seat" style="top: 90px; left: 821px"></div>
-
         <!-- 1층 2열 시작 -->
         <div class="row" style="top: 105px; left: 330px">
           <strong>2</strong>
@@ -87,6 +154,29 @@
         <!-- 1층 A구역 2열 -->
         <div class="seat" style="top: 105px; left: 190px"></div>
         <div class="seat" style="top: 105px; left: 201px"></div>
+        <div class="seat" style="top: 105px; left: 212px"></div>
+        <div class="seat" style="top: 105px; left: 223px"></div>
+        <div class="seat" style="top: 105px; left: 234px"></div>
+        <div class="seat" style="top: 105px; left: 245px"></div>
+        <!-- 1층 B구역 2열 -->
+        <div class="seat" style="top: 105px; left: 434px"></div>
+        <div class="seat" style="top: 105px; left: 445px"></div>
+        <div class="seat" style="top: 105px; left: 456px"></div>
+        <div class="seat" style="top: 105px; left: 467px"></div>
+        <div class="seat" style="top: 105px; left: 478px"></div>
+        <div class="seat" style="top: 105px; left: 489px"></div>
+        <div class="seat" style="top: 105px; left: 500px"></div>
+        <div class="seat" style="top: 105px; left: 511px"></div>
+        <div class="seat" style="top: 105px; left: 522px"></div>
+        <div class="seat" style="top: 105px; left: 533px"></div>
+        <div class="seat" style="top: 105px; left: 544px"></div>
+        <div class="seat" style="top: 105px; left: 555px"></div>
+        <div class="seat" style="top: 105px; left: 566px"></div>
+        <div class="seat" style="top: 105px; left: 577px"></div>
+        <!-- 1층 C구역 2열 -->
+        <div class="seat" style="top: 105px; left: 777px"></div>
+        <div class="seat" style="top: 105px; left: 788px"></div>
+        <div class="seat" style="top: 105px; left: 799px"></div>
         <div class="seat" style="top: 105px; left: 810px"></div>
         <div class="seat" style="top: 105px; left: 821px"></div>
         <div class="seat" style="top: 105px; left: 832px"></div>
@@ -100,6 +190,32 @@
         <!-- 1층 A구역 3열 -->
         <div class="seat" style="top: 120px; left: 179px"></div>
         <div class="seat" style="top: 120px; left: 190px"></div>
+        <div class="seat" style="top: 120px; left: 201px"></div>
+        <div class="seat" style="top: 120px; left: 212px"></div>
+        <div class="seat" style="top: 120px; left: 223px"></div>
+        <div class="seat" style="top: 120px; left: 234px"></div>
+        <div class="seat" style="top: 120px; left: 245px"></div>
+        <!-- 1층 B구역 3열 -->
+        <div class="seat" style="top: 120px; left: 434px"></div>
+        <div class="seat" style="top: 120px; left: 445px"></div>
+        <div class="seat" style="top: 120px; left: 456px"></div>
+        <div class="seat" style="top: 120px; left: 467px"></div>
+        <div class="seat" style="top: 120px; left: 478px"></div>
+        <div class="seat" style="top: 120px; left: 489px"></div>
+        <div class="seat" style="top: 120px; left: 500px"></div>
+        <div class="seat" style="top: 120px; left: 511px"></div>
+        <div class="seat" style="top: 120px; left: 522px"></div>
+        <div class="seat" style="top: 120px; left: 533px"></div>
+        <div class="seat" style="top: 120px; left: 544px"></div>
+        <div class="seat" style="top: 120px; left: 555px"></div>
+        <div class="seat" style="top: 120px; left: 566px"></div>
+        <div class="seat" style="top: 120px; left: 577px"></div>
+        <div class="seat" style="top: 120px; left: 588px"></div>
+        <!-- 1층 C구역 3열 -->
+        <div class="seat" style="top: 120px; left: 777px"></div>
+        <div class="seat" style="top: 120px; left: 788px"></div>
+        <div class="seat" style="top: 120px; left: 799px"></div>
+        <div class="seat" style="top: 120px; left: 810px"></div>
         <div class="seat" style="top: 120px; left: 821px"></div>
         <div class="seat" style="top: 120px; left: 832px"></div>
         <div class="seat" style="top: 120px; left: 843px"></div>
@@ -113,6 +229,35 @@
         <!-- 1층 A구역 4열 -->
         <div class="seat" style="top: 135px; left: 168px"></div>
         <div class="seat" style="top: 135px; left: 179px"></div>
+        <div class="seat" style="top: 135px; left: 190px"></div>
+        <div class="seat" style="top: 135px; left: 201px"></div>
+        <div class="seat" style="top: 135px; left: 212px"></div>
+        <div class="seat" style="top: 135px; left: 223px"></div>
+        <div class="seat" style="top: 135px; left: 234px"></div>
+        <div class="seat" style="top: 135px; left: 245px"></div>
+        <!-- 1층 B구역 4열 -->
+        <div class="seat" style="top: 135px; left: 423px"></div>
+        <div class="seat" style="top: 135px; left: 434px"></div>
+        <div class="seat" style="top: 135px; left: 445px"></div>
+        <div class="seat" style="top: 135px; left: 456px"></div>
+        <div class="seat" style="top: 135px; left: 467px"></div>
+        <div class="seat" style="top: 135px; left: 478px"></div>
+        <div class="seat" style="top: 135px; left: 489px"></div>
+        <div class="seat" style="top: 135px; left: 500px"></div>
+        <div class="seat" style="top: 135px; left: 511px"></div>
+        <div class="seat" style="top: 135px; left: 522px"></div>
+        <div class="seat" style="top: 135px; left: 533px"></div>
+        <div class="seat" style="top: 135px; left: 544px"></div>
+        <div class="seat" style="top: 135px; left: 555px"></div>
+        <div class="seat" style="top: 135px; left: 566px"></div>
+        <div class="seat" style="top: 135px; left: 577px"></div>
+        <div class="seat" style="top: 135px; left: 588px"></div>
+        <!-- 1층 C구역 4열 -->
+        <div class="seat" style="top: 135px; left: 777px"></div>
+        <div class="seat" style="top: 135px; left: 788px"></div>
+        <div class="seat" style="top: 135px; left: 799px"></div>
+        <div class="seat" style="top: 135px; left: 810px"></div>
+        <div class="seat" style="top: 135px; left: 821px"></div>
         <div class="seat" style="top: 135px; left: 832px"></div>
         <div class="seat" style="top: 135px; left: 843px"></div>
         <div class="seat" style="top: 135px; left: 854px"></div>
@@ -126,6 +271,36 @@
         <!-- 1층 A구역 5열 -->
         <div class="seat" style="top: 150px; left: 168px"></div>
         <div class="seat" style="top: 150px; left: 179px"></div>
+        <div class="seat" style="top: 150px; left: 190px"></div>
+        <div class="seat" style="top: 150px; left: 201px"></div>
+        <div class="seat" style="top: 150px; left: 212px"></div>
+        <div class="seat" style="top: 150px; left: 223px"></div>
+        <div class="seat" style="top: 150px; left: 234px"></div>
+        <div class="seat" style="top: 150px; left: 245px"></div>
+        <!-- 1층 B구역 5열 -->
+        <div class="seat" style="top: 150px; left: 423px"></div>
+        <div class="seat" style="top: 150px; left: 434px"></div>
+        <div class="seat" style="top: 150px; left: 445px"></div>
+        <div class="seat" style="top: 150px; left: 456px"></div>
+        <div class="seat" style="top: 150px; left: 467px"></div>
+        <div class="seat" style="top: 150px; left: 478px"></div>
+        <div class="seat" style="top: 150px; left: 489px"></div>
+        <div class="seat" style="top: 150px; left: 500px"></div>
+        <div class="seat" style="top: 150px; left: 511px"></div>
+        <div class="seat" style="top: 150px; left: 522px"></div>
+        <div class="seat" style="top: 150px; left: 533px"></div>
+        <div class="seat" style="top: 150px; left: 544px"></div>
+        <div class="seat" style="top: 150px; left: 555px"></div>
+        <div class="seat" style="top: 150px; left: 566px"></div>
+        <div class="seat" style="top: 150px; left: 577px"></div>
+        <div class="seat" style="top: 150px; left: 588px"></div>
+        <div class="seat" style="top: 150px; left: 599px"></div>
+        <!-- 1층 C구역 5열 -->
+        <div class="seat" style="top: 150px; left: 777px"></div>
+        <div class="seat" style="top: 150px; left: 788px"></div>
+        <div class="seat" style="top: 150px; left: 799px"></div>
+        <div class="seat" style="top: 150px; left: 810px"></div>
+        <div class="seat" style="top: 150px; left: 821px"></div>
         <div class="seat" style="top: 150px; left: 832px"></div>
         <div class="seat" style="top: 150px; left: 843px"></div>
         <div class="seat" style="top: 150px; left: 854px"></div>
@@ -139,6 +314,37 @@
         <!-- 1층 A구역 6열 -->
         <div class="seat" style="top: 165px; left: 168px"></div>
         <div class="seat" style="top: 165px; left: 179px"></div>
+        <div class="seat" style="top: 165px; left: 190px"></div>
+        <div class="seat" style="top: 165px; left: 201px"></div>
+        <div class="seat" style="top: 165px; left: 212px"></div>
+        <div class="seat" style="top: 165px; left: 223px"></div>
+        <div class="seat" style="top: 165px; left: 234px"></div>
+        <div class="seat" style="top: 165px; left: 245px"></div>
+        <!-- 1층 B구역 6열 -->
+        <div class="seat" style="top: 165px; left: 412px"></div>
+        <div class="seat" style="top: 165px; left: 423px"></div>
+        <div class="seat" style="top: 165px; left: 434px"></div>
+        <div class="seat" style="top: 165px; left: 445px"></div>
+        <div class="seat 1_b_6_num" style="top: 165px; left: 456px"></div>
+        <div class="seat" style="top: 165px; left: 467px"></div>
+        <div class="seat" style="top: 165px; left: 478px"></div>
+        <div class="seat" style="top: 165px; left: 489px"></div>
+        <div class="seat" style="top: 165px; left: 500px"></div>
+        <div class="seat" style="top: 165px; left: 511px"></div>
+        <div class="seat" style="top: 165px; left: 522px"></div>
+        <div class="seat" style="top: 165px; left: 533px"></div>
+        <div class="seat" style="top: 165px; left: 544px"></div>
+        <div class="seat" style="top: 165px; left: 555px"></div>
+        <div class="seat" style="top: 165px; left: 566px"></div>
+        <div class="seat" style="top: 165px; left: 577px"></div>
+        <div class="seat" style="top: 165px; left: 588px"></div>
+        <div class="seat" style="top: 165px; left: 599px"></div>
+        <!-- 1층 C구역 6열 -->
+        <div class="seat" style="top: 165px; left: 777px"></div>
+        <div class="seat" style="top: 165px; left: 788px"></div>
+        <div class="seat" style="top: 165px; left: 799px"></div>
+        <div class="seat" style="top: 165px; left: 810px"></div>
+        <div class="seat" style="top: 165px; left: 821px"></div>
         <div class="seat" style="top: 165px; left: 832px"></div>
         <div class="seat" style="top: 165px; left: 843px"></div>
         <div class="seat" style="top: 165px; left: 854px"></div>
@@ -152,6 +358,38 @@
         <!-- 1층 A구역 7열 -->
         <div class="seat" style="top: 180px; left: 168px"></div>
         <div class="seat" style="top: 180px; left: 179px"></div>
+        <div class="seat" style="top: 180px; left: 190px"></div>
+        <div class="seat" style="top: 180px; left: 201px"></div>
+        <div class="seat" style="top: 180px; left: 212px"></div>
+        <div class="seat" style="top: 180px; left: 223px"></div>
+        <div class="seat" style="top: 180px; left: 234px"></div>
+        <div class="seat" style="top: 180px; left: 245px"></div>
+        <!-- 1층 B구역 7열 -->
+        <div class="seat" style="top: 180px; left: 412px"></div>
+        <div class="seat" style="top: 180px; left: 423px"></div>
+        <div class="seat" style="top: 180px; left: 434px"></div>
+        <div class="seat" style="top: 180px; left: 445px"></div>
+        <div class="seat" style="top: 180px; left: 456px"></div>
+        <div class="seat" style="top: 180px; left: 467px"></div>
+        <div class="seat" style="top: 180px; left: 478px"></div>
+        <div class="seat" style="top: 180px; left: 489px"></div>
+        <div class="seat" style="top: 180px; left: 500px"></div>
+        <div class="seat" style="top: 180px; left: 511px"></div>
+        <div class="seat" style="top: 180px; left: 522px"></div>
+        <div class="seat" style="top: 180px; left: 533px"></div>
+        <div class="seat" style="top: 180px; left: 544px"></div>
+        <div class="seat" style="top: 180px; left: 555px"></div>
+        <div class="seat" style="top: 180px; left: 566px"></div>
+        <div class="seat" style="top: 180px; left: 577px"></div>
+        <div class="seat" style="top: 180px; left: 588px"></div>
+        <div class="seat" style="top: 180px; left: 599px"></div>
+        <div class="seat" style="top: 180px; left: 610px"></div>
+        <!-- 1층 C구역 7열 -->
+        <div class="seat" style="top: 180px; left: 777px"></div>
+        <div class="seat" style="top: 180px; left: 788px"></div>
+        <div class="seat" style="top: 180px; left: 799px"></div>
+        <div class="seat" style="top: 180px; left: 810px"></div>
+        <div class="seat" style="top: 180px; left: 821px"></div>
         <div class="seat" style="top: 180px; left: 832px"></div>
         <div class="seat" style="top: 180px; left: 843px"></div>
         <div class="seat" style="top: 180px; left: 854px"></div>
@@ -165,10 +403,23 @@
         <!-- 1층 A구역 8열 -->
         <div class="seat" style="top: 195px; left: 168px"></div>
         <div class="seat" style="top: 195px; left: 179px"></div>
+        <div class="seat" style="top: 195px; left: 190px"></div>
+        <div class="seat" style="top: 195px; left: 201px"></div>
+        <div class="seat" style="top: 195px; left: 212px"></div>
+        <div class="seat" style="top: 195px; left: 223px"></div>
+        <div class="seat" style="top: 195px; left: 234px"></div>
+        <div class="seat" style="top: 195px; left: 245px"></div>
+        <!-- 1층 B구역 8열 -->
+        <div class="seat" style="top: 195px; left: 401px"></div>
+        <div class="seat" style="top: 195px; left: 412px"></div>
+        <div class="seat" style="top: 195px; left: 423px"></div>
+        <div class="seat" style="top: 195px; left: 434px"></div>
+        <div class="seat" style="top: 195px; left: 445px"></div>
+        <div class="seat" style="top: 195px; left: 456px"></div>
+        <div class="seat" style="top: 195px; left: 467px"></div>
         <div class="seat" style="top: 195px; left: 478px"></div>
         <div class="seat" style="top: 195px; left: 489px"></div>
         <div class="seat" style="top: 195px; left: 500px"></div>
-        <div class="seat" style="top: 195px; left: 511px"></div>
         <div
           class="seat openBtn"
           style="top: 195px; left: 511px; background-color: orange"
@@ -177,6 +428,18 @@
         <div class="seat" style="top: 195px; left: 522px"></div>
         <div class="seat" style="top: 195px; left: 533px"></div>
         <div class="seat" style="top: 195px; left: 544px"></div>
+        <div class="seat" style="top: 195px; left: 555px"></div>
+        <div class="seat" style="top: 195px; left: 566px"></div>
+        <div class="seat" style="top: 195px; left: 577px"></div>
+        <div class="seat" style="top: 195px; left: 588px"></div>
+        <div class="seat" style="top: 195px; left: 599px"></div>
+        <div class="seat" style="top: 195px; left: 610px"></div>
+        <!-- 1층 C구역 8열 -->
+        <div class="seat" style="top: 195px; left: 777px"></div>
+        <div class="seat" style="top: 195px; left: 788px"></div>
+        <div class="seat" style="top: 195px; left: 799px"></div>
+        <div class="seat" style="top: 195px; left: 810px"></div>
+        <div class="seat" style="top: 195px; left: 821px"></div>
         <div class="seat" style="top: 195px; left: 832px"></div>
         <div class="seat" style="top: 195px; left: 843px"></div>
         <div class="seat" style="top: 195px; left: 854px"></div>
@@ -190,6 +453,40 @@
         <!-- 1층 A구역 9열 -->
         <div class="seat" style="top: 210px; left: 168px"></div>
         <div class="seat" style="top: 210px; left: 179px"></div>
+        <div class="seat" style="top: 210px; left: 190px"></div>
+        <div class="seat" style="top: 210px; left: 201px"></div>
+        <div class="seat" style="top: 210px; left: 212px"></div>
+        <div class="seat" style="top: 210px; left: 223px"></div>
+        <div class="seat" style="top: 210px; left: 234px"></div>
+        <div class="seat" style="top: 210px; left: 245px"></div>
+        <!-- 1층 B구역 9열 -->
+        <div class="seat" style="top: 210px; left: 401px"></div>
+        <div class="seat" style="top: 210px; left: 412px"></div>
+        <div class="seat" style="top: 210px; left: 423px"></div>
+        <div class="seat" style="top: 210px; left: 434px"></div>
+        <div class="seat" style="top: 210px; left: 445px"></div>
+        <div class="seat" style="top: 210px; left: 456px"></div>
+        <div class="seat" style="top: 210px; left: 467px"></div>
+        <div class="seat" style="top: 210px; left: 478px"></div>
+        <div class="seat" style="top: 210px; left: 489px"></div>
+        <div class="seat" style="top: 210px; left: 500px"></div>
+        <div class="seat" style="top: 210px; left: 511px"></div>
+        <div class="seat" style="top: 210px; left: 522px"></div>
+        <div class="seat" style="top: 210px; left: 533px"></div>
+        <div class="seat" style="top: 210px; left: 544px"></div>
+        <div class="seat" style="top: 210px; left: 555px"></div>
+        <div class="seat" style="top: 210px; left: 566px"></div>
+        <div class="seat" style="top: 210px; left: 577px"></div>
+        <div class="seat" style="top: 210px; left: 588px"></div>
+        <div class="seat" style="top: 210px; left: 599px"></div>
+        <div class="seat" style="top: 210px; left: 610px"></div>
+        <div class="seat" style="top: 210px; left: 621px"></div>
+        <!-- 1층 C구역 9열 -->
+        <div class="seat" style="top: 210px; left: 777px"></div>
+        <div class="seat" style="top: 210px; left: 788px"></div>
+        <div class="seat" style="top: 210px; left: 799px"></div>
+        <div class="seat" style="top: 210px; left: 810px"></div>
+        <div class="seat" style="top: 210px; left: 821px"></div>
         <div class="seat" style="top: 210px; left: 832px"></div>
         <div class="seat" style="top: 210px; left: 843px"></div>
         <div class="seat" style="top: 210px; left: 854px"></div>
@@ -203,6 +500,10 @@
         <!-- 1층 A구역 10열 -->
         <div class="seat" style="top: 240px; left: 212px"></div>
         <div class="seat" style="top: 240px; left: 223px"></div>
+        <div class="seat" style="top: 240px; left: 234px"></div>
+        <div class="seat" style="top: 240px; left: 245px"></div>
+        <!-- 1층 C구역 10열 -->
+        <div class="seat" style="top: 240px; left: 777px"></div>
         <div class="seat" style="top: 240px; left: 788px"></div>
         <div class="seat" style="top: 240px; left: 799px"></div>
         <div class="seat" style="top: 240px; left: 810px"></div>
@@ -216,6 +517,10 @@
         <!-- 1층 A구역 11열 -->
         <div class="seat" style="top: 255px; left: 212px"></div>
         <div class="seat" style="top: 255px; left: 223px"></div>
+        <div class="seat" style="top: 255px; left: 234px"></div>
+        <div class="seat" style="top: 255px; left: 245px"></div>
+        <!-- 1층 C구역 11열 -->
+        <div class="seat" style="top: 255px; left: 777px"></div>
         <div class="seat" style="top: 255px; left: 788px"></div>
         <div class="seat" style="top: 255px; left: 799px"></div>
         <div class="seat" style="top: 255px; left: 810px"></div>
@@ -556,68 +861,12 @@
         <!-- 각 후기들 슬라이더를 통해 하나씩 볼 수 있게 설정하기 위한 클래스 -->
       </div>
     </div>
-    <!-- <img
-        src="/img/ggart_seat.gif"
-        alt="경기아트센터 소극장 배치도"
-        width="100%"
-        height="600px"
-      /> -->
+    <script src="/js/review_modal.js"></script>
     <script>
-      let curPos = 0;
-      let postion = 0;
-      let now = 0;
-      //review 클래스를 가진 div 태그들 모두 배열에 담기
-      let list = document.querySelectorAll(".review");
-      //팝업 열음 함수
-      const open = () => {
-        document.querySelector(".modal").classList.remove("hidden");
-      };
-
-      //팝업 닫음 함수
-      const close = () => {
-        document.querySelector(".modal").classList.add("hidden");
-      };
-      //이전 버튼 함수
-      const prev = () => {
-        let target1 = document.querySelector(".next");
-        if (target1.disabled === true) {
-          target1.disabled = false;
-        }
-        let list = document.querySelectorAll(".review");
-        list[now].classList.add("hidden");
-        now--;
-        list[now].classList.remove("hidden");
-        if (now === 0) {
-          let target2 = document.querySelector(".prev");
-          target2.disabled = true;
-        }
-      };
-      //다음 버튼 함수
-      const next = () => {
-        let target1 = document.querySelector(".prev");
-        if (target1.disabled === true) {
-          target1.disabled = false;
-        }
-        let list = document.querySelectorAll(".review");
-        list[now].classList.add("hidden");
-        now++;
-        list[now].classList.remove("hidden");
-        if (now === list.length - 1) {
-          let target2 = document.querySelector(".next");
-          target2.disabled = true;
-        }
-      };
-
-      // 포도알역할 대신 친구 선택시 팝업 열림(open함수 실행)
-      document.querySelector(".openBtn").addEventListener("click", open);
-      // x표시 선택시 팝업 닫힘(close함수 실행)
-      document.querySelector(".closeBtn").addEventListener("click", close);
-      // 팝업이 아닌 배경 선택시 닫힘(close함수 실행)
-      document.querySelector(".bg").addEventListener("click", close);
-      // 팝업에서 이전 버튼 클릭했을때
-      document.querySelector(".prev").addEventListener("click", prev);
-      // 팝업에서 다음 버튼 클릭했을때
-      document.querySelector(".next").addEventListener("click", next);
+      let test = document.getElementsByClassName("seat");
+      for (let i = 0; i < test.length; i++) {
+        test[i].classList.toggle(`seat${i}`);
+      }
     </script>
     <footer class="footer"></footer>
   </body>

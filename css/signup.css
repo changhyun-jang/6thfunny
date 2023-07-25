@@ -101,6 +101,16 @@ body {
   font-family: "OTWelcomeRA";
 }
 
+#floatingInput {
+  margin-bottom: 10px;
+}
 label {
   font-family: "OTWelcomeRA";
+}
+
+#idRegCheck {
+  display: none;
+}
+#pwdRegCheck {
+  display: none;
 }
