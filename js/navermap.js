@@ -19,6 +19,10 @@ var maps = [
     zoom: 15,
   },
   {
+    center: new naver.maps.LatLng(38.06066083832177, 128.16496376768805),
+    zoom: 15,
+  },
+  {
     center: new naver.maps.LatLng(37.58330974810386, 127.00438993195093),
     zoom: 15,
   },

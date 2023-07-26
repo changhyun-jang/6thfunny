@@ -11,7 +11,8 @@ header {
   height: 50px;
   background-color: #f2ba4b;
   color: black;
-  font-family: "KCC-Ganpan";
+  box-sizing: border-box;
+  font-family: "OTWelcomeRA";
 }
 .menuBar {
   display: flex;

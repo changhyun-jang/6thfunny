@@ -3,25 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--0726-->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/center.css" />
     <link rel="stylesheet" href="/css/review_popup.css" />
     <link rel="stylesheet" href="css/writeReveiw.css" />
-    <title>경기아트센터</title>
+    <title>Ticket Tier Adviser</title>
+    <link rel="icon" href="./img/logo2.png" />
+    <style>
+    /* 0726 사이드바 */
+   @media screen and (max-width: 768px) {
+     .menuBar span {
+        display: none;
+     }
+      .menu_btn {
+            display: block;
+        }
+    }
+    </style>
   </head>
   <body>
     <!-- 헤더의 메뉴 -->
     <header>
       <div class="logoImage">
-        <img src="/img/logo2.png" alt="팀 로고" class="mainlogo" />
+        <img
+          src="/img/logo2.png"
+          alt="팀 로고"
+          class="mainlogo"
+          onclick="gotoMain()"
+        />
       </div>
       <div class="menuBar">
         <span onclick="gotoreview()">찾아보기</span>
         <span>로그인</span>
       </div>
+      <!-- 0726 사이드바 부분 -->
+      <div class="menu_btn"><a href="#">       
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgNmgtMjR2LTRoMjR2NHptMCA0aC0yNHY0aDI0di00em0wIDhoLTI0djRoMjR2LTR6Ii8+PC9zdmc+">
+        </a>
+        </div>
+    </div>
+    <div class="menu_bg"></div>
+    <div class="sidebar_menu">
+      <div class="close_btn">
+        <a href="#">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjMuOTU0IDIxLjAzbC05LjE4NC05LjA5NSA5LjA5Mi05LjE3NC0yLjgzMi0yLjgwNy05LjA5IDkuMTc5LTkuMTc2LTkuMDg4LTIuODEgMi44MSA5LjE4NiA5LjEwNS05LjA5NSA5LjE4NCAyLjgxIDIuODEgOS4xMTItOS4xOTIgOS4xOCA5LjF6Ii8+PC9zdmc+"
+          />
+        </a>
+      </div>
+      <div class="menu_wrap">
+        <span>로그인</span>
+        <span onclick="gotoreview()">찾아보기</span>
+      </div>
     </header>
     <!-- 선택한 공연장 상세 정보 -->
     <h2>공연장 정보</h2>
-    <section class="infoSection">
+    <section class="infoSection animate__animated animate__fadeInUp">
       <div class="infoLeft">
         <img
           onClick="gotoMain()"
@@ -77,7 +119,7 @@
       </p>
     </section>
     <!-- 좌석 배치도 부분 시작 -->
-    <div class="seatLayout">
+    <div class="seatLayout animate__animated animate__fadeInUp  animate__delay-0.5s">
       <div class="seatView">
         <div class="stage"><strong>무대</strong></div>
         <!-- A~C 구역 div -->
@@ -790,10 +832,10 @@
         class="mainlogo"
         onclick="gotoMain()"
       />
-      <div>
+      <div style="margin-left: 40px;">
+        <em>포스코X코딩온 웹 풀스택 8기 첫번째 프로젝트</em>
+        <br>
         육회함조 - 이동준, 전주현, 장창현
-        <br />
-        첫번째 프로젝트
       </div>
     </footer>
 
@@ -838,7 +880,7 @@
                   <img src="/img/review_img_example03.jpg" alt="" />
                   <h4>1층 B구역 8열 11번</h4>
                   <p>
-                    사진처럼 전체적인 시야는 정말 눈에 잘들어옵니다. 하지만
+                    사진처럼 전체적인 시야는 정말 눈에 잘 들어옵니다. 하지만
                     자리가 너무 좁아서 관람하는 동안 너무 불편했어요. 자리를
                     넓히는 보수가 필요한 것 같아요!!
                   </p>
@@ -884,6 +926,27 @@
     function gotoreview() {
       location.href = "all_review.html";
     }
+    
+    //0726 사이드바 스크립트
+    $(document).ready(function () {
+        $(".menu_btn>a").on("click", function () {
+          $(".menu_bg").show();
+          $(".sidebar_menu").show().animate({
+            right: 0,
+          });
+        });
+        $(".close_btn>a").on("click", function () {
+          $(".menu_bg").hide();
+          $(".sidebar_menu").animate(
+            {
+              right: "-" + 50 + "%",
+            },
+            function () {
+              $(".sidebar_menu").hide();
+            }
+          );
+        });
+      });
   </script>
   <script src="/js/review_modal_gg.js"></script>
   <script src="./js/cookieCheck.js"></script>

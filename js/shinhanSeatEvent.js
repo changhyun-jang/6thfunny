@@ -12,7 +12,7 @@ seats.forEach((seat) => {
       seatId = this.getAttribute("id");
 
       if (this.classList.contains("reviewed")) {
-        openReviewModal(`${seatId}_g`);
+        openReviewModal(`${seatId}_s`);
       } else {
         openModal();
       }
@@ -24,14 +24,11 @@ seats.forEach((seat) => {
 function submitReview() {
   const reviewInput = document.getElementById("reviewInput");
   const review = reviewInput.value;
-  if (review !== "") {
-    addLS(seatId, review);
 
-    closeModal();
-    location.reload();
-  } else {
-    alert("내용을 입력해주세요.");
-  }
+  addLS(seatId, review);
+
+  closeModal();
+  location.reload();
 }
 
 function openModal() {
@@ -47,7 +44,7 @@ function closeModal() {
 
 function addLS(seatNum, seatContent) {
   localStorage.setItem(
-    `${seatNum}_g`,
+    `${seatNum}_s`,
     JSON.stringify(new SeatObj(seatNum, seatContent))
   );
 }
@@ -58,7 +55,7 @@ function checkLocalStroage() {
     let seatObj = JSON.parse(localStorage.getItem(key));
     let check = key.split("_")[2];
 
-    if (key !== "__mantle_tile_meta_data" && check !== "s") {
+    if (key !== "__mantle_tile_meta_data" && check !== "g") {
       let seatNum = seatObj.objNumber.split("_")[1];
       seats[seatNum].classList.add("reviewed");
     }

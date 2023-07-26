@@ -150,7 +150,7 @@ th {
   margin: 0 auto;
   position: relative;
   top: 5px;
-  overflow: scroll;
+  overflow: auto;
   border-radius: 1.5%;
   border: dashed 0.5px rgb(184, 182, 182);
 }

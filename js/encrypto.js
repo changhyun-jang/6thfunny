@@ -13,8 +13,6 @@
 /* [aes 128 인코딩, 디코딩에 필요한 전역 변수 선언] */
 var aes128SecretKey = "0123456789abcdef"; // key 값 16 바이트
 var aes128Iv = "0123456789abcdef"; //iv 16 바이트
-var aes128EncodeData = "";
-var aes128DecodeData = "";
 
 /* [aes128Encode 이벤트 함수 정의] */
 function aes128Encode(secretKey, Iv, data) {

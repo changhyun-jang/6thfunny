@@ -54,7 +54,7 @@ main {
 }
 .ticketContents {
   background-color: var(--color-main-lighter);
-  min-height: 60vw;
+  min-height: 80vh;
   width: 75vw;
   height: 60vw;
   margin: 0 auto;
@@ -70,8 +70,8 @@ main {
 }
 
 .cardImg {
-  width: 27vw;
-  height: 20vw;
+  width: 24vw;
+  height: 18vw;
   display: inline;
   border-radius: 10px;
 }

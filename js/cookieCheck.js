@@ -1,4 +1,5 @@
 let loginBtn = document.querySelector(".menuBar").lastElementChild;
+let loginBtn2 = document.querySelector(".menu_wrap").firstElementChild;
 
 let cookies = document.cookie;
 
@@ -20,4 +21,5 @@ for (let ck of ckArr) {
 
 if (idCheck && pwdCheck) {
   loginBtn.innerText = "로그아웃";
+  loginBtn2.innerText = "로그아웃";
 }

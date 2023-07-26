@@ -1,0 +1,66 @@
+/* 폰트 적용 */
+@font-face {
+  font-family: "KCC-Ganpan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 사이드바 적용 부분 */
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+.menu_btn {
+  text-align: right;
+  padding: 0.8rem;
+  display: none; /*이거*/
+}
+.menu_bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  display: none;
+}
+.sidebar_menu {
+  display: none;
+  width: 25%;
+  height: 100%;
+  background-color: #f2ba4b;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: -50%;
+}
+.close_btn {
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+}
+.close_btn > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.menu_wrap {
+  margin-top: 20px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.menu_wrap span {
+  font-family: "KCC-Ganpan";
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+.menu_wrap span:hover {
+  font-size: 1em;
+  font-weight: 800;
+  cursor: pointer;
+}

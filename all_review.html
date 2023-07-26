@@ -3,10 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Ticket Tier Adviser</title>
     <link rel="stylesheet" href="css/review_all.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="icon" href="./img/logo2.png" />
+    <style>
+      /* 0726 사이드바 */
+     @media screen and (max-width: 768px) {
+       .menuBar span {
+          display: none;
+       }
+        .menu_btn {
+          display: inline-block;
+            float: right;
+          }
+      }
+      </style>
     <script
       type="text/javascript"
       src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=xpmj5g73ov"
@@ -17,6 +31,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--0726-->
     <script type="text/javascript">
       function win_open(page, name) {
         // window.open("팝업될 문서 경로","팝업될 문서 이름","옵션(위치, bar표시, 크기 등)");
@@ -36,6 +51,25 @@
         <span>찾아보기</span>
         <span>로그인</span>
       </div>
+      <!-- 0726 사이드바 부분 -->
+      <div class="menu_btn"><a href="#">       
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgNmgtMjR2LTRoMjR2NHptMCA0aC0yNHY0aDI0di00em0wIDhoLTI0djRoMjR2LTR6Ii8+PC9zdmc+">
+        </a>
+        </div>
+    </div>
+    <div class="menu_bg"></div>
+    <div class="sidebar_menu">
+      <div class="close_btn">
+        <a href="#">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjMuOTU0IDIxLjAzbC05LjE4NC05LjA5NSA5LjA5Mi05LjE3NC0yLjgzMi0yLjgwNy05LjA5IDkuMTc5LTkuMTc2LTkuMDg4LTIuODEgMi44MSA5LjE4NiA5LjEwNS05LjA5NSA5LjE4NCAyLjgxIDIuODEgOS4xMTItOS4xOTIgOS4xOCA5LjF6Ii8+PC9zdmc+"
+          />
+        </a>
+      </div>
+      <div class="menu_wrap">
+        <span>로그인</span>
+        <span onclick="gotoreview()">찾아보기</span>
+      </div>
     </header>
     <div class="main">
       <div class="search">
@@ -51,7 +85,7 @@
           placeholder="예시) VIP석 1층 4열"
           onchange="f_search_review()"
         />
-        <button class="logo">로고</button>
+        <img src="/img/logo2.png" alt="팀 로고" class="mainlogo" />
       </div>
       <div class="ticketContents">
         <div class="forhr">
@@ -377,19 +411,26 @@
         class="mainlogo"
         onclick="gotoMain()"
       />
-      <div>
-        육회함조 - 이동준, 전주현, 장창현
+      <div style="margin-left: 40px">
+        <em>포스코X코딩온 웹 풀스택 8기 첫번째 프로젝트</em>
         <br />
-        첫번째 프로젝트
+        육회함조 - 이동준, 전주현, 장창현
       </div>
     </footer>
   </body>
   <script src="/js/review_navermap.js"></script>
   <script>
+    //리뷰들을 보여줄 요소
     let ticket = document.querySelector(".ticketContents");
+    // 리뷰별 번호
     let num = document.querySelectorAll(".num");
+    // 각리뷰 정보를 담고있는 클래스
     let list = document.querySelectorAll(".forhr");
+
+    //테마 분류저장 변수
     var selectText;
+
+    //검색어에 대한 정보가 없을떄 출력할 '검색된 후기가 없습니다.' 설정
     let message = document.createElement("div");
     message.innerHTML = "<h2>검색된 후기가 없습니다.</h2>";
     message.style.textAlign = "center";
@@ -397,6 +438,19 @@
     message.style.top = "30vw";
     ticket.append(message);
     message.classList.add("hidden");
+
+    //테마 선택을 하면 option에 선택한 테마가 출력
+    function changeThemeSelect() {
+      var themeSelect = document.getElementById("selectbox");
+      var selectValue = themeSelect.options[themeSelect.selectedIndex].value;
+      selectText = themeSelect.options[themeSelect.selectedIndex].text;
+
+      $("#selectbox option:selected").text();
+    }
+
+    //테마에 따른 리뷰 분류
+    //테마가 좌석일떄는 좌석 번호와 입력값 비교
+    //테마가 장소일떄는 장소 이름과 입력값 비교하여 해당하지 않는 각리뷰 정보를 담고있는 클래스들을 hidden을 통해 사라지게 함
     function f_search_review() {
       var search = document.getElementById("search_review").value;
       var title = document.querySelectorAll(".title");
@@ -419,6 +473,8 @@
           break;
         }
       }
+
+      //검색할때마다 리뷰들 번호를 새로 매겨줌
       let count = 0;
       let check = 0;
       for (let i = 0; i < list.length; i++) {
@@ -437,17 +493,30 @@
     for (let i = 0; i < num.length; i++) {
       num[i].innerText = "[" + (i + 1) + "]";
     }
-    function changeThemeSelect() {
-      var themeSelect = document.getElementById("selectbox");
-      var selectValue = themeSelect.options[themeSelect.selectedIndex].value;
-      selectText = themeSelect.options[themeSelect.selectedIndex].text;
 
-      $("#selectbox option:selected").text();
-      console.log(selectText);
-    }
     function gotoMain() {
       location.href = "index.html";
     }
+    //0726 사이드바 스크립트
+    $(document).ready(function () {
+        $(".menu_btn>a").on("click", function () {
+          $(".menu_bg").show();
+          $(".sidebar_menu").show().animate({
+            right: 0,
+          });
+        });
+        $(".close_btn>a").on("click", function () {
+          $(".menu_bg").hide();
+          $(".sidebar_menu").animate(
+            {
+              right: "-" + 50 + "%",
+            },
+            function () {
+              $(".sidebar_menu").hide();
+            }
+          );
+        });
+      });
   </script>
   <script src="./js/cookieCheck.js"></script>
 </html>
