@@ -3,11 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--0726-->
+    <link rel="stylesheet" href="/css/sidebar.css">
     <title>Ticket Tier Adviser</title>
     <link rel="stylesheet" href="css/review_all.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/header.css" />
     <link rel="icon" href="./img/logo2.png" />
+    <style>
+      /* 0726 사이드바 */
+     @media screen and (max-width: 768px) {
+       .menuBar span {
+          display: none;
+       }
+        .menu_btn {
+          display: inline-block;
+            float: right;
+          }
+      }
+      </style>
     <script
       type="text/javascript"
       src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=xpmj5g73ov"
@@ -36,6 +50,25 @@
       <div class="menuBar">
         <span>찾아보기</span>
         <span>로그인</span>
+      </div>
+      <!-- 0726 사이드바 부분 -->
+      <div class="menu_btn"><a href="#">       
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgNmgtMjR2LTRoMjR2NHptMCA0aC0yNHY0aDI0di00em0wIDhoLTI0djRoMjR2LTR6Ii8+PC9zdmc+">
+        </a>
+        </div>
+    </div>
+    <div class="menu_bg"></div>
+    <div class="sidebar_menu">
+      <div class="close_btn">
+        <a href="#">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjMuOTU0IDIxLjAzbC05LjE4NC05LjA5NSA5LjA5Mi05LjE3NC0yLjgzMi0yLjgwNy05LjA5IDkuMTc5LTkuMTc2LTkuMDg4LTIuODEgMi44MSA5LjE4NiA5LjEwNS05LjA5NSA5LjE4NCAyLjgxIDIuODEgOS4xMTItOS4xOTIgOS4xOCA5LjF6Ii8+PC9zdmc+"
+          />
+        </a>
+      </div>
+      <div class="menu_wrap">
+        <span>로그인</span>
+        <span onclick="gotoreview()">찾아보기</span>
       </div>
     </header>
     <div class="main">
@@ -464,6 +497,26 @@
     function gotoMain() {
       location.href = "index.html";
     }
+    //0726 사이드바 스크립트
+    $(document).ready(function () {
+        $(".menu_btn>a").on("click", function () {
+          $(".menu_bg").show();
+          $(".sidebar_menu").show().animate({
+            right: 0,
+          });
+        });
+        $(".close_btn>a").on("click", function () {
+          $(".menu_bg").hide();
+          $(".sidebar_menu").animate(
+            {
+              right: "-" + 50 + "%",
+            },
+            function () {
+              $(".sidebar_menu").hide();
+            }
+          );
+        });
+      });
   </script>
   <script src="./js/cookieCheck.js"></script>
 </html>
