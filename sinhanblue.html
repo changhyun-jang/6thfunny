@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <link rel="stylesheet" href="/css/sidebar.css"> <!--0726-->
     <link rel="stylesheet" href="/css/review_popup.css" />
     <link rel="stylesheet" href="/css/center.css" />
@@ -25,7 +29,7 @@
     <link rel="icon" href="./img/logo2.png" />
     <title>Ticket Tier Adviser</title>
   </head>
-  <body>
+  <body >
     <header>
       <img
         src="/img/logo2.png"
@@ -57,8 +61,9 @@
         <span onclick="gotoreview()">찾아보기</span>
       </div>
     </header>
+    <main class="">
     <h2>공연장 정보</h2>
-    <section class="infoSection">
+    <section class="infoSection animate__animated animate__fadeInUp">
       <div class="infoLeft">
         <img class="centerImg" src="/img/bluesqure.jpg" alt="블루스퀘어" />
       </div>
@@ -107,7 +112,7 @@
         >를 확인할 수 있어요👀
       </p>
     </section>
-    <div class="seatLayout">
+    <div class="seatLayout animate__animated animate__fadeInUp  animate__delay-0.5s">
       <div class="seatView">
         <div class="stage"><strong>무대</strong></div>
       </div>
@@ -299,6 +304,7 @@
         <!-- 각 후기들 슬라이더를 통해 하나씩 볼 수 있게 설정하기 위한 클래스 -->
       </div>
     </div>
+  </main>
     <footer>
       <img
         src="/img/logo2.png"

@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--0726-->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
   <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/center.css" />
     <link rel="stylesheet" href="/css/review_popup.css" />
@@ -59,7 +63,7 @@
     </header>
     <!-- 선택한 공연장 상세 정보 -->
     <h2>공연장 정보</h2>
-    <section class="infoSection">
+    <section class="infoSection animate__animated animate__fadeInUp">
       <div class="infoLeft">
         <img
           onClick="gotoMain()"
@@ -115,7 +119,7 @@
       </p>
     </section>
     <!-- 좌석 배치도 부분 시작 -->
-    <div class="seatLayout">
+    <div class="seatLayout animate__animated animate__fadeInUp  animate__delay-0.5s">
       <div class="seatView">
         <div class="stage"><strong>무대</strong></div>
         <!-- A~C 구역 div -->
